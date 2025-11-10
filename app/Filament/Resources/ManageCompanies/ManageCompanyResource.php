@@ -5,7 +5,6 @@ namespace App\Filament\Resources\ManageCompanies;
 use App\Filament\Resources\ManageCompanies\Pages\CreateManageCompany;
 use App\Filament\Resources\ManageCompanies\Pages\EditManageCompany;
 use App\Filament\Resources\ManageCompanies\Pages\ListManageCompanies;
-use App\Filament\Resources\ManageCompanies\Schemas\ManageCompanyForm;
 use App\Filament\Resources\ManageCompanies\Tables\ManageCompaniesTable;
 use App\Models\Company;
 use BackedEnum;
@@ -20,11 +19,50 @@ class ManageCompanyResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
-    protected static ?string $recordTitleAttribute = 'Company';
+    protected static ?string $recordTitleAttribute = 'name';
 
     public static function form(Schema $schema): Schema
     {
-        return ManageCompanyForm::configure($schema);
+        return $schema->components(self::getFormSchema());
+    }
+
+    public static function getFormSchema(): array
+    {
+        return [
+            \Filament\Forms\Components\TextInput::make('name')
+                ->label('Company Name')
+                ->required()
+                ->maxLength(255),
+
+            \Filament\Forms\Components\TextInput::make('phone')
+                ->label('Phone Number')
+                ->required()
+                ->maxLength(255),
+
+            \Filament\Forms\Components\TextInput::make('url')
+                ->label('URL')
+                ->required()
+                ->maxLength(255),
+
+            \Filament\Forms\Components\TextInput::make('ulpad')
+                ->label('ULPAD')
+                ->maxLength(255),
+
+            \Filament\Forms\Components\TextInput::make('ad_id')
+                ->label('Ad ID')
+                ->numeric()
+                ->default(0),
+
+            \Filament\Forms\Components\TextInput::make('popup_id')
+                ->label('Popup ID')
+                ->numeric()
+                ->default(0),
+
+            \Filament\Forms\Components\RichEditor::make('content')
+                ->label('Content')
+                ->required()
+                ->columnSpanFull(),
+        ];
     }
 
     public static function table(Table $table): Table

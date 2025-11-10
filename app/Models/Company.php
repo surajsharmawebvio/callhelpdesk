@@ -9,8 +9,8 @@ class Company extends Model
     protected $connection = 'mongodb';
     protected $collection = 'company';
 
-    protected $primaryKey = 'id';
-    protected $keyType = 'int';
+    protected $primaryKey = '_id';
+    protected $keyType = 'string';
 
     protected $fillable = [
         'content',

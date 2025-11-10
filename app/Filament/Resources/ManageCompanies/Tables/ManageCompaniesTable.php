@@ -15,6 +15,11 @@ class ManageCompaniesTable
     {
         return $table
             ->columns([
+                TextColumn::make('_id')
+                    ->label('ID')
+                    ->searchable()
+                    ->sortable()
+                    ->copyable(),
                 TextColumn::make('name')
                     ->label('Company Name')
                     ->searchable()
