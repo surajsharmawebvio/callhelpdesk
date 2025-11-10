@@ -190,7 +190,7 @@
 
     <!-- Back to Top Button (Mobile Only) -->
     <button 
-        v-if="showBackToTop" 
+        v-show="showBackToTop" 
         @click="scrollToTop"
         class="back-to-top-btn"
         :class="{ 'visible': showBackToTop }"
@@ -361,12 +361,6 @@
     padding-top: 80px;
 }
 
-/* Prevent horizontal scroll */
-* {
-    max-width: 100%;
-    box-sizing: border-box;
-}
-
 /* Hide search container when scrolling */
 .search-container.hidden-on-scroll {
     opacity: 0;
@@ -378,8 +372,6 @@
 
 .search-container {
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    width: 100%;
-    max-width: 100%;
 }
 
 /* Responsive adjustments */
@@ -400,17 +392,17 @@
     background: linear-gradient(135deg, var(--primary), var(--secondary));
     color: white;
     border: none;
-    box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3);
     cursor: pointer;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(20px) scale(0.8);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 999;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 18px;
+    box-shadow: 0 4px 12px rgba(67, 97, 238, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px) scale(0.8);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
 }
 
 .back-to-top-btn.visible {
@@ -428,7 +420,7 @@
     transform: translateY(0) scale(0.95);
 }
 
-/* Hide on desktop */
+/* Hide on desktop, show only on mobile */
 @media (min-width: 769px) {
     .back-to-top-btn {
         display: none !important;

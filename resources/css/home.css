@@ -814,9 +814,4 @@ footer {
     .testimonial-slide {
         padding: 30px;
     }
-
-    .steps {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
 }
