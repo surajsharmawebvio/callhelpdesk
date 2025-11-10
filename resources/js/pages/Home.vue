@@ -8,7 +8,7 @@
                 <h1>Get Human Support <span>Faster Than Ever</span></h1>
                 <p>Connect with real customer service representatives in minutes, not hours. Skip the automated systems
                     and get the help you need right away.</p>
-                <div class="search-container">
+                <div class="search-container" :class="{ 'hidden-on-scroll': hideSearchInHero }">
                     <div class="search-wrapper">
                         <input 
                             type="text" 
@@ -187,6 +187,16 @@
     </section>
 
     <Footer />
+
+    <!-- Back to Top Button (Mobile Only) -->
+    <button 
+        v-if="showBackToTop" 
+        @click="scrollToTop"
+        class="back-to-top-btn"
+        :class="{ 'visible': showBackToTop }"
+    >
+        <i class="fas fa-arrow-up"></i>
+    </button>
 </template>
 
 <script>
@@ -206,14 +216,39 @@
         },
         data() {
             return {
+                hideSearchInHero: false,
                 searchQuery: '',
                 searchResults: [],
                 showDropdown: false,
                 searchLoading: false,
-                searchTimeout: null
+                searchTimeout: null,
+                showBackToTop: false
             }
         },
         methods: {
+            handleScroll() {
+                const heroSection = document.querySelector('.hero');
+                if (heroSection) {
+                    const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+                    const scrollPosition = window.scrollY;
+                    
+                    // Hide search in hero when scrolled past it
+                    this.hideSearchInHero = scrollPosition > heroBottom - 100;
+                }
+                
+                // Header scroll effect
+                const header = document.getElementById('header');
+                if (header) {
+                    if (window.scrollY > 50) {
+                        header.classList.add('scrolled');
+                    } else {
+                        header.classList.remove('scrolled');
+                    }
+                }
+
+                // Show/hide back to top button
+                this.showBackToTop = window.scrollY > 300;
+            },
             async searchCompanies() {
                 const query = this.searchQuery.trim();
                 
@@ -271,53 +306,132 @@
                     console.log('Searching for:', this.searchQuery);
                     // You can add navigation or API call here
                 }
+            },
+            scrollToTop() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
             }
         },
         mounted() {
-            // Header scroll effect
-            window.addEventListener('scroll', function () {
-                const header = document.getElementById('header');
-                if (window.scrollY > 50) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
-                }
-            });
+            // Add scroll listener
+            window.addEventListener('scroll', this.handleScroll);
+            this.handleScroll(); // Check initial state
 
             // Testimonial slider
-            document.addEventListener('DOMContentLoaded', function () {
-                const track = document.querySelector('.testimonial-track');
-                const slides = document.querySelectorAll('.testimonial-slide');
-                const dots = document.querySelectorAll('.slider-dot');
-                let currentSlide = 0;
+            const track = document.querySelector('.testimonial-track');
+            const slides = document.querySelectorAll('.testimonial-slide');
+            const dots = document.querySelectorAll('.slider-dot');
+            let currentSlide = 0;
 
-                function goToSlide(slideIndex) {
-                    track.style.transform = `translateX(-${slideIndex * 100}%)`;
+            function goToSlide(slideIndex) {
+                track.style.transform = `translateX(-${slideIndex * 100}%)`;
 
-                    // Update active dot
-                    dots.forEach(dot => dot.classList.remove('active'));
-                    dots[slideIndex].classList.add('active');
+                // Update active dot
+                dots.forEach(dot => dot.classList.remove('active'));
+                dots[slideIndex].classList.add('active');
 
-                    currentSlide = slideIndex;
-                }
+                currentSlide = slideIndex;
+            }
 
-                // Add click events to dots
-                dots.forEach((dot, index) => {
-                    dot.addEventListener('click', () => {
-                        goToSlide(index);
-                    });
+            // Add click events to dots
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    goToSlide(index);
                 });
-
-                // Auto slide
-                setInterval(() => {
-                    let nextSlide = (currentSlide + 1) % slides.length;
-                    goToSlide(nextSlide);
-                }, 5000);
             });
+
+            // Auto slide
+            setInterval(() => {
+                let nextSlide = (currentSlide + 1) % slides.length;
+                goToSlide(nextSlide);
+            }, 5000);
+        },
+        beforeUnmount() {
+            window.removeEventListener('scroll', this.handleScroll);
         }
     };
 
 </script>
 
 <style scoped>
+/* Add padding to account for fixed header */
+.hero {
+    padding-top: 80px;
+}
+
+/* Prevent horizontal scroll */
+* {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Hide search container when scrolling */
+.search-container.hidden-on-scroll {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-30px) scale(0.95);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+}
+
+.search-container {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero {
+        padding-top: 70px;
+    }
+}
+
+/* Back to Top Button (Mobile Only) */
+.back-to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    border: none;
+    box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3);
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px) scale(0.8);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.back-to-top-btn.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
+
+.back-to-top-btn:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(67, 97, 238, 0.4);
+}
+
+.back-to-top-btn:active {
+    transform: translateY(0) scale(0.95);
+}
+
+/* Hide on desktop */
+@media (min-width: 769px) {
+    .back-to-top-btn {
+        display: none !important;
+    }
+}
 </style>

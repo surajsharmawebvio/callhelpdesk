@@ -1,6 +1,6 @@
 <!-- make header component -->
 <template>
-    <header id="header">
+    <header id="header" :class="{ 'scrolled': isScrolled }">
         <div class="container header-container">
             <a href="#" class="logo">
                 <div class="logo-icon">
@@ -9,8 +9,53 @@
                 <div class="logo-text">Elevate<span>Support</span></div>
             </a>
 
-            <!-- Search bar -->
-             
+            <!-- Search bar that appears on scroll -->
+            <div class="search-bar" :class="{ 'visible': showSearchInHeader }">
+                <div class="search-wrapper">
+                    <input 
+                        type="text" 
+                        class="search-input" 
+                        placeholder="Search for a company or service..." 
+                        v-model="searchQuery"
+                        @input="searchCompanies"
+                        @focus="showDropdown = true"
+                        @blur="hideDropdown"
+                    >
+                    <div v-if="showDropdown && searchResults.length > 0" class="search-dropdown">
+                        <div 
+                            v-for="company in searchResults" 
+                            :key="company._id || company.id"
+                            class="search-item"
+                            @mousedown="selectCompany(company)"
+                        >
+                            <div class="company-info">
+                                <div class="company-name">{{ company.name }}</div>
+                                <div class="company-category" v-if="company.category">{{ company.category }}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div v-if="showDropdown && searchQuery && searchResults.length === 0 && !searchLoading" class="search-dropdown">
+                        <div class="search-item no-results">
+                            <div class="company-info">
+                                <div class="company-name">No companies found</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div v-if="searchLoading && showDropdown" class="search-dropdown">
+                        <div class="search-item loading">
+                            <div class="company-info">
+                                <div class="company-name">
+                                    <i class="fas fa-spinner fa-spin"></i>
+                                    Searching...
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="search-btn btn btn-primary" @click="handleSearch">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
 
         </div>
     </header>
@@ -18,7 +63,93 @@
 
 <script>
     export default {
-        name: 'Header'
+        name: 'Header',
+        data() {
+            return {
+                showSearchInHeader: false,
+                isScrolled: false,
+                searchQuery: '',
+                searchResults: [],
+                showDropdown: false,
+                searchLoading: false,
+                searchTimeout: null
+            }
+        },
+        methods: {
+            handleScroll() {
+                const heroSection = document.querySelector('.hero');
+                if (heroSection) {
+                    const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+                    const scrollPosition = window.scrollY;
+                    
+                    // Show search in header when scrolled past hero section
+                    this.showSearchInHeader = scrollPosition > heroBottom - 100;
+                    this.isScrolled = scrollPosition > 50;
+                }
+            },
+            async searchCompanies() {
+                const query = this.searchQuery.trim();
+                
+                // Clear previous timeout
+                if (this.searchTimeout) {
+                    clearTimeout(this.searchTimeout);
+                }
+
+                if (!query) {
+                    this.searchResults = [];
+                    this.showDropdown = false;
+                    return;
+                }
+
+                // Debounce search to avoid too many API calls
+                this.searchTimeout = setTimeout(async () => {
+                    this.searchLoading = true;
+                    
+                    try {
+                        const response = await fetch(`/api/companies/search?query=${encodeURIComponent(query)}`);
+                        const companies = await response.json();
+                        
+                        this.searchResults = companies;
+                        this.showDropdown = true;
+                    } catch (error) {
+                        console.error('Search error:', error);
+                        this.searchResults = [];
+                    } finally {
+                        this.searchLoading = false;
+                    }
+                }, 300); // 300ms debounce
+            },
+            
+            selectCompany(company) {
+                this.searchQuery = company.name;
+                this.showDropdown = false;
+                this.searchResults = [];
+                
+                // Navigate to company page
+                console.log('Selected company:', company.url);
+                this.$inertia.visit(company.url);
+            },
+            
+            hideDropdown() {
+                // Delay hiding to allow for click events
+                setTimeout(() => {
+                    this.showDropdown = false;
+                }, 200);
+            },
+            
+            handleSearch() {
+                if (this.searchQuery.trim()) {
+                    console.log('Searching for:', this.searchQuery);
+                }
+            }
+        },
+        mounted() {
+            window.addEventListener('scroll', this.handleScroll);
+            this.handleScroll(); // Check initial state
+        },
+        beforeUnmount() {
+            window.removeEventListener('scroll', this.handleScroll);
+        }
     }
 </script>
 
@@ -32,6 +163,51 @@
     --gray: #6c757d;
 }
 
+/* Header Styles */
+header {
+    background-color: white;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+header.scrolled {
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    transition: padding 0.3s ease;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo-icon {
+    font-size: 28px;
+    color: var(--primary);
+    margin-right: 10px;
+}
+
+.logo-text {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--dark);
+}
+
+.logo-text span {
+    color: var(--primary);
+}
+
 .search-bar {
     display: flex;
     align-items: center;
@@ -39,6 +215,18 @@
     max-width: 400px;
     flex: 1;
     margin: 0 20px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px) scale(0.95);
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.search-bar.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+    transition-delay: 0.1s;
+    filter: drop-shadow(0 4px 12px rgba(67, 97, 238, 0.15));
 }
 
 .search-wrapper {
@@ -60,7 +248,7 @@
 
 .search-input:focus {
     border-color: var(--primary);
-    box-shadow: 0 4px 15px rgba(67, 97, 238, 0.2);
+    box-shadow: 0 4px 15px rgba(67, 97, 238, 0.2), 0 0 0 3px rgba(67, 97, 238, 0.1);
 }
 
 .search-input::placeholder {
@@ -169,9 +357,22 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+    .header-container {
+        padding: 15px 0;
+    }
+
+    .logo-text {
+        font-size: 20px;
+    }
+
+    .logo-icon {
+        font-size: 24px;
+    }
+
     .search-bar {
         margin: 0 10px;
         max-width: 250px;
+        display: none !important;
     }
     
     .search-input {
