@@ -7,6 +7,7 @@ use App\Filament\Resources\ManageCompanies\Pages\EditManageCompany;
 use App\Filament\Resources\ManageCompanies\Pages\ListManageCompanies;
 use App\Filament\Resources\ManageCompanies\Tables\ManageCompaniesTable;
 use App\Models\Company;
+use App\Models\CompanyQuestion;
 use BackedEnum;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
@@ -62,6 +63,26 @@ class ManageCompanyResource extends Resource
                 ->label('Content')
                 ->required()
                 ->columnSpanFull(),
+
+            \Filament\Forms\Components\Repeater::make('questions')
+                ->label('Company Questions')
+                ->relationship('questions')
+                ->schema([
+                    \Filament\Forms\Components\TextInput::make('question')
+                        ->label('Question')
+                        ->required()
+                        ->columnSpanFull(),
+
+                    \Filament\Forms\Components\Textarea::make('answer')
+                        ->label('Answer')
+                        ->required()
+                        ->rows(3)
+                        ->columnSpanFull(),
+                ])
+                ->columns(1)
+                ->columnSpanFull()
+                ->addActionLabel('Add Question')
+                ->defaultItems(0),
         ];
     }
 

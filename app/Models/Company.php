@@ -21,4 +21,9 @@ class Company extends Model
         'ad_id',
         'popup_id',
     ];
+
+    public function questions()
+    {
+        return $this->hasMany(CompanyQuestion::class, 'company_id', 'id');
+    }
 }
