@@ -110,12 +110,14 @@
                                     <div class="ul-pad mt-r"><span class="bul">A:</span><span>Our free phone can help you navigate phone menus to get a live human for you.</span></div>
                                 </div>
                             </div>
+
                             <div>
                                 <img src="https://picsum.photos/600/200?random=2" alt="Random image"
                                     style="width: 100%; height: 200px; border-radius: 8px; margin: 20px 0;">
                             </div>
+
                             <div><a name="phone-numbers"></a>
-                                <h2>ACN Customer Phone Numbers</h2>
+                                <h2>{{ company.name }} Customer Phone Numbers</h2>
                                 <div class="list-block mb-u">
                                     <div class="list-block">
                                         <h3 class="min">Technical Support</h3><a class="link-med trunc und"
@@ -126,7 +128,7 @@
                                                 <path
                                                     d="M457 322c0 5-1 12-3 20-2 9-4 15-6 20-4 10-15 20-35 30-17 10-35 15-53 15-5 0-10 0-15-1s-10-2-16-4c-6-1-11-3-14-4s-8-3-16-6c-7-3-12-4-14-5-18-7-35-14-50-24-24-15-49-35-75-61s-47-51-62-76c-9-14-17-31-23-50-1-1-3-6-6-14-2-7-4-13-5-16s-3-7-5-13c-1-6-2-12-3-17-1-4-1-9-1-15 0-17 5-35 14-53 11-19 21-31 31-35 4-2 11-4 19-6 9-1 15-2 20-2h6c4 2 9 9 16 22 2 4 5 9 8 16 4 6 7 12 10 18l9 15c1 1 2 3 5 7s5 8 6 10c1 3 2 6 2 8 0 4-3 9-8 15-5 5-11 11-18 15-6 5-12 10-17 16-6 5-9 9-9 13 0 1 1 4 2 6 1 3 2 5 2 6 1 1 2 4 4 7s3 5 4 5c14 26 31 49 49 67 19 19 41 36 67 50 1 0 3 1 6 3s5 4 7 4c1 1 3 2 6 3 2 1 4 1 6 1 3 0 8-2 13-8 5-5 11-11 15-18 5-6 10-12 16-17 6-6 10-8 14-8 3 0 6 0 8 2 3 1 7 3 11 6 4 2 6 4 7 5 4 3 10 6 15 9s11 6 18 10c7 3 12 6 16 8 13 7 20 12 21 15 1 2 1 4 1 6z">
                                                 </path>
-                                            </svg><span>888-414-1958</span></a>
+                                            </svg><span>{{ company.phone }}</span></a>
                                         <div style="margin-bottom: 0"><span>Toll-free</span><span class="sep"> &middot;
                                             </span><span>24 hours, 7 days</span><span class="sep"> &middot;
                                             </span><span>Press 1 then 2 then 4 then enter the phone number associated
@@ -148,22 +150,24 @@
                             <div class="rich-content" v-html="company.content"></div>
 
                         </div>
+
+                        <!-- Right Layout -->
                         <div id="lay-fl-right">
+                            <!-- right add -->
                             <div>
                                 <img src="https://picsum.photos/600/400?random=8" alt="Random image"
                                     style="width: 100%; height: auto; border-radius: 8px; margin: 20px 0;">
                             </div>
+
                             <div>
                                 <div class="h4">What's on this page</div>
-                                <nav class="list-block mb-u" role="navigation"><a href="ACN.html#contact">ACN's top
-                                        Customer Service phone number</a><a href="#">We call and talk to customer
-                                        service for you</a><a href="#">Skip
-                                        waiting on hold</a><a href="ACN.html#phone-numbers">More ACN phone numbers</a><a
-                                        href="ACN.html#live-person">How to get to a live person fastest</a><a
-                                        href="ACN.html#hours">Hours, busy times, and hold times</a><a
-                                        href="ACN.html#why-call">Types of issues handled at this number</a><a
-                                        href="ACN.html#contact-information">More ways to contact ACN</a></nav>
+                                <nav class="list-block mb-u" role="navigation">
+                                    <a v-for="(heading, index) in extractedHeadings" :key="index" :href="'#' + heading.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '')">
+                                        {{ heading }}
+                                    </a>
+                                </nav>
                             </div>
+
                             <div>
                                 <div class="h4">Call with our free super-powered phone</div>
                                 <ul>
@@ -188,6 +192,8 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Footer -->
                     <div id="lay-fl-bottom">
                         <div class="sec-below">
                             <div>
@@ -244,13 +250,21 @@
     // import DefaultLayout from '@/Layouts/DefaultLayout.vue';
     import '@/../css/company_detail.css'
     import company from '@/routes/company';
+    import { computed } from 'vue';
 
     export default {
         // layout: DefaultLayout,
         props: {
             company: Object,
+        },
+        computed: {
+            extractedHeadings() {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(this.company.content, 'text/html');
+                return Array.from(doc.querySelectorAll('h2')).map(h2 => h2.textContent.trim());
+            }
         }
-    }
+    };
 
 </script>
 <style>
