@@ -2,9 +2,11 @@
 
 namespace App\Filament\Resources\ManageCompanies;
 
-use App\Filament\Resources\ManageCompanies\Pages\CreateManageCompany;
-use App\Filament\Resources\ManageCompanies\Pages\EditManageCompany;
-use App\Filament\Resources\ManageCompanies\Pages\ListManageCompanies;
+use App\Filament\Resources\ManageCompanies\Pages\{ 
+    CreateManageCompany, 
+    EditManageCompany, 
+    ListManageCompanies 
+};
 use App\Filament\Resources\ManageCompanies\Tables\ManageCompaniesTable;
 use App\Models\Company;
 use App\Models\CompanyQuestion;
@@ -13,6 +15,8 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use Filament\Schemas\Components\Section;
+use Filament\Forms\Components\{TextInput, RichEditor, Repeater, Textarea};
 
 class ManageCompanyResource extends Resource
 {
@@ -24,66 +28,68 @@ class ManageCompanyResource extends Resource
 
     public static function form(Schema $schema): Schema
     {
-        return $schema->components(self::getFormSchema());
-    }
+        return $schema
+            ->columns(1)
+            ->schema([
+                Section::make('Company Details')
+                    ->schema([
+                        TextInput::make('name')
+                            ->label('Company Name')
+                            ->required()
+                            ->maxLength(255),
 
-    public static function getFormSchema(): array
-    {
-        return [
-            \Filament\Forms\Components\TextInput::make('name')
-                ->label('Company Name')
-                ->required()
-                ->maxLength(255),
+                        TextInput::make('phone')
+                            ->label('Phone Number')
+                            ->required()
+                            ->maxLength(255),
 
-            \Filament\Forms\Components\TextInput::make('phone')
-                ->label('Phone Number')
-                ->required()
-                ->maxLength(255),
+                        TextInput::make('url')
+                            ->label('URL')
+                            ->required()
+                            ->maxLength(255),
 
-            \Filament\Forms\Components\TextInput::make('url')
-                ->label('URL')
-                ->required()
-                ->maxLength(255),
+                        TextInput::make('ulpad')
+                            ->label('ULPAD')
+                            ->maxLength(255),
 
-            \Filament\Forms\Components\TextInput::make('ulpad')
-                ->label('ULPAD')
-                ->maxLength(255),
+                        TextInput::make('ad_id')
+                            ->label('Ad ID')
+                            ->numeric()
+                            ->default(0),
 
-            \Filament\Forms\Components\TextInput::make('ad_id')
-                ->label('Ad ID')
-                ->numeric()
-                ->default(0),
+                        TextInput::make('popup_id')
+                            ->label('Popup ID')
+                            ->numeric()
+                            ->default(0),
 
-            \Filament\Forms\Components\TextInput::make('popup_id')
-                ->label('Popup ID')
-                ->numeric()
-                ->default(0),
+                        RichEditor::make('content')
+                            ->label('Content')
+                            ->required()
+                            ->columnSpanFull(),
+                    ])->collapsed(),
 
-            \Filament\Forms\Components\RichEditor::make('content')
-                ->label('Content')
-                ->required()
-                ->columnSpanFull(),
+                Section::make('Company Questions')
+                    ->schema([
+                        Repeater::make('questions')
+                            ->relationship('questions')
+                            ->schema([
+                                TextInput::make('question')
+                                    ->label('Question')
+                                    ->required()
+                                    ->columnSpanFull(),
 
-            \Filament\Forms\Components\Repeater::make('questions')
-                ->label('Company Questions')
-                ->relationship('questions')
-                ->schema([
-                    \Filament\Forms\Components\TextInput::make('question')
-                        ->label('Question')
-                        ->required()
-                        ->columnSpanFull(),
-
-                    \Filament\Forms\Components\Textarea::make('answer')
-                        ->label('Answer')
-                        ->required()
-                        ->rows(3)
-                        ->columnSpanFull(),
-                ])
-                ->columns(1)
-                ->columnSpanFull()
-                ->addActionLabel('Add Question')
-                ->defaultItems(0),
-        ];
+                                Textarea::make('answer')
+                                    ->label('Answer')
+                                    ->required()
+                                    ->rows(3)
+                                    ->columnSpanFull(),
+                            ])
+                            ->label('Frequently Asked Questions')
+                            ->collapsible()
+                            ->defaultItems(0)
+                            ->addActionLabel('Add Question'),
+                    ])->collapsed(),
+            ]);
     }
 
     public static function table(Table $table): Table
