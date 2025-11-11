@@ -1009,18 +1009,6 @@ i+span {
     margin-left: .5em
 }
 
-.icon-star {
-    background-image: url('/img/icon/orange/star.svg')
-}
-
-.icon-star-half-1 {
-    background-image: url('/img/icon/orange/star-half-1.svg')
-}
-
-.icon-star-2 {
-    background-image: url('/img/icon/orange/star-2.svg')
-}
-
 a>.in-icon {
     position: relative;
     left: -3px
@@ -1085,7 +1073,8 @@ a>.in-icon {
 
 #lay-fl-nav-left {
     max-width: 13.6%;
-    background-image: url('/assets/img/blingSidebarBG2.png'), linear-gradient(-44deg, #0d42ff 0, #001973 96%);
+    /* background-image: url('/assets/img/blingSidebarBG2.png'), linear-gradient(-44deg, #0d42ff 0, #001973 96%); */
+    background-color: #4361ee;
     background-position: center bottom, bottom;
     background-repeat: no-repeat, no-repeat;
     background-size: contain, cover;
@@ -1097,13 +1086,14 @@ a>.in-icon {
     display: none
 }
 
-#lay-fl-nav-left>a {
+#lay-fl-nav-left > a {
     max-width: 198px;
     height: 62px;
     display: block;
     margin-bottom: 50px;
-    background: url('/assets/img/bling-logo-muted2.png') top left no-repeat;
-    background-size: contain
+    /* background: url('/assets/img/bling-logo-muted2.png') top left no-repeat; */
+    background-size: contain;
+    color: white;
 }
 
 #lay-fl-nav-left>div {
@@ -1144,7 +1134,7 @@ nav.left>a {
 #lay-fl-nav-top>a {
     display: block;
     height: 36px;
-    background: url('/assets/img/simple-logo-muted.png') center no-repeat;
+    /* background: url('/assets/img/simple-logo-muted.png') center no-repeat; */
     background-size: 118px 20px
 }
 
@@ -1678,7 +1668,7 @@ h3+.stars {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-image: url('/assets/img/blingHeroBG2.png'), linear-gradient(-44deg, #69cf96 0, #72d469 96%);
+    /* background-image: url('/assets/img/blingHeroBG2.png'), linear-gradient(-44deg, #69cf96 0, #72d469 96%); */
     background-position: center bottom, bottom;
     background-repeat: no-repeat, no-repeat;
     background-size: 100% auto, cover;

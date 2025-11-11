@@ -2,7 +2,8 @@
     <div class="viewMainServer">
         <div>
             <div id="lay-fl" class="google-auto-placed">
-                <div id="lay-fl-nav-left"><a href="#" title="GetHuman"></a>
+                <div id="lay-fl-nav-left">
+                    <a href="#" title="GetHuman"></a>
                     <div>
                         <nav role="navigation" class="left list-block">
                             <a href="#">Home</a>
@@ -144,7 +145,7 @@
                                 </div>
                             </div>
 
-                            <div v-html="company.content"></div>
+                            <div class="rich-content" v-html="company.content"></div>
 
                         </div>
                         <div id="lay-fl-right">
@@ -252,5 +253,59 @@
     }
 
 </script>
-<style scoped>
+<style>
+.rich-content p img,
+.rich-content div img,
+.rich-content figure img,
+.rich-content span img,
+.rich-content img {
+    width: 100% !important;
+}
+
+/* .rich-content img:hover { */
+    /* transform: scale(1.02) !important; */
+    /* box-shadow: 0 8px 16px -2px rgba(0, 0, 0, 0.15) !important; */
+/* } */
+
+/* Rich content typography */
+.rich-content p {
+    margin-bottom: 1rem !important;
+    line-height: 1.6 !important;
+}
+
+.rich-content h1,
+.rich-content h2,
+.rich-content h3,
+.rich-content h4,
+.rich-content h5,
+.rich-content h6 {
+    margin-top: 1.5rem !important;
+    margin-bottom: 0.75rem !important;
+    font-weight: 600 !important;
+}
+
+.rich-content ul,
+.rich-content ol {
+    margin-left: 1.5rem !important;
+    margin-bottom: 1rem !important;
+}
+
+.rich-content a {
+    color: var(--primary, #4361ee) !important;
+    text-decoration: none !important;
+}
+
+.rich-content a:hover {
+    text-decoration: underline !important;
+}
+
+/* Navigation link colors */
+#lay-fl-nav-left a {
+    color: white !important;
+    opacity: 1 !important;
+}
+
+#lay-fl-nav-left a:hover {
+    color: #f0f0f0 !important;
+}
 </style>
