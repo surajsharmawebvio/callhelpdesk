@@ -14,7 +14,7 @@ class CompanyController extends Controller
         $parsedUrl = parse_url($url);
         $path = $parsedUrl['path'] ?? '';
 
-        $company = Company::where('url', $path)->first();
+        $company = Company::with('questions')->where('url', $path)->first();
 
         return Inertia::render('Company', [
             'company' => $company

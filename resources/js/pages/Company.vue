@@ -4,56 +4,72 @@
             <div id="lay-fl" class="google-auto-placed">
                 <div id="lay-fl-nav-left"><a href="#" title="GetHuman"></a>
                     <div>
-                        <nav role="navigation" class="left list-block"><a href="#">Home</a><a href="#">Search Company
-                                Customer Service Information</a><a href="#">Companies A-Z</a><a href="#">About
-                                GetHuman</a></nav>
-                    </div><small>&copy; GetHuman Inc.</small>
+                        <nav role="navigation" class="left list-block">
+                            <a href="#">Home</a>
+                            <a href="#">Search Company Customer Service Information</a>
+                            <a href="#">Companies A-Z</a>
+                            <a href="#">About GetHuman</a>
+                        </nav>
+                    </div>
+                    <small>&copy; GetHuman Inc.</small>
                 </div>
                 <div id="lay-fl-con">
-                    <div id="lay-fl-nav-top"><a id="top" title="GetHuman"></a>
-                        <div id="nav-top-l"><a href="#" title="Home"><svg xmlns="http://www.w3.org/2000/svg"
+                    <div id="lay-fl-nav-top">
+                        <a id="top" title="GetHuman"></a>
+                        <div id="nav-top-l">
+                            <a href="#" title="Home"><svg xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 -48 512 544" class="home in-icon">
                                     <path d="M448 256L256 32 64 256h48v160h96V288h96v128h96V256z"></path>
-                                </svg></a></div>
-                        <div id="nav-top-r"><a href="#" title="Search Companies"><svg xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 -48 512 544" class="search in-icon">
-                                    <path
-                                        d="M493 384L368 259c18-29 29-62 29-99 0-106-86-192-192-192S13 54 13 160s86 192 192 192c36 0 70-11 99-28l125 124c9 9 23 9 32 0l32-32c9-9 9-23 0-32zm-288-96c-71 0-128-57-128-128S134 32 205 32c70 0 128 57 128 128s-58 128-128 128z">
+                                </svg>
+                            </a>
+                        </div>
+                        <div id="nav-top-r"><a href="#" title="Search Companies">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -48 512 544" class="search in-icon">
+                                    <path d="M493 384L368 259c18-29 29-62 29-99 0-106-86-192-192-192S13 54 13 160s86 192 192 192c36 0 70-11 99-28l125 124c9 9 23 9 32 0l32-32c9-9 9-23 0-32zm-288-96c-71 0-128-57-128-128S134 32 205 32c70 0 128 57 128 128s-58 128-128 128z">
                                     </path>
-                                </svg></a></div>
+                                </svg>
+                            </a>
+                        </div>
                     </div>
                     <div id="lay-fl-mandr">
                         <div id="lay-fl-main">
+
                             <div class="crumbs no-mob">
                                 <div class="extremes">
                                     <div class="trunc">
                                         <ol itemscope="" itemtype="http://schema.org/BreadcrumbList">
-                                            <li itemprop="itemListElement" itemtype="http://schema.org/ListItem"
-                                                itemscope=""><a itemprop="item" class="p-r" href="#"><span
-                                                        itemprop="name">All
-                                                        Companies</span>
+                                            <li itemprop="itemListElement" itemtype="http://schema.org/ListItem" itemscope="">
+                                                <a itemprop="item" class="p-r" href="#">
+                                                    <span itemprop="name">All Companies</span>
                                                     <meta itemprop="position" content="1" />
-                                                </a><span>&nbsp;&rsaquo;&nbsp;</span></li>
-                                            <li itemprop="itemListElement" itemtype="http://schema.org/ListItem"
-                                                itemscope=""><a itemprop="item" class="p-r" href="ACN.html"><span
-                                                        itemprop="name">{{ company.name }}</span>
-                                                    <meta itemprop="position" content="2" /></a></li>
+                                                </a>
+                                                <span>&nbsp;&rsaquo;&nbsp;</span>
+                                            </li>
+                                            <li itemprop="itemListElement" itemtype="http://schema.org/ListItem" itemscope="">
+                                                <a itemprop="item" class="p-r" href="ACN.html">
+                                                    <span itemprop="name">{{ company.name }}</span>
+                                                    <meta itemprop="position" content="2" />
+                                                </a>
+                                            </li>
                                         </ol>
                                     </div>
-                                    <div class="small">Updated <time datetime="2025-10-31T15:10:39+00:00">October 31,
-                                            2025</time></div>
+                                    <div class="small">
+                                        Updated
+                                        <time datetime="2025-10-31T15:10:39+00:00">October 31, 2025</time>
+                                    </div>
                                 </div>
                             </div>
+
                             <h1>{{ company.name }}</h1>
                             <h2>Phone Number & Contact Info</h2><a id="contact"></a>
                             <div class="card stk top">
                                 <div>
                                     <div>
-                                        <h3>ACN's Best Phone Number</h3><a class="link-jumbo und"
+                                        <h3>{{ company.name }} Best Phone Number</h3><a class="link-jumbo und"
                                             style="padding: 0.2rem 1px"
-                                            title="ACN's best customer service phone number is 877-226-1010"
-                                            href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -48 512 544"
-                                                class="phone in-icon">
+                                            title="{{ company.name }}'s best customer service phone number is 877-226-1010"
+                                            href="#">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -48 512 544" class="phone in-icon">
                                                 <path
                                                     d="M457 322c0 5-1 12-3 20-2 9-4 15-6 20-4 10-15 20-35 30-17 10-35 15-53 15-5 0-10 0-15-1s-10-2-16-4c-6-1-11-3-14-4s-8-3-16-6c-7-3-12-4-14-5-18-7-35-14-50-24-24-15-49-35-75-61s-47-51-62-76c-9-14-17-31-23-50-1-1-3-6-6-14-2-7-4-13-5-16s-3-7-5-13c-1-6-2-12-3-17-1-4-1-9-1-15 0-17 5-35 14-53 11-19 21-31 31-35 4-2 11-4 19-6 9-1 15-2 20-2h6c4 2 9 9 16 22 2 4 5 9 8 16 4 6 7 12 10 18l9 15c1 1 2 3 5 7s5 8 6 10c1 3 2 6 2 8 0 4-3 9-8 15-5 5-11 11-18 15-6 5-12 10-17 16-6 5-9 9-9 13 0 1 1 4 2 6 1 3 2 5 2 6 1 1 2 4 4 7s3 5 4 5c14 26 31 49 49 67 19 19 41 36 67 50 1 0 3 1 6 3s5 4 7 4c1 1 3 2 6 3 2 1 4 1 6 1 3 0 8-2 13-8 5-5 11-11 15-18 5-6 10-12 16-17 6-6 10-8 14-8 3 0 6 0 8 2 3 1 7 3 11 6 4 2 6 4 7 5 4 3 10 6 15 9s11 6 18 10c7 3 12 6 16 8 13 7 20 12 21 15 1 2 1 4 1 6z">
                                                 </path>
@@ -61,47 +77,36 @@
                                         <div class="ul-pad tile-right" style="margin-bottom: 0" v-html="company.ulpad">
                                             
                                         </div>
+
                                         <div><b>Free tools for easier calling</b></div>
-                                        <div class="ul-pad tile-right"><a style="margin-right: 1.5rem" class="und"
-                                                href="#">We talk to them for
-                                                you</a><a style="margin-right: 1.5rem" class="und" href="#">Skip waiting
-                                                on
-                                                hold</a><a style="margin-right: 1.5rem" class="und" href="#">Schedule a
-                                                call</a>
+                                        <div class="ul-pad tile-right">
+                                            <a style="margin-right: 1.5rem" class="und" href="#">
+                                                We talk to them for you
+                                            </a>
+                                            <a style="margin-right: 1.5rem" class="und" href="#">
+                                                Skip waiting on hold
+                                            </a>
+                                            <a style="margin-right: 1.5rem" class="und" href="#">
+                                                Schedule a call
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
+                            <!-- FAQ Section -->
                             <div class="card bot">
-                                <div>
+                                <div v-for="(question, index) in company.questions" :key="question._id || index">
                                     <div class="ul-pad text-sembld"><span class="bul">Q:</span>
-                                        <h3>How do I talk to a live human at ACN?</h3>
+                                        <h3>{{ question.question }}</h3>
                                     </div>
-                                    <div class="ul-pad mt-r"><span class="bul">A:</span><span>Press 1 for English, then
-                                            press 2. Next, press 0.</span><span> </span><span>Our free phone can also
-                                            navigate phone menus to <a href="#" class="und">get a live human at ACN</a>
-                                            for you.</span></div>
-                                    <div>
-                                        <img src="https://picsum.photos/600/200?random=1" alt="Random image"
-                                            style="width: 100%; height: 200px; border-radius: 8px; margin: 20px 0;">
+                                    <div class="ul-pad mt-r"><span class="bul">A:</span><span v-html="question.answer"></span></div>
+                                </div>
+                                <div v-if="!company.questions || company.questions.length === 0">
+                                    <div class="ul-pad text-sembld"><span class="bul">Q:</span>
+                                        <h3>How do I talk to a live human at {{ company.name }}?</h3>
                                     </div>
-                                    <div class="ul-pad text-sembld mt-u"><span class="bul">Q:</span>
-                                        <h3>Does ACN offer 24 hour customer service?</h3>
-                                    </div>
-                                    <div class="ul-pad mt-r mb-u"><span class="bul">A:</span><span>Yes! This call center
-                                            operates 24 hours a day, 7 days a week.</span><span> </span><span>The least
-                                            busy day is Sunday, and the most busy day is Tuesday.</span><span>
-                                        </span><span><a href="#" class="und">Schedule a call</a> when it's convenient
-                                            for you.</span>
-                                    </div>
-                                    <div class="ul-pad text-sembld mt-u"><span class="bul">Q:</span>
-                                        <h3>How long will I wait on hold?</h3>
-                                    </div>
-                                    <div class="ul-pad mt-r"><span class="bul">A:</span><span>The average hold time is 4
-                                            minutes.</span><span> </span><span>The longest hold times are on Monday, and
-                                            the shortest are on Tuesday.</span><span> </span><span>You can <a href="#"
-                                                class="und">skip the
-                                                hold time</a> for free.</span></div>
+                                    <div class="ul-pad mt-r"><span class="bul">A:</span><span>Our free phone can help you navigate phone menus to get a live human for you.</span></div>
                                 </div>
                             </div>
                             <div>
