@@ -3,10 +3,7 @@
     <header id="header" :class="{ 'scrolled': isScrolled }">
         <div class="container header-container">
             <a href="#" class="logo">
-                <div class="logo-icon">
-                    <i class="fas fa-headset"></i>
-                </div>
-                <div class="logo-text">Elevate<span>Support</span></div>
+                <img src="/images/logo-2.png" alt="callhelpdesk logo" width="220">
             </a>
 
             <!-- Search bar that appears on scroll -->

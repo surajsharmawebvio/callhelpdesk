@@ -25,6 +25,13 @@ class ManageCompaniesTable
                 TextColumn::make('url')
                     ->label('URL')
                     ->searchable(),
+                IconColumn::make('published')
+                    ->label('Published')
+                    ->boolean()
+                    ->trueIcon('heroicon-o-check-circle')
+                    ->falseIcon('heroicon-o-x-circle')
+                    ->trueColor('success')
+                    ->falseColor('danger'),
                 TextColumn::make('created_at')
                     ->label('Created')
                     ->dateTime()

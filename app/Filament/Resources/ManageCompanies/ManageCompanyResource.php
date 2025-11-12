@@ -16,7 +16,7 @@ use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 use Filament\Schemas\Components\Section;
-use Filament\Forms\Components\{TextInput, RichEditor, Repeater, Textarea};
+use Filament\Forms\Components\{TextInput, RichEditor, Repeater, Textarea, Toggle};
 use Filament\Forms\Components\Select;
 use App\Models\CompanyCategory;
 
@@ -91,6 +91,11 @@ class ManageCompanyResource extends Resource
                             ->numeric()
                             ->default(0),
 
+                        Toggle::make('published')
+                            ->label('Published')
+                            ->default(false)
+                            ->helperText('Toggle to publish or unpublish this company'),
+
                         RichEditor::make('content')
                             ->label('Content')
                             ->required()
@@ -118,6 +123,8 @@ class ManageCompanyResource extends Resource
                             ->defaultItems(0)
                             ->addActionLabel('Add Question'),
                     ])->collapsed(),
+
+                // Section::make('Right Ads')
             ]);
     }
 

@@ -3,7 +3,9 @@
         <div>
             <div id="lay-fl" class="google-auto-placed">
                 <div id="lay-fl-nav-left">
-                    <a href="#" title="GetHuman"></a>
+                    <a href="#" title="CallHelpDesk">
+                        <img src="/images/fav-1.png" alt="callhelpdesk logo" width="120">
+                    </a>
                     <div>
                         <nav role="navigation" class="left list-block">
                             <a href="#">Home</a>
@@ -147,7 +149,7 @@
                                 </div>
                             </div>
 
-                            <div class="rich-content" v-html="company.content"></div>
+                            <div class="rich-content" v-html="processedContent"></div>
 
                         </div>
 
@@ -162,7 +164,7 @@
                             <div>
                                 <div class="h4">What's on this page</div>
                                 <nav class="list-block mb-u" role="navigation">
-                                    <a v-for="(heading, index) in extractedHeadings" :key="index" :href="'#' + heading.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '')">
+                                    <a v-for="(heading, index) in extractedHeadings" :key="index" :href="'#' + heading.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '')" @click="scrollToHeading(heading, $event)">
                                         {{ heading }}
                                     </a>
                                 </nav>
@@ -186,7 +188,7 @@
                             <div class="list-block"><a href="AirBnB.html">AirBnB Customer Service</a><a
                                     href="Capital-One.html">Capital One Customer Service</a><a
                                     href="Comcast.html">Comcast Customer Service</a></div>
-                            <div>
+                            <div class="sticky-top">
                                 <img src="https://picsum.photos/600/800?random=9" alt="Random image"
                                     style="width: 100%; height: auto; border-radius: 8px; margin: 20px 0;">
                             </div>
@@ -258,10 +260,35 @@
             company: Object,
         },
         computed: {
+            processedContent() {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(this.company.content, 'text/html');
+                const headings = doc.querySelectorAll('h2');
+                headings.forEach(h2 => {
+                    const id = h2.textContent.trim().toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '');
+                    h2.id = id;
+                });
+                return doc.body.innerHTML;
+            },
             extractedHeadings() {
                 const parser = new DOMParser();
                 const doc = parser.parseFromString(this.company.content, 'text/html');
                 return Array.from(doc.querySelectorAll('h2')).map(h2 => h2.textContent.trim());
+            }
+        },
+        methods: {
+            isDesktop() {
+                return window.innerWidth >= 768;
+            },
+            scrollToHeading(heading, event) {
+                if (this.isDesktop()) {
+                    event.preventDefault();
+                    const targetId = heading.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '');
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
             }
         }
     };
@@ -321,5 +348,12 @@
 
 #lay-fl-nav-left a:hover {
     color: #f0f0f0 !important;
+}
+
+/* Sticky right sidebar */
+.sticky-top {
+    position: sticky;
+    top: 20px;
+    height: fit-content;
 }
 </style>

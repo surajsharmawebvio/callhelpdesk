@@ -20,10 +20,16 @@ class Company extends Model
         'url',
         'ad_id',
         'popup_id',
+        'published',
     ];
 
     public function questions()
     {
         return $this->hasMany(CompanyQuestion::class, 'company_id', 'id');
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(CompanyCategory::class, 'company_category_id', 'id');
     }
 }
