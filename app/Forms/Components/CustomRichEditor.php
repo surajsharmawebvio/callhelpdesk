@@ -1,0 +1,19 @@
+<?php
+
+namespace App\Forms\Components;
+
+use Filament\Forms\Components\RichEditor;
+use Illuminate\Support\HtmlString;
+
+class CustomRichEditor extends RichEditor
+{
+    protected function setUp(): void
+    {
+        parent::setUp();
+        
+        $this->extraAttributes([
+            'x-data' => new HtmlString('customLinkEditor'),
+            'x-init' => new HtmlString('initLinkCustomization()'),
+        ]);
+    }
+}

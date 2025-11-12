@@ -17,6 +17,8 @@ use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 use Filament\Schemas\Components\Section;
 use Filament\Forms\Components\{TextInput, RichEditor, Repeater, Textarea};
+use Filament\Forms\Components\Select;
+use App\Models\CompanyCategory;
 
 class ManageCompanyResource extends Resource
 {
@@ -43,6 +45,33 @@ class ManageCompanyResource extends Resource
                             ->required()
                             ->maxLength(255),
 
+                        Select::make('company_category_id')
+                            ->label('Category')
+                            ->options(CompanyCategory::pluck('name', 'id'))
+                            ->searchable()
+                            ->placeholder('Select a category')
+                            ->createOptionForm([
+                                TextInput::make('name')
+                                    ->label('Category Name')
+                                    ->required()
+                                    ->maxLength(255)
+                                    ->unique(CompanyCategory::class, 'name'),
+
+                                // TextInput::make('slug')
+                                //     ->label('Slug')
+                                //     ->required()
+                                //     ->maxLength(255)
+                                //     ->unique(CompanyCategory::class, 'slug'),
+
+                                Textarea::make('description')
+                                    ->label('Description')
+                                    ->maxLength(1000)
+                                    ->rows(3),
+                            ])
+                            ->createOptionUsing(function (array $data) {
+                                return CompanyCategory::create($data)->id;
+                            }),
+
                         TextInput::make('url')
                             ->label('URL')
                             ->required()
@@ -68,7 +97,7 @@ class ManageCompanyResource extends Resource
                             ->columnSpanFull(),
                     ])->collapsed(),
 
-                Section::make('Company Questions')
+                Section::make('FAQs')
                     ->schema([
                         Repeater::make('questions')
                             ->relationship('questions')
