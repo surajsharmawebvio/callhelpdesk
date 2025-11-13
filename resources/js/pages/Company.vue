@@ -156,9 +156,13 @@
                         <!-- Right Layout -->
                         <div id="lay-fl-right">
                             <!-- right add -->
-                            <div>
-                                <img src="https://picsum.photos/600/400?random=8" alt="Random image"
-                                    style="width: 100%; height: auto; border-radius: 8px; margin: 20px 0;">
+                            <div class="live-agent-card">
+                                <img src="https://picsum.photos/90/90?random=8" alt="Live Agent">
+                                <h2>Talk to a Live Agent</h2>
+                                <p>Talk to a live expert get instant help with {{ company.name }} customer service.</p>
+                                <a :href="'tel:' + company.phone" class="call-button">
+                                    <i class="bi bi-telephone"></i> {{ company.phone }}
+                                </a>
                             </div>
 
                             <div>
@@ -355,5 +359,71 @@
     position: sticky;
     top: 20px;
     height: fit-content;
+}
+
+/* Live Agent Card */
+.live-agent-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    padding: 24px;
+    margin: 20px 0;
+}
+
+.live-agent-card img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 16px;
+    border: 3px solid #1565ff;
+}
+
+.live-agent-card h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #0d2b66;
+    margin-bottom: 8px;
+}
+
+.live-agent-card p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.call-button {
+    display: inline-block;
+    background-color: #1565ff;
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.call-button:hover {
+    background-color: #0e4ad4;
+}
+
+/* Ringing animation for telephone icon */
+.call-button .bi-telephone {
+    animation: ring 1s infinite;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+@keyframes ring {
+    0% { transform: rotate(0deg); }
+    10% { transform: rotate(5deg); }
+    20% { transform: rotate(-5deg); }
+    30% { transform: rotate(5deg); }
+    40% { transform: rotate(-5deg); }
+    50% { transform: rotate(0deg); }
+    100% { transform: rotate(0deg); }
 }
 </style>

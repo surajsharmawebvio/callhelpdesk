@@ -367,9 +367,7 @@ header.scrolled {
     }
 
     .search-bar {
-        margin: 0 10px;
-        max-width: 300px;
-        gap: 10px;
+        display: none !important; /* Hide search bar on mobile */
     }
     
     .search-input {

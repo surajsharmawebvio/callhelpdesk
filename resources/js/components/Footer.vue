@@ -17,22 +17,19 @@
                 <div class="footer-col">
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">How It Works</a></li>
-                        <li><a href="#">Pricing</a></li>
-                        <li><a href="#">About Us</a></li>
+                        <li><Link href="/">Home</Link></li>
+                        <li><Link href="/companies">Companies A-Z</Link></li>
+                        <li><Link href="/about-us">About Us</Link></li>
+                        <li><Link href="/contact-us">Contact Us</Link></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
-                    <h3>Services</h3>
+                    <h3>Legal</h3>
                     <ul>
-                        <li><a href="#">Phone Support</a></li>
-                        <li><a href="#">Live Chat</a></li>
-                        <li><a href="#">Email Support</a></li>
-                        <li><a href="#">Company Directory</a></li>
-                        <li><a href="#">Support Guides</a></li>
+                        <li><Link href="/privacy-policy">Privacy Policy</Link></li>
+                        <li><Link href="/terms-and-conditions">Terms & Conditions</Link></li>
+                        <li><Link href="/disclaimer">Disclaimer</Link></li>
                     </ul>
                 </div>
 
@@ -55,11 +52,118 @@
 </template>
 
 <script>
-    export default {
-        name: 'Footer'
-    }
+import { Link } from '@inertiajs/vue3';
 
+export default {
+    name: 'Footer',
+    components: {
+        Link
+    }
+}
 </script>
 
 <style scoped>
+footer {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 60px 0 20px;
+    margin-top: auto;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-col h3 {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.footer-col h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 30px;
+    height: 2px;
+    background-color: #1565ff;
+}
+
+.footer-col p {
+    color: #cccccc;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    color: #cccccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: #1565ff;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-links a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: #333;
+    color: #ffffff;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background-color: #1565ff;
+    transform: translateY(-2px);
+}
+
+.footer-bottom {
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: #888;
+    margin: 0;
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    footer {
+        padding: 40px 0 20px;
+    }
+}
 </style>

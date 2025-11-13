@@ -29,4 +29,24 @@ class CompanyController extends Controller
 
         return response()->json(array_values($companies));
     }
+
+    public function companies(Request $request)
+    {
+        $letter = $request->get('letter', 'a');
+        $perPage = 20; // Match the Vue component's companiesPerPage
+
+        // Get paginated companies filtered by letter
+        $companies = Company::where('name', 'like', $letter . '%')
+            ->orderBy('name')
+            ->paginate($perPage);
+
+        return Inertia::render('CompanyList', [
+            'companies' => $companies->items(),
+            'currentLetter' => $letter,
+            'currentPage' => $companies->currentPage(),
+            'totalPages' => $companies->lastPage(),
+            'totalCompanies' => $companies->total(),
+            'pagination' => $companies
+        ]);
+    }
 }
