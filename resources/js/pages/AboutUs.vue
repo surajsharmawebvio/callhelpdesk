@@ -5,8 +5,8 @@
     <section class="hero">
         <div class="hero-container">
             <div class="hero-content">
-                <h1>About <span>Elevate</span></h1>
-                <p>We're revolutionizing customer support by connecting people with real human representatives faster than ever before. Skip the automated systems and get the help you deserve.</p>
+                <h1>About <span>Call Help Desk</span></h1>
+                <p>Reliable and Accurate - Call Help Desk makes it easy for you to search for airline customer support numbers</p>
             </div>
         </div>
     </section>
@@ -16,23 +16,10 @@
         <div class="container">
             <div class="story-wrapper">
                 <div class="story-content">
-                    <h2>Our Story</h2>
-                    <p>Founded in 2020, Elevate was born from a simple frustration: waiting endlessly on hold for customer support. Our founders experienced this pain firsthand and decided to create a solution that would change how people access customer service.</p>
-                    <p>Today, we help thousands of customers connect with human representatives in minutes, not hours. Our mission is to eliminate the frustration of automated systems and restore the human element to customer support.</p>
-                    <div class="stats">
-                        <div class="stat">
-                            <div class="stat-number">50K+</div>
-                            <div class="stat-label">Happy Customers</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-number">3min</div>
-                            <div class="stat-label">Average Wait Time</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-number">99%</div>
-                            <div class="stat-label">Success Rate</div>
-                        </div>
-                    </div>
+                    <h2>What We Do</h2>
+                    <p>On our website, you will find contact details of the customer support departments of various airlines that operate in the United States. All details are verified and sourced from official pages. That is our guarantee.</p>
+                    <p>We value the trust of our users. Therefore, our site is developed keeping in mind the factors of credibility and reliability. Each number on our site is frequently reviewed to ensure that it leads to the official and designated support channels of that airline.</p>
+                    <p>Through an organized and structured database, we aim to encourage accessibility in information sharing. Our platform serves solely as an informational resource, offering reliable data on airline customer service communication.</p>
                 </div>
                 <div class="story-image">
                     <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Team collaboration">
@@ -47,124 +34,45 @@
             <div class="mv-grid">
                 <div class="mv-card">
                     <div class="mv-icon">
-                        <i class="fas fa-bullseye"></i>
+                        <i class="fas fa-check-circle"></i>
                     </div>
-                    <h3>Our Mission</h3>
-                    <p>To democratize access to quality customer support by connecting people with human representatives instantly, eliminating the frustration of automated systems.</p>
+                    <h3>Accurate Airline Contact Information</h3>
+                    <p>All customer service contacts are checked for correctness and updated on time</p>
                 </div>
                 <div class="mv-card">
                     <div class="mv-icon">
-                        <i class="fas fa-eye"></i>
+                        <i class="fas fa-sync-alt"></i>
                     </div>
-                    <h3>Our Vision</h3>
-                    <p>A world where customer support is human-first, efficient, and accessible to everyone, regardless of the complexity of their issue or the size of the company they need help from.</p>
+                    <h3>Regularity in Information Maintenance</h3>
+                    <p>The information is evaluated at regular intervals to ensure that it represents current airline contact information</p>
                 </div>
                 <div class="mv-card">
                     <div class="mv-icon">
-                        <i class="fas fa-heart"></i>
+                        <i class="fas fa-compass"></i>
                     </div>
-                    <h3>Our Values</h3>
-                    <p>Human-centered design, transparency, innovation, and unwavering commitment to customer satisfaction drive everything we do.</p>
+                    <h3>User-Friendly Access and Navigation</h3>
+                    <p>Our site is made with clear navigation so users can easily find the number they are looking for</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Team Section -->
-    <section class="team-section">
+    <!-- Commitment Section -->
+    <section class="commitment-section">
         <div class="container">
-            <div class="section-title">
-                <h2>Meet Our Team</h2>
-                <p>The passionate individuals behind Elevate's mission to revolutionize customer support.</p>
-            </div>
-            <div class="team-grid">
-                <div class="team-member">
-                    <div class="member-image">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="John Smith">
-                    </div>
-                    <h4>John Smith</h4>
-                    <p class="member-role">CEO & Founder</p>
-                    <p class="member-bio">Former customer service director with 15+ years experience in transforming support operations.</p>
-                </div>
-                <div class="team-member">
-                    <div class="member-image">
-                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Johnson">
-                    </div>
-                    <h4>Sarah Johnson</h4>
-                    <p class="member-role">CTO & Co-Founder</p>
-                    <p class="member-bio">Tech innovator specializing in AI and machine learning for customer experience optimization.</p>
-                </div>
-                <div class="team-member">
-                    <div class="member-image">
-                        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Mike Chen">
-                    </div>
-                    <h4>Mike Chen</h4>
-                    <p class="member-role">Head of Customer Success</p>
-                    <p class="member-bio">Dedicated to ensuring every customer gets the support they need when they need it.</p>
-                </div>
+            <div class="commitment-content">
+                <p>Verified contact information for several airline customer service departments. All information provided on this platform is for reference purposes only. Call Help Desk gets the details from official airline pages.</p>
             </div>
         </div>
     </section>
 
-    <!-- Why Choose Us Section -->
-    <section class="why-choose-us">
-        <div class="container">
-            <div class="section-title">
-                <h2>Why Choose Elevate?</h2>
-                <p>We're not just another customer support tool. We're your partner in getting the help you deserve.</p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <h3>Lightning Fast</h3>
-                    <p>Get connected to human support in under 3 minutes on average, compared to hours with traditional methods.</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3>Human First</h3>
-                    <p>We believe in human connection. Our AI works to connect you with people, not replace them.</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Secure & Private</h3>
-                    <p>Your conversations and data are protected with enterprise-grade security and privacy measures.</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-globe"></i>
-                    </div>
-                    <h3>Global Reach</h3>
-                    <p>Supporting customers in over 50 countries with multi-language capabilities and 24/7 availability.</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h3>Proven Results</h3>
-                    <p>99% success rate in connecting customers with the right support representative for their needs.</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-headset"></i>
-                    </div>
-                    <h3>Expert Support</h3>
-                    <p>Access to specialized support teams for complex issues across various industries and services.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+
 
     <!-- CTA Section -->
     <section class="cta">
         <div class="container">
             <h2>Ready to Experience Better Support?</h2>
-            <p>Join thousands of customers who have transformed their support experience with Elevate.</p>
+            <p>Join thousands of customers who trust Call Help Desk for accurate airline contact information.</p>
             <a href="#" class="btn btn-primary">Get Started Today</a>
         </div>
     </section>
@@ -395,130 +303,29 @@
     line-height: 1.6;
 }
 
-/* Team Section */
-.team-section {
+
+
+/* Commitment Section */
+.commitment-section {
     padding: 5rem 0;
     background: var(--light-bg);
 }
 
-.section-title {
-    text-align: center;
-    margin-bottom: 3rem;
-}
-
-.section-title h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    color: var(--dark);
-}
-
-.section-title p {
-    font-size: 1.1rem;
-    color: var(--text-muted);
-    max-width: 600px;
+.commitment-content {
+    max-width: 800px;
     margin: 0 auto;
-}
-
-.team-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-}
-
-.team-member {
-    background: white;
-    border-radius: 16px;
-    padding: 2rem;
     text-align: center;
+    background: white;
+    padding: 3rem;
+    border-radius: 16px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
 }
 
-.team-member:hover {
-    transform: translateY(-5px);
-}
-
-.member-image {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin: 0 auto 1.5rem;
-}
-
-.member-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.team-member h4 {
-    font-size: 1.25rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    color: var(--dark);
-}
-
-.member-role {
-    color: var(--primary);
-    font-weight: 600;
-    margin-bottom: 1rem;
-}
-
-.member-bio {
-    color: var(--text-muted);
-    line-height: 1.5;
-}
-
-/* Why Choose Us Section */
-.why-choose-us {
-    padding: 5rem 0;
-    background: white;
-}
-
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
-.feature-item {
-    background: var(--light-bg);
-    padding: 2rem;
-    border-radius: 16px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.feature-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-}
-
-.feature-icon {
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    color: white;
-    margin: 0 auto 1.5rem;
-}
-
-.feature-item h3 {
-    font-size: 1.25rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    color: var(--dark);
-}
-
-.feature-item p {
-    color: var(--text-muted);
+.commitment-content p {
+    font-size: 1.1rem;
     line-height: 1.6;
+    color: var(--text-muted);
+    margin: 0;
 }
 
 /* CTA Section */
@@ -635,10 +442,6 @@
         grid-template-columns: 1fr;
     }
 
-    .team-grid {
-        grid-template-columns: 1fr;
-    }
-
     .features-grid {
         grid-template-columns: 1fr;
     }
@@ -669,12 +472,7 @@
         font-size: 1.75rem;
     }
 
-    .mv-card,
-    .feature-item {
-        padding: 1.5rem;
-    }
-
-    .team-member {
+    .mv-card {
         padding: 1.5rem;
     }
 }

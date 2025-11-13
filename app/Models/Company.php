@@ -9,8 +9,9 @@ class Company extends Model
     protected $connection = 'mongodb';
     protected $collection = 'company';
 
-    protected $primaryKey = '_id';
-    protected $keyType = 'string';
+    protected $casts = [
+        'right_ad_image' => 'string',
+    ];
 
     protected $fillable = [
         'content',
@@ -21,6 +22,7 @@ class Company extends Model
         'ad_id',
         'popup_id',
         'published',
+        'right_ad_image',
     ];
 
     public function questions()

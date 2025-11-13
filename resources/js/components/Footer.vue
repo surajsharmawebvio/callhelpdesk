@@ -5,7 +5,7 @@
             <div class="footer-container">
                 <div class="footer-col">
                     <h3>Elevate Support</h3>
-                    <p>We help customers connect with human support representatives faster than ever before.</p>
+                    <p>Call Help Desk helps you connect with live agents faster and get your airline issues resolved with no waiting times. Whether it’s to make bookings, cancellations, refunds, or baggage issues, we’re here 24/7 to make your flying simpler.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>

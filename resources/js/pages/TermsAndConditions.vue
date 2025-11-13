@@ -6,7 +6,7 @@
         <div class="hero-container">
             <div class="hero-content">
                 <h1>Terms & <span>Conditions</span></h1>
-                <p>Please read these terms and conditions carefully before using our services. By accessing or using Elevate, you agree to be bound by these terms.</p>
+                <p>Please read these terms and conditions carefully before using our services. By accessing or using Call Help Desk, you agree to be bound by these terms.</p>
             </div>
         </div>
     </section>
@@ -16,108 +16,78 @@
         <div class="container">
             <div class="content-wrapper">
                 <div class="last-updated">
-                    <p>Last updated: November 10, 2025</p>
+                    <p>Last updated: November 13, 2025</p>
                 </div>
 
                 <div class="policy-section">
-                    <h2>1. Acceptance of Terms</h2>
-                    <p>By accessing and using Elevate ("the Service"), you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by the above, please do not use this service.</p>
+                    <p>Clear terms of service for a fair and responsible use of Call Help Desk
+
+Welcome to Call Help Desk. These Terms of Service stand for the conditions of your use of this website and the information on this website. You acknowledge and agree to all of these terms by using this website.  Please quit using this website right now if you disagree with any of the terms. </p>
                 </div>
 
                 <div class="policy-section">
-                    <h2>2. Description of Service</h2>
-                    <p>Elevate is a customer support assistance platform that helps users connect with human customer service representatives faster than traditional methods. Our service includes:</p>
-                    <ul>
-                        <li>Company search and contact information lookup</li>
-                        <li>Customer support connection assistance</li>
-                        <li>Educational resources and tips</li>
-                        <li>Community-driven support information</li>
-                    </ul>
+                    <h2>1. Purpose of the Website</h2>
+                    <p>Call Help Desk is an online information resource created to help users find customer service contact numbers of different airlines in the United States. The primary purpose of this website is to provide accurate, easy-to-find, regularly updated information for general reference. We have no association with endorsement from, or operations on behalf of any airline operators.</p>
                 </div>
 
                 <div class="policy-section">
-                    <h2>3. User Accounts</h2>
-                    <p>To access certain features of our service, you may be required to create an account. You are responsible for:</p>
-                    <ul>
-                        <li>Maintaining the confidentiality of your account credentials</li>
-                        <li>All activities that occur under your account</li>
-                        <li>Notifying us immediately of any unauthorized use</li>
-                        <li>Providing accurate and complete information</li>
-                    </ul>
-                    <p>We reserve the right to terminate accounts that violate these terms or engage in fraudulent activity.</p>
+                    <h2>2. Acceptable Use</h2>
+                    <p>The information that may be available to you from our site is only for reference. You agree to use responsibly, for lawful, non-commercial purposes only. You will not use the numbers on this website for advertising, resale, data mining, or any purpose that inappropriately represents the source or use of the information.</p>
                 </div>
 
                 <div class="policy-section">
-                    <h2>4. Acceptable Use Policy</h2>
-                    <p>You agree not to use the Service for any unlawful purposes or to conduct any unlawful activity, including but not limited to:</p>
-                    <ul>
-                        <li>Harassing, abusing, or harming others</li>
-                        <li>Impersonating any person or entity</li>
-                        <li>Posting false or misleading information</li>
-                        <li>Attempting to gain unauthorized access to our systems</li>
-                        <li>Using the service for spam or unsolicited communications</li>
-                        <li>Violating any applicable laws or regulations</li>
-                    </ul>
+                    <h2>3. Information Reliability</h2>
+                    <p>We have made every effort so that each number on the site remains accurate. However, the information may change as the airline updates its information periodically. While we make no such declarations that all information will be entirely error-free, we will try to maintain only resources that are reliable and useful.</p>
                 </div>
 
                 <div class="policy-section">
-                    <h2>5. Intellectual Property</h2>
-                    <p>The Service and its original content, features, and functionality are and will remain the exclusive property of Elevate and its licensors. The Service is protected by copyright, trademark, and other laws. You may not duplicate, copy, or reuse any portion of the HTML/CSS, JavaScript, or visual design elements without express written permission.</p>
+                    <h2>4. Ownership & Intellectual Rights</h2>
+                    <p>The relevant intellectual property rights apply to all written content, format, and design on the site. Users may view and use the material exclusively for their own reference. Except for content used in fairways, you are strictly forbidden from copying, modifying, or redistributing any of the content without our written authorization.</p>
                 </div>
 
                 <div class="policy-section">
-                    <h2>6. User-Generated Content</h2>
-                    <p>By posting content to our Service, you grant us a non-exclusive, royalty-free, perpetual, and worldwide license to use, display, and distribute your content in connection with the Service. You represent and warrant that:</p>
-                    <ul>
-                        <li>You own or have the necessary rights to use and authorize us to use your content</li>
-                        <li>Your content does not infringe any third-party rights</li>
-                        <li>Your content complies with these Terms</li>
-                    </ul>
+                    <h2>5. Data Presentation Standards</h2>
+                    <p>Data on our site has been presented considering the factors of accuracy and reliability. The data has been formatted in such a way that all information is clear and consistent, aiding the user in locating the information they're looking for. No additional commentary, promotional description, or ranking is given anywhere. Each airline or service name appears purely for identification purposes.</p>
                 </div>
 
                 <div class="policy-section">
-                    <h2>7. Privacy Policy</h2>
-                    <p>Your privacy is important to us. Please review our Privacy Policy, which also governs your use of the Service, to understand our practices regarding the collection and use of your personal information.</p>
+                    <h2>6. Independence and Non-Affiliation</h2>
+                    <p>Our site acts as an independent platform. The use of airline names, customer service phone numbers, or the names of particular carriers should not be taken as a connection, partnership, or endorsement. All registered names, logos, and marks are the sole property of their respective owners and are used exclusively for information purposes.</p>
                 </div>
 
                 <div class="policy-section">
-                    <h2>8. Termination</h2>
-                    <p>We may terminate or suspend your account and access to the Service immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach the Terms. Upon termination, your right to use the Service will cease immediately.</p>
+                    <h2>7. Disclaimer of Information</h2>
+                    <p>We work hard so all information remains up-to-date and accurate. However, the content on this website is meant for general reference only and is subject to change or correction without notice. We make every effort to provide accurate content, but there may be occasional discrepancies or outdated details. Users are encouraged to use the information as a guide and to use caution when making any related decisions.</p>
                 </div>
 
                 <div class="policy-section">
-                    <h2>9. Disclaimer of Warranties</h2>
-                    <p>The Service is provided on an "AS IS" and "AS AVAILABLE" basis. We make no representations or warranties of any kind, express or implied, as to the operation of the Service or the information, content, or materials included therein. You expressly agree that your use of the Service is at your sole risk.</p>
+                    <h2>8. Use and Conduct</h2>
+                    <p>You agree to use Call Help Desk in a manner that does not impede its proper functioning. You shall not use the site to introduce viruses or similar malware, gather information illegally or inappropriately, or disrupt the technical operations of the website. Any fraudulent use of data may lead to your access being denied.</p>
                 </div>
 
                 <div class="policy-section">
-                    <h2>10. Limitation of Liability</h2>
-                    <p>In no event shall Elevate, its directors, employees, partners, agents, suppliers, or affiliates be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your use of the Service.</p>
+                    <h2>9. Changes and Updates in the Content</h2>
+                    <p>We reserve the right to edit, rearrange, and/or delete content as we deem fit. This is done to establish data accuracy and the effectiveness of the site. This may happen at any time without notice. We intend to be transparent with the users and maintain an uninterrupted user experience.</p>
                 </div>
 
                 <div class="policy-section">
-                    <h2>11. Indemnification</h2>
-                    <p>You agree to defend, indemnify, and hold harmless Elevate and its licensee and licensors, and their employees, contractors, agents, officers and directors, from and against any and all claims, damages, obligations, losses, liabilities, costs or debt, and expenses arising from or related to your use of and access to the Service.</p>
+                    <h2>10. Changes to These Terms</h2>
+                    <p>Amendments to the terms may be made to reflect improvements in operations or changes in the information policy. The most up-to-date version will always be available on this page. Continued use of the site after the revision to the Terms indicates your acceptance of the changes.</p>
                 </div>
 
                 <div class="policy-section">
-                    <h2>12. Governing Law</h2>
-                    <p>These Terms shall be interpreted and governed by the laws of the Commonwealth of Massachusetts, United States, without regard to its conflict of law provisions. Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights.</p>
+                    <h2>11. Availability and Support of the Platform</h2>
+                    <p>We will try to provide uninterrupted availability of the platform, but there will be times when it may experience temporary downtime. This might be due to maintenance or upgrading the site and its services. Certain pages, sections, or other access to information on the platform may change without prior notification. This website provides information reference only, and not for advisory-based services or transactions.</p>
                 </div>
 
                 <div class="policy-section">
-                    <h2>13. Changes to Terms</h2>
-                    <p>We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material, we will try to provide at least 30 days notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.</p>
+                    <h2>12. General Provisions</h2>
+                    <p>These Terms exist to enable users with fair usage of Call Help Desk. They emphasize responsible access, respect for proprietary content, and recognition of the website's informational purpose. The company may bring changes to strengthen the integrity of information from time to time.</p>
                 </div>
 
                 <div class="policy-section">
-                    <h2>14. Contact Information</h2>
-                    <p>If you have any questions about these Terms and Conditions, please contact us:</p>
-                    <div class="contact-info">
-                        <p><strong>Email:</strong> legal@elevate.com</p>
-                        <p><strong>Address:</strong> 132 Dartmouth Street, Boston, Massachusetts 02156, United States</p>
-                        <p><strong>Phone:</strong> +1 (012) 345-6789</p>
-                    </div>
+                    <h2>13. Contact Info</h2>
+                    <p>Got some more queries on the policies? Please contact us through +1 (012) 345-6789 or privacy@callhelpdesk.com.</p>
                 </div>
             </div>
         </div>

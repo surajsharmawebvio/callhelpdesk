@@ -20,6 +20,7 @@ return new class extends Migration
             $collection->string('url')->nullable();
             $collection->integer('ad_id')->nullable();
             $collection->integer('popup_id')->nullable();
+            $collection->string('right_ad_image')->nullable();
             $collection->timestamps(); // created_at, updated_at (optional)
         });
     }

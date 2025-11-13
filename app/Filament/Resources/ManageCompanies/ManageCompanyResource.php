@@ -16,7 +16,7 @@ use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 use Filament\Schemas\Components\Section;
-use Filament\Forms\Components\{TextInput, RichEditor, Repeater, Textarea, Toggle};
+use Filament\Forms\Components\{TextInput, RichEditor, Repeater, Textarea, Toggle, FileUpload};
 use Filament\Forms\Components\Select;
 use App\Models\CompanyCategory;
 
@@ -94,7 +94,10 @@ class ManageCompanyResource extends Resource
                         Toggle::make('published')
                             ->label('Published')
                             ->default(false)
-                            ->helperText('Toggle to publish or unpublish this company'),
+                            ->helperText('Toggle to publish or unpublish this company')
+                            ->afterStateUpdated(function ($state, $record) {
+                                $record->touch(); // Updates the updated_at timestamp
+                            }),
 
                         RichEditor::make('content')
                             ->label('Content')
@@ -124,7 +127,18 @@ class ManageCompanyResource extends Resource
                             ->addActionLabel('Add Question'),
                     ])->collapsed(),
 
-                // Section::make('Right Ads')
+                Section::make('Right Ads')
+                ->schema([
+                    // make upload image component for right ads
+                    FileUpload::make('right_ad_image')
+                        ->label('Right Ad Image')
+                        ->disk('public')
+                        ->directory('company-ads')
+                        ->image()
+                        ->nullable(),
+                ])
+                ->collapsed(),
+
             ]);
     }
 

@@ -5,9 +5,8 @@
     <section class="hero">
         <div class="hero-container">
             <div class="hero-content">
-                <h1>Get Human Support <span>Faster Than Ever</span></h1>
-                <p>Connect with real customer service representatives in minutes, not hours. Skip the automated systems
-                    and get the help you need right away.</p>
+                <h1>Skip the Wait. Get Bookings <span>Done Right Away.</span></h1>
+                <p>Tired of spending hours on hold and dealing with endless robotic callers and their responses? Connect with Call Help Desk and speak directly with a live representative to book or resolve any airline issues.</p>
                 <div class="search-container" :class="{ 'hidden-on-scroll': hideSearchInHero }">
                     <div class="search-wrapper">
                         <input 
@@ -63,33 +62,87 @@
     <section class="features">
         <div class="container">
             <div class="section-title">
-                <h2>Why Choose Elevate?</h2>
-                <p>We provide the fastest and most effective way to connect with customer support representatives.</p>
+                <h2>Features</h2>
+                <p>We provide real travel solutions to real problems without any delays or bots in between.</p>
             </div>
 
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-bolt"></i>
+                        <i class="fas fa-clock"></i>
                     </div>
-                    <h3>Lightning Fast</h3>
-                    <p>Get connected to a human representative in under 3 minutes on average.</p>
+                    <h3>No More Waiting on Hold</h3>
+                    <p>End the endless phone quests and chat with a live agent the second you call, and get bookings done.</p>
                 </div>
 
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
+                        <i class="fas fa-user-friends"></i>
                     </div>
-                    <h3>100% Secure</h3>
-                    <p>Your information is protected with bank-level encryption and security protocols.</p>
+                    <h3>24/7 Support from Real Agents</h3>
+                    <p>Whether you need help at 3 am or on Christmas eve, Call Help Desk is here for you round-the-clock.</p>
                 </div>
 
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-globe"></i>
+                        <i class="fas fa-user-tie"></i>
                     </div>
-                    <h3>Global Support</h3>
-                    <p>We help customers from over 50 countries connect with support in their language.</p>
+                    <h3>Help from Airline & Travel Experts</h3>
+                    <p>Our team has airline and travel experts who’ll make your booking, changes, and refunds a total breeze.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="about-us">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Us</h2>
+            </div>
+            <div class="about-content">
+                <p>Getting stuck on the calls for hours is frustrating, and we understand that. That's why CallHelp Desk has made it its mission to assist its users with real human help, no bots. With zero to no waiting time, we are present to help you round-the-clock across the United States. Our focus is simple - to bring focus to the digital chaos and make customer service quick, easy, and hassle-free.</p>
+                
+                <div class="about-features">
+                    <div class="about-feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h4>Hassle-free support</h4>
+                            <p>Thousands of travelers have put their trust in us to handle their bookings, changes, and cancellations. Now it's your turn!</p>
+                        </div>
+                    </div>
+                    
+                    <div class="about-feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h4>All-round support</h4>
+                            <p>No matter which customer service numbers you're looking for, all are present on this platform to resolve your issues in one go.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="about-feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h4>Live human representative</h4>
+                            <p>Talk to a real human for your travel needs without the unnecessary wait times and get the help that you need.</p>
+                        </div>
+                    </div>
+
+                    <div class="about-feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h4>Expert guidance</h4>
+                            <p>Our experienced travel specialists provide personalized assistance for all your booking and support needs.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -99,27 +152,80 @@
     <section class="how-it-works">
         <div class="container">
             <div class="section-title">
-                <h2>How It Works</h2>
-                <p>Getting the support you need is simple with our three-step process.</p>
+                <h2>FEATURES</h2>
+                <p>We provide real travel solutions to real problems without any delays or bots in between.</p>
             </div>
 
             <div class="steps">
                 <div class="step">
                     <div class="step-number">1</div>
-                    <h3>Tell Us Your Issue</h3>
-                    <p>Describe the problem you're facing and which company you need help with.</p>
+                    <h3>Connect Instantly to a Real Expert</h3>
+                    <p>No more waiting and direct calling to a live agent to get the answers to your travel problems. Reschedule your calls at any time that suits your schedule, and speak to an agent.</p>
                 </div>
 
                 <div class="step">
                     <div class="step-number">2</div>
-                    <h3>We Find the Best Contact</h3>
-                    <p>Our system identifies the fastest way to reach a human representative.</p>
+                    <h3>Round-the-Clock Support</h3>
+                    <p>Travel needs don’t arise within business hours. Therefore, we are here for you 24/7 to assist you with a booking or answer your queries. Call us when you feel and get solutions to your problems.</p>
                 </div>
 
                 <div class="step">
                     <div class="step-number">3</div>
-                    <h3>Get Connected</h3>
-                    <p>We connect you directly or provide the exact steps to reach a person quickly.</p>
+                    <h3>Multi-Brand Assistance</h3>
+                    <p>Stop juggling from website to website for contact numbers and simply call us for all your needs. We connect you with whichever company you want to talk to within the United States or even internationally.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>No Stress, Only Solutions</h3>
+                    <p>From early bookings to last-minute ones, get support from Call Help Desk professionals without waiting time. Travel with peace of mind with expert guidance and reliable support at every step.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+                <p>Find answers to common questions about our service</p>
+            </div>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <h3>Why use CallHelpDesk.com instead of Google for support numbers?</h3>
+                    <p>With Call Help Desk, you get support numbers and instant assistance without hunting Google for hours. Our platform is trusted by thousands to get to those customer service lines fast and connect with a human agent, skipping all the hassle.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Is the Call Help Desk available 24/7?</h3>
+                    <p>Yes. Call Help Desk is there for your travel needs round-the-clock, offering you support. We're available anytime you want and get answers to your needs regardless of time zones or emergencies.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Does Call Help Desk handle emergency flight issues or last-minute bookings?</h3>
+                    <p>If you want support, like for cancellations or rescheduling, Call Help Desk is there for you. For flight bookings or last-minute reservations, we suggest you talk to the concerned company's agent directly or use their emergency support number.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Is my personal and booking information safe with CallHelpDesk?</h3>
+                    <p>Yes. Whatever personal data you provide, Call Help Desk is secure with us. We protect your personal information through secure protocols. For details, we suggest you read our Privacy Policy thoroughly.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Can I book new flights directly through CallHelpDesk?</h3>
+                    <p>Yes, you can book a flight to your desired destination from multiple airlines with Call Help Desk. Our goal is to connect you with airline support for inquiries, cancellations, or changes, and also assist you with flight booking whenever needed.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Do I need to wait on hold to speak with CallHelpDesk?</h3>
+                    <p>No, you don't have to wait longer to speak with an agent here. We aim to reduce the hold time by connecting you to live agents directly and offering "zero wait time" support.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Is CallHelpDesk.com free?</h3>
+                    <p>Yes, Call Help Desk is free to use for those seeking airline support. There aren't any charges for getting the assistance, which makes us a convenient resource for travelers.</p>
                 </div>
             </div>
         </div>
@@ -180,9 +286,9 @@
     <!-- CTA Section -->
     <section class="cta">
         <div class="container">
-            <h2>Ready to Skip the Wait?</h2>
-            <p>Join thousands of satisfied customers who get the support they need in minutes.</p>
-            <a href="#" class="btn">Get Started For Free</a>
+            <h2>Talk to a Pro in Seconds!</h2>
+            <p>Call Help Desk values your time and thus connects you instantly to an actual human with no waiting times who handles all your travel needs quickly.</p>
+            <a href="#" class="btn">Get Started</a>
         </div>
     </section>
 
@@ -361,6 +467,25 @@
     padding-top: 80px;
 }
 
+/* Make search elements bigger on home page */
+.search-input {
+    font-size: 18px !important;
+    padding: 16px 20px !important;
+    height: auto !important;
+    min-height: 56px !important;
+}
+
+.search-btn {
+    font-size: 18px !important;
+    padding: 16px 24px !important;
+    min-height: 56px !important;
+}
+
+.search-wrapper {
+    position: relative;
+    max-width: 600px;
+}
+
 /* Hide search container when scrolling */
 .search-container.hidden-on-scroll {
     opacity: 0;
@@ -424,6 +549,197 @@
 @media (min-width: 769px) {
     .back-to-top-btn {
         display: none !important;
+    }
+}
+
+/* About Us Section Styles */
+.about-us {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
+.about-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 50px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-features {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 50px;
+}
+
+.about-feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: white;
+    padding: 30px 20px;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+}
+
+.about-feature:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    color: white;
+    font-size: 24px;
+}
+
+.checkmark {
+    font-size: 28px;
+    color: #28a745;
+    margin-bottom: 15px;
+    display: block;
+    text-align: center;
+}
+
+.feature-text h4 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+.feature-text p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+    margin: 0;
+}
+
+/* Responsive adjustments for About Us */
+@media (max-width: 1200px) {
+    .about-features {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-us {
+        padding: 60px 0;
+    }
+    
+    .about-content p {
+        font-size: 16px;
+        margin-bottom: 40px;
+    }
+    
+    .about-features {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin-top: 40px;
+    }
+    
+    .about-feature {
+        padding: 25px 20px;
+    }
+    
+    .checkmark {
+        font-size: 24px;
+        margin-bottom: 12px;
+    }
+    
+    .feature-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+    
+    .feature-text h4 {
+        font-size: 20px;
+    }
+    
+    .feature-text p {
+        font-size: 15px;
+    }
+}
+
+/* FAQ Section Styles */
+.faq {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
+.faq-list {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: white;
+    padding: 30px;
+    margin-bottom: 20px;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.faq-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.faq-item h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.faq-item p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+    margin: 0;
+}
+
+/* Responsive adjustments for FAQ */
+@media (max-width: 768px) {
+    .faq {
+        padding: 60px 0;
+    }
+    
+    .faq-item {
+        padding: 25px 20px;
+    }
+    
+    .faq-item h3 {
+        font-size: 18px;
+    }
+    
+    .faq-item p {
+        font-size: 15px;
     }
 }
 </style>

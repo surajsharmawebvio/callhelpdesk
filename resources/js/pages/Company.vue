@@ -192,8 +192,8 @@
                             <div class="list-block"><a href="AirBnB.html">AirBnB Customer Service</a><a
                                     href="Capital-One.html">Capital One Customer Service</a><a
                                     href="Comcast.html">Comcast Customer Service</a></div>
-                            <div class="sticky-top">
-                                <img src="https://picsum.photos/600/800?random=9" alt="Random image"
+                            <div class="sticky-top" v-if="company.right_ad_image">
+                                <img :src="'/storage/' + company.right_ad_image" alt="Company advertisement"
                                     style="width: 100%; height: auto; border-radius: 8px; margin: 20px 0;">
                             </div>
                         </div>
