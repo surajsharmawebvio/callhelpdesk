@@ -84,7 +84,7 @@
                                     <div v-for="company in paginatedCompanies"
                                          :key="company._id || company.id"
                                          class="company-card">
-                                        <a :href="'/phone-number/' + encodeURIComponent(company.name.toLowerCase().replace(/\s+/g, '-'))" class="company-link">
+                                        <a :href="company.url" class="company-link">
                                             <div class="company-name">{{ company.name }}</div>
                                             <div class="company-description">Customer Service Phone Number and Contact Information</div>
                                         </a>

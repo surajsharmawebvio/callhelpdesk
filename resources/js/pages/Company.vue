@@ -3,15 +3,15 @@
         <div>
             <div id="lay-fl" class="google-auto-placed">
                 <div id="lay-fl-nav-left">
-                    <a href="#" title="CallHelpDesk">
+                    <Link href="/" title="CallHelpDesk">
                         <img src="/images/fav-1.png" alt="callhelpdesk logo" width="120">
-                    </a>
+                    </Link>
                     <div>
                         <nav role="navigation" class="left list-block">
-                            <a href="#">Home</a>
-                            <a href="#">Search Company Customer Service Information</a>
-                            <a href="#">Companies A-Z</a>
-                            <a href="#">About GetHuman</a>
+                            <Link href="/">Home</Link>
+                            <Link href="#">Search Company Customer Service Information</Link>
+                            <Link href="/companies">Companies A-Z</Link>
+                            <Link href="/about-us">About GetHuman</Link>
                         </nav>
                     </div>
                     <small>&copy; GetHuman Inc.</small>
@@ -257,11 +257,15 @@
     import '@/../css/company_detail.css'
     import company from '@/routes/company';
     import { computed } from 'vue';
+    import { Link } from '@inertiajs/vue3';
 
     export default {
         // layout: DefaultLayout,
         props: {
             company: Object,
+        },
+        components: {
+            Link
         },
         computed: {
             processedContent() {
