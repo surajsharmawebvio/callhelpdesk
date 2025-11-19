@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Inertia\Inertia;
 use App\Models\Company;
 
 class CompanyController extends Controller
@@ -16,7 +15,7 @@ class CompanyController extends Controller
 
         $company = Company::with('questions')->where('url', $path)->first();
 
-        return Inertia::render('Company', [
+        return view('company', [
             'company' => $company
         ]);
     }
@@ -40,7 +39,7 @@ class CompanyController extends Controller
             ->orderBy('name')
             ->paginate($perPage);
 
-        return Inertia::render('CompanyList', [
+        return view('companies', [
             'companies' => $companies->items(),
             'currentLetter' => $letter,
             'currentPage' => $companies->currentPage(),

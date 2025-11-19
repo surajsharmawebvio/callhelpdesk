@@ -3,12 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Inertia\Inertia;
 
 class TermsAndConditionsController extends Controller
 {
     public function index()
     {
-        return Inertia::render('TermsAndConditions');
+        return view('terms-and-conditions');
     }
 }
