@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@push('styles')
+<link rel="stylesheet" href="/css/company_detail.css">
+@endpush
+
 @section('content')
 <div class="viewMainServer">
     <div>
@@ -260,12 +264,17 @@
 </div>
 
 <style>
+/* Rich content images */
 .rich-content p img,
 .rich-content div img,
 .rich-content figure img,
 .rich-content span img,
 .rich-content img {
     width: 100% !important;
+    height: auto !important;
+    border-radius: 8px !important;
+    margin: 20px 0 !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
 }
 
 /* Rich content typography */

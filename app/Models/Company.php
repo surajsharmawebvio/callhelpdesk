@@ -7,7 +7,8 @@ use MongoDB\Laravel\Eloquent\Model;
 class Company extends Model
 {
     protected $connection = 'mongodb';
-    protected $collection = 'company';
+    protected $table = 'company';
+    protected $primaryKey = '_id';
 
     protected $casts = [
         'right_ad_image' => 'string',

@@ -128,6 +128,43 @@ header.scrolled {
     border-bottom: none;
 }
 
+.company-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.company-name {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.company-category {
+    font-size: 13px;
+    color: #666;
+}
+
+.search-item.no-results,
+.search-item.loading {
+    text-align: center;
+    color: #666;
+}
+
+.search-item {
+    padding: 12px 20px;
+    cursor: pointer;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background-color 0.2s ease;
+}
+
+.search-item:hover {
+    background-color: #f8f9fa;
+}
+
+.search-item:last-child {
+    border-bottom: none;
+}
+
 .company-name {
     font-weight: 600;
     color: #333;

@@ -274,7 +274,7 @@
     <i class="fas fa-arrow-up"></i>
 </button>
 
-<style scoped>
+<style>
 /* Add padding to account for fixed header */
 .hero {
     padding-top: 80px;
@@ -297,6 +297,58 @@
 .search-wrapper {
     position: relative;
     max-width: 600px;
+}
+
+/* Search Dropdown Styles */
+.search-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.search-item {
+    padding: 12px 16px;
+    cursor: pointer;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background-color 0.2s ease;
+}
+
+.search-item:hover {
+    background-color: #f8f9fa;
+}
+
+.search-item:last-child {
+    border-bottom: none;
+}
+
+.company-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.company-name {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.company-category {
+    font-size: 14px;
+    color: #666;
+}
+
+.search-item.loading,
+.search-item.no-results {
+    color: #666;
+    font-style: italic;
 }
 
 /* Hide search container when scrolling */
@@ -551,18 +603,21 @@ let searchResults = [];
 function handleScroll() {
     const heroSection = document.querySelector('.hero');
     const searchContainer = document.getElementById('searchContainer');
+    const headerSearchBar = document.getElementById('headerSearchBar');
     const backToTopBtn = document.getElementById('backToTopBtn');
     const header = document.getElementById('header');
     
-    if (heroSection && searchContainer) {
+    if (heroSection && searchContainer && headerSearchBar) {
         const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
         const scrollPosition = window.scrollY;
         
-        // Hide search in hero when scrolled past it
+        // Hide search in hero and show in header when scrolled past hero
         if (scrollPosition > heroBottom - 100) {
             searchContainer.classList.add('hidden-on-scroll');
+            headerSearchBar.classList.add('visible');
         } else {
             searchContainer.classList.remove('hidden-on-scroll');
+            headerSearchBar.classList.remove('visible');
         }
     }
     
@@ -591,9 +646,8 @@ function handleScroll() {
     }
 }
 
-async function searchCompanies() {
-    const searchQuery = document.getElementById('searchQuery').value.trim();
-    const searchDropdown = document.getElementById('searchDropdown');
+async function searchCompanies(searchInput, searchDropdown) {
+    const searchQuery = searchInput.value.trim();
     
     // Clear previous timeout
     if (searchTimeout) {
@@ -616,7 +670,7 @@ async function searchCompanies() {
             const companies = await response.json();
             
             searchResults = companies;
-            displaySearchResults(companies);
+            displaySearchResults(companies, searchDropdown);
         } catch (error) {
             console.error('Search error:', error);
             searchResults = [];
@@ -625,9 +679,7 @@ async function searchCompanies() {
     }, 300);
 }
 
-function displaySearchResults(companies) {
-    const searchDropdown = document.getElementById('searchDropdown');
-    
+function displaySearchResults(companies, searchDropdown) {
     if (companies.length === 0) {
         searchDropdown.innerHTML = '<div class="search-item no-results"><div class="company-info"><div class="company-name">No companies found</div></div></div>';
     } else {
@@ -645,16 +697,44 @@ function displaySearchResults(companies) {
 }
 
 function selectCompany(url, name) {
-    document.getElementById('searchQuery').value = name;
-    document.getElementById('searchDropdown').style.display = 'none';
+    // Update both search inputs
+    const homeSearchInput = document.getElementById('searchQuery');
+    const headerSearchInput = document.getElementById('headerSearchInput');
+    
+    if (homeSearchInput) homeSearchInput.value = name;
+    if (headerSearchInput) headerSearchInput.value = name;
+    
+    // Hide both dropdowns
+    const homeDropdown = document.getElementById('searchDropdown');
+    const headerDropdown = document.getElementById('headerSearchDropdown');
+    
+    if (homeDropdown) homeDropdown.style.display = 'none';
+    if (headerDropdown) headerDropdown.style.display = 'none';
+    
     window.location.href = url;
 }
 
 function handleSearch() {
-    const searchQuery = document.getElementById('searchQuery').value.trim();
+    const homeSearchInput = document.getElementById('searchQuery');
+    const headerSearchInput = document.getElementById('headerSearchInput');
+    
+    const searchQuery = homeSearchInput ? homeSearchInput.value.trim() : 
+                       (headerSearchInput ? headerSearchInput.value.trim() : '');
+    
     if (searchQuery) {
         console.log('Searching for:', searchQuery);
         // You can add navigation or API call here
+    }
+}
+
+function syncSearchInputs(sourceInput) {
+    const homeSearchInput = document.getElementById('searchQuery');
+    const headerSearchInput = document.getElementById('headerSearchInput');
+    
+    if (sourceInput === homeSearchInput && headerSearchInput) {
+        headerSearchInput.value = sourceInput.value;
+    } else if (sourceInput === headerSearchInput && homeSearchInput) {
+        homeSearchInput.value = sourceInput.value;
     }
 }
 
@@ -670,20 +750,52 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', handleScroll);
     handleScroll();
     
-    // Search input listener
-    const searchInput = document.getElementById('searchQuery');
-    if (searchInput) {
-        searchInput.addEventListener('input', searchCompanies);
-        searchInput.addEventListener('focus', function() {
+    // Home search input listeners
+    const homeSearchInput = document.getElementById('searchQuery');
+    const homeSearchDropdown = document.getElementById('searchDropdown');
+    
+    if (homeSearchInput && homeSearchDropdown) {
+        homeSearchInput.addEventListener('input', function() {
+            syncSearchInputs(homeSearchInput);
+            searchCompanies(homeSearchInput, homeSearchDropdown);
+        });
+        homeSearchInput.addEventListener('focus', function() {
             if (searchResults.length > 0) {
-                document.getElementById('searchDropdown').style.display = 'block';
+                homeSearchDropdown.style.display = 'block';
             }
         });
-        searchInput.addEventListener('blur', function() {
+        homeSearchInput.addEventListener('blur', function() {
             setTimeout(() => {
-                document.getElementById('searchDropdown').style.display = 'none';
+                if (homeSearchDropdown) homeSearchDropdown.style.display = 'none';
             }, 200);
         });
+    }
+    
+    // Header search input listeners
+    const headerSearchInput = document.getElementById('headerSearchInput');
+    const headerSearchDropdown = document.getElementById('headerSearchDropdown');
+    
+    if (headerSearchInput && headerSearchDropdown) {
+        headerSearchInput.addEventListener('input', function() {
+            syncSearchInputs(headerSearchInput);
+            searchCompanies(headerSearchInput, headerSearchDropdown);
+        });
+        headerSearchInput.addEventListener('focus', function() {
+            if (searchResults.length > 0) {
+                headerSearchDropdown.style.display = 'block';
+            }
+        });
+        headerSearchInput.addEventListener('blur', function() {
+            setTimeout(() => {
+                if (headerSearchDropdown) headerSearchDropdown.style.display = 'none';
+            }, 200);
+        });
+    }
+    
+    // Header search button listener
+    const headerSearchBtn = document.getElementById('headerSearchBtn');
+    if (headerSearchBtn) {
+        headerSearchBtn.addEventListener('click', handleSearch);
     }
 
     // Testimonial slider
