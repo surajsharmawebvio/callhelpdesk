@@ -6,8 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Inquiries extends Model
 {
-    protected $connection = 'mongodb';
-    protected $collection = 'inquiries';
+    protected $table = 'inquiries';
 
     protected $fillable = [
         'name',

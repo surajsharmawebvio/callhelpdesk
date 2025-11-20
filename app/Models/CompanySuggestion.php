@@ -6,8 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class CompanySuggestion extends Model
 {
-    protected $connection = 'mongodb';
-    protected $collection = 'company_suggestions';
+    protected $table = 'company_suggestions';
 
     protected $fillable = [
         'name',

@@ -6,8 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class CompanyAd extends Model
 {
-    protected $connection = 'mongodb';
-    protected $collection = 'company_ads';
+    protected $table = 'company_ads';
 
     protected $fillable = [
         'company_id',

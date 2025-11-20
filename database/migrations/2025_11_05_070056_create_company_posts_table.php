@@ -11,13 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::connection('mongodb')->create('company_posts', function (Blueprint $collection) {
-            $collection->index('id'); // index for faster search
-            $collection->integer('company_id')->nullable();
-            $collection->string('image_path')->nullable();
-            $collection->string('title')->nullable();
-            $collection->string('url')->nullable();
-            $collection->timestamps(); // optional (created_at, updated_at)
+        Schema::create('company_posts', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('company_id')->nullable();
+            $table->string('image_path')->nullable();
+            $table->string('title')->nullable();
+            $table->text('url')->nullable();
+            $table->timestamps();
+            
+            $table->index('company_id');
         });
     }
 
@@ -26,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::connection('mongodb')->dropIfExists('company_posts');
+        Schema::dropIfExists('company_posts');
     }
 };

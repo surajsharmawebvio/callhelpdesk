@@ -12,13 +12,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::connection('mongodb')->create('company_categories', function (Blueprint $collection) {
-            $collection->index('id'); // index on id for faster lookup
-            $collection->string('name')->nullable();
-            $collection->string('description')->nullable();
-            $collection->string('slug')->nullable();
-            $collection->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
-            $collection->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
+        Schema::create('company_categories', function (Blueprint $table) {
+            $table->id();
+            $table->string('name')->nullable();
+            $table->text('description')->nullable();
+            $table->string('slug')->unique()->nullable();
+            $table->timestamps();
+            
+            $table->index('slug');
         });
     }
 
@@ -27,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::connection('mongodb')->dropIfExists('company_categories');
+        Schema::dropIfExists('company_categories');
     }
 };

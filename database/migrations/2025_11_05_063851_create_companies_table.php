@@ -11,17 +11,22 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::connection('mongodb')->create('company', function (Blueprint $collection) {
-            $collection->index('id'); // index on id for faster lookup
-            $collection->string('content')->nullable();
-            $collection->string('name')->nullable();
-            $collection->string('phone')->nullable();
-            $collection->string('ulpad')->nullable();
-            $collection->string('url')->nullable();
-            $collection->integer('ad_id')->nullable();
-            $collection->integer('popup_id')->nullable();
-            $collection->string('right_ad_image')->nullable();
-            $collection->timestamps(); // created_at, updated_at (optional)
+        Schema::create('company', function (Blueprint $table) {
+            $table->id();
+            $table->longText('content')->charset('utf8mb4')->collation('utf8mb4_unicode_ci')->nullable();
+            $table->string('name', 255)->nullable();
+            $table->string('phone', 50)->nullable();
+            $table->text('ulpad')->nullable();
+            $table->text('url')->nullable();
+            $table->integer('ad_id')->nullable();
+            $table->integer('popup_id')->nullable();
+            $table->string('right_ad_image')->nullable();
+            $table->boolean('published')->default(false);
+            $table->unsignedBigInteger('company_category_id')->nullable();
+            $table->timestamps();
+            
+            $table->index('name');
+            $table->index('published');
         });
     }
 
@@ -30,6 +35,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::connection('mongodb')->dropIfExists('company');
+        Schema::dropIfExists('company');
     }
 };

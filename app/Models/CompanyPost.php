@@ -6,8 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class CompanyPost extends Model
 {
-    protected $connection = 'mongodb';
-    protected $collection = 'company_posts';
+    protected $table = 'company_posts';
 
     protected $fillable = [
         'company_id',

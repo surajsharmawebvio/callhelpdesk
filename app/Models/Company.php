@@ -2,17 +2,13 @@
 
 namespace App\Models;
 
-use MongoDB\Laravel\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
 class Company extends Model
 {
-    protected $connection = 'mongodb';
     protected $table = 'company';
-    protected $primaryKey = '_id';
-
-    protected $casts = [
-        'right_ad_image' => 'string',
-    ];
+    protected $primaryKey = 'id';
+    public $incrementing = true;
 
     protected $fillable = [
         'content',
@@ -24,6 +20,14 @@ class Company extends Model
         'popup_id',
         'published',
         'right_ad_image',
+        'company_category_id',
+    ];
+
+    protected $casts = [
+        'published' => 'boolean',
+        'ad_id' => 'integer',
+        'popup_id' => 'integer',
+        'company_category_id' => 'integer',
     ];
 
     public function questions()

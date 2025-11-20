@@ -2,25 +2,16 @@
 
 namespace App\Models;
 
-use MongoDB\Laravel\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
 class CompanyCategory extends Model
 {
-    protected $connection = 'mongodb';
-    protected $collection = 'company_categories';
-
-    protected $primaryKey = '_id';
-    protected $keyType = 'string';
+    protected $table = 'company_categories';
 
     protected $fillable = [
         'name',
         'description',
         'slug',
-    ];
-
-    protected $dates = [
-        'created_at',
-        'updated_at',
     ];
 
     public function companies()

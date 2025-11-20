@@ -2,15 +2,11 @@
 
 namespace App\Models;
 
-use MongoDB\Laravel\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
 class CompanyQuestion extends Model
 {
-    protected $connection = 'mongodb';
-    protected $collection = 'company_questions';
-
-    protected $primaryKey = '_id';
-    protected $keyType = 'string';
+    protected $table = 'company_questions';
 
     protected $fillable = [
         'company_id',

@@ -14,6 +14,9 @@
     
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <!-- noindex -->
+    <meta name="robots" content="noindex,nofollow">
     
     <!-- Styles -->
     @vite(['resources/css/app.css', 'resources/css/home.css'])
