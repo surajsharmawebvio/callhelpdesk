@@ -5,13 +5,20 @@
     "description": "The skeleton application for the Laravel framework.",
     "keywords": ["laravel", "framework"],
     "license": "MIT",
+    "repositories": [
+        {
+            "type": "path",
+            "url": "./packages/filament-link-nofollow"
+        }
+    ],
     "require": {
         "php": "^8.2",
         "filament/filament": "^4.0",
         "laravel/framework": "^12.0",
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.10.1",
-        "laravel/wayfinder": "^0.1.11"
+        "laravel/wayfinder": "^0.1.11",
+        "webvio/filament-link-nofollow": "@dev"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",

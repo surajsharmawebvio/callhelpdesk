@@ -17,14 +17,14 @@
                         <a href="/">Home</a>
                         <a href="#">Search Company Customer Service Information</a>
                         <a href="/companies">Companies A-Z</a>
-                        <a href="/about-us">About GetHuman</a>
+                        <a href="/about-us">About CallHelpDesk</a>
                     </nav>
                 </div>
-                <small>&copy; GetHuman Inc.</small>
+                <small>&copy; CallHelpDesk Inc.</small>
             </div>
             <div id="lay-fl-con">
                 <div id="lay-fl-nav-top">
-                    <a id="top" title="GetHuman"></a>
+                    <a id="top" title="CallHelpDesk"></a>
                     <div id="nav-top-l">
                         <a href="/" title="Home"><svg xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 -48 512 544" class="home in-icon">
@@ -204,9 +204,9 @@
                                 href="#">Capital One Customer Service</a><a
                                 href="#">Comcast Customer Service</a></div>
                         @if(isset($company->right_ad_image))
-                            <div class="sticky-top">
+                            <div class="sticky-top" style="text-align: center;">
                                 <img src="/storage/{{ $company->right_ad_image }}" alt="Company advertisement"
-                                    style="width: 100%; height: auto; border-radius: 8px; margin: 20px 0;">
+                                    class="right_ad">
                             </div>
                         @endif
                     </div>
@@ -219,7 +219,7 @@
                             <div class="list-tiled"><b>Was this page helpful?</b><a href="#">Yes</a><a
                                     href="#">Needs
                                     work</a></div>
-                            <div class="mb-100">Sharing is what powers GetHuman's free customer service contact
+                            <div class="mb-100">Sharing is what powers CallHelpDesk's free customer service contact
                                 information and tools. You can help!</div>
                             <div class="bar-share"><a class="btn-share-f" rel="noopener" target="_blank"
                                     href="http://www.facebook.com/sharer/sharer.php?m2w&amp;s=100&amp;p[url]=https%3A%2F%2Fgethuman.com%2Fphone-number%2FACN&amp;p[title]=ACN%20Customer%20Service%20Phone%20Number%20877-226-1010%3A%20Call%20Support">
@@ -380,6 +380,12 @@
     animation: ring 1s infinite;
     display: inline-block;
     margin-right: 5px;
+}
+
+.right_ad {
+    border-radius: 8px;
+    margin: 15px;
+    height: 95vh;
 }
 
 @keyframes ring {

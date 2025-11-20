@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1724eb2d1ae0f86eda886be1a5092291",
+    "content-hash": "b4601b29bd2777be9a7dc68e5b3c3f5c",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -8277,6 +8277,64 @@
                 }
             ],
             "time": "2024-11-21T01:49:47+00:00"
+        },
+        {
+            "name": "webvio/filament-link-nofollow",
+            "version": "dev-admin_panel",
+            "dist": {
+                "type": "path",
+                "url": "./packages/filament-link-nofollow",
+                "reference": "38e1e77d51fe6ce958bed7530c727a961aaf13b3"
+            },
+            "require": {
+                "filament/filament": "^4.0",
+                "illuminate/support": "^11.0|^12.0",
+                "php": "^8.1|^8.2|^8.3"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^9.0",
+                "pestphp/pest": "^3.0",
+                "pestphp/pest-plugin-laravel": "^3.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Webvio\\FilamentLinkNofollow\\FilamentLinkNofollowServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Webvio\\FilamentLinkNofollow\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Webvio\\FilamentLinkNofollow\\Tests\\": "tests/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "WebVio",
+                    "email": "info@webvio.com"
+                }
+            ],
+            "description": "Filament RichEditor plugin with dofollow/nofollow checkbox for links",
+            "keywords": [
+                "filament",
+                "laravel",
+                "nofollow",
+                "rich-editor",
+                "seo",
+                "tiptap"
+            ],
+            "transport-options": {
+                "relative": true
+            }
         }
     ],
     "packages-dev": [
@@ -11796,7 +11854,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {},
+    "stability-flags": {
+        "webvio/filament-link-nofollow": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

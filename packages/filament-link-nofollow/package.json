@@ -1,0 +1,24 @@
+{
+    "name": "@webvio/filament-link-nofollow",
+    "version": "1.0.0",
+    "description": "Filament RichEditor plugin with dofollow/nofollow checkbox for links",
+    "type": "module",
+    "main": "resources/dist/custom-link.js",
+    "scripts": {
+        "build": "node bin/build.js"
+    },
+    "keywords": [
+        "filament",
+        "laravel",
+        "rich-editor",
+        "tiptap",
+        "nofollow",
+        "seo"
+    ],
+    "author": "WebVio",
+    "license": "MIT",
+    "devDependencies": {
+        "@tiptap/extension-link": "^2.0.0",
+        "esbuild": "^0.19.0"
+    }
+}

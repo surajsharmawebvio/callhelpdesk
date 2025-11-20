@@ -5,7 +5,7 @@
 
 <!-- Hero Section -->
 <section class="hero">
-    <div class="hero-container">
+    <div class="container">
         <div class="hero-content">
             <h1>Skip the Wait. Get Bookings <span>Done Right Away.</span></h1>
             <p>Tired of spending hours on hold and dealing with endless robotic callers and their responses? Connect with Call Help Desk and speak directly with a live representative to book or resolve any airline issues.</p>
@@ -16,6 +16,7 @@
                         class="search-input" 
                         placeholder="Search for a company or service..." 
                         id="searchQuery"
+                        autocomplete="off"
                     >
                     <div id="searchDropdown" class="search-dropdown" style="display: none;"></div>
                 </div>
@@ -33,7 +34,7 @@
     <div class="container">
         <div class="section-title">
             <h2>Features</h2>
-            <p>We provide real travel solutions to real problems without any delays or bots in between.</p>
+            <p>We provide real travel solutions to real problems without any delays or bots in between</p>
         </div>
 
         <div class="features-grid">
@@ -241,6 +242,24 @@
                         <h4 class="testimonial-author">Jessica Williams</h4>
                         <p class="testimonial-role">Satisfied Customer</p>
                     </div>
+
+                    <div class="testimonial-slide">
+                        <div class="testimonial-avatar">
+                            <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="David Rodriguez">
+                        </div>
+                        <p class="testimonial-text">"CallHelpDesk has revolutionized how I help my clients. No more long waits on hold - we get answers instantly!"</p>
+                        <h4 class="testimonial-author">David Rodriguez</h4>
+                        <p class="testimonial-role">Travel Agent</p>
+                    </div>
+
+                    <div class="testimonial-slide">
+                        <div class="testimonial-avatar">
+                            <img src="https://randomuser.me/api/portraits/women/55.jpg" alt="Emily Davis">
+                        </div>
+                        <p class="testimonial-text">"As someone who travels frequently for work, CallHelpDesk saves me hours every month. Their service is exceptional!"</p>
+                        <h4 class="testimonial-author">Emily Davis</h4>
+                        <p class="testimonial-role">Busy Professional</p>
+                    </div>
                 </div>
             </div>
 
@@ -248,6 +267,8 @@
                 <div class="slider-dot active" data-slide="0"></div>
                 <div class="slider-dot" data-slide="1"></div>
                 <div class="slider-dot" data-slide="2"></div>
+                <div class="slider-dot" data-slide="3"></div>
+                <div class="slider-dot" data-slide="4"></div>
             </div>
         </div>
     </div>
@@ -286,12 +307,14 @@
     padding: 16px 20px !important;
     height: auto !important;
     min-height: 56px !important;
+    border-radius: 50px !important;
 }
 
 .search-btn {
     font-size: 18px !important;
     padding: 16px 24px !important;
     min-height: 56px !important;
+    border-radius: 50px !important;
 }
 
 .search-wrapper {
@@ -368,6 +391,11 @@
 @media (max-width: 768px) {
     .hero {
         padding-top: 70px;
+        overflow: visible;
+    }
+    
+    .search-wrapper {
+        width: 100%;
     }
 }
 
@@ -593,6 +621,12 @@
     .faq-item p {
         font-size: 15px;
     }
+}
+button {
+    border-radius: 50px !important;
+}
+.hero-content{
+    text-align: center;
 }
 </style>
 

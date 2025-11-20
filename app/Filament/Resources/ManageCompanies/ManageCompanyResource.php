@@ -19,6 +19,7 @@ use Filament\Schemas\Components\Section;
 use Filament\Forms\Components\{TextInput, RichEditor, Repeater, Textarea, Toggle, FileUpload};
 use Filament\Forms\Components\Select;
 use App\Models\CompanyCategory;
+use Webvio\FilamentLinkNofollow\Plugins\CustomLinkPlugin;
 
 class ManageCompanyResource extends Resource
 {
@@ -102,6 +103,16 @@ class ManageCompanyResource extends Resource
                         RichEditor::make('content')
                             ->label('Content')
                             ->required()
+                            ->toolbarButtons([
+                                ['bold', 'italic', 'underline', 'strike', 'subscript', 'superscript', 'link'],
+                                ['h2', 'h3', 'alignStart', 'alignCenter', 'alignEnd'],
+                                ['blockquote', 'codeBlock', 'bulletList', 'orderedList'],
+                                ['table', 'attachFiles'],
+                                ['undo', 'redo'],
+                            ])
+                            ->plugins([
+                                CustomLinkPlugin::make(),
+                            ])
                             ->columnSpanFull(),
                     ])->collapsed(),
 

@@ -36,7 +36,7 @@
                 <ul>
                     <li><i class="fas fa-map-marker-alt"></i> 123 Support Street, NY</li>
                     <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
-                    <li><i class="fas fa-envelope"></i> help@elevatesupport.com</li>
+                    <li><i class="fas fa-envelope"></i> help@callhelpdesk.com</li>
                 </ul>
             </div>
         </div>

@@ -1,0 +1,49 @@
+{
+    "name": "webvio/filament-link-nofollow",
+    "description": "Filament RichEditor plugin with dofollow/nofollow checkbox for links",
+    "keywords": [
+        "filament",
+        "laravel",
+        "rich-editor",
+        "tiptap",
+        "nofollow",
+        "seo"
+    ],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "WebVio",
+            "email": "info@webvio.com"
+        }
+    ],
+    "require": {
+        "php": "^8.1|^8.2|^8.3",
+        "filament/filament": "^4.0",
+        "illuminate/support": "^11.0|^12.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^9.0",
+        "pestphp/pest": "^3.0",
+        "pestphp/pest-plugin-laravel": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Webvio\\FilamentLinkNofollow\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Webvio\\FilamentLinkNofollow\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Webvio\\FilamentLinkNofollow\\FilamentLinkNofollowServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

@@ -187,7 +187,7 @@ header.scrolled {
     background: linear-gradient(135deg, var(--primary), var(--secondary));
     color: white;
     border: none;
-    border-radius: 25px;
+    border-radius: 50px !important;
     cursor: pointer;
     font-size: 14px;
     font-weight: 600;
@@ -216,6 +216,10 @@ header.scrolled {
     .search-btn {
         padding: 10px 20px;
         font-size: 13px;
+    }
+
+    .search-bar {
+        display: none !important;
     }
 }
 </style>

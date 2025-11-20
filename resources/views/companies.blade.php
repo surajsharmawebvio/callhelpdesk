@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+<link rel="stylesheet" href="{{ asset('css/company_detail.css') }}">
+
 <div class="viewMainServer">
     <div>
         <div id="lay-fl" class="google-auto-placed">
@@ -13,14 +16,14 @@
                         <a href="/">Home</a>
                         <a href="#">Search Company Customer Service Information</a>
                         <a href="/companies">Companies A-Z</a>
-                        <a href="/about-us">About GetHuman</a>
+                        <a href="/about-us">About CallHelpDesk</a>
                     </nav>
                 </div>
-                <small>&copy; GetHuman Inc.</small>
+                <small>&copy; CallHelpDesk Inc.</small>
             </div>
             <div id="lay-fl-con">
                 <div id="lay-fl-nav-top">
-                    <a id="top" title="GetHuman"></a>
+                    <a id="top" title="CallHelpDesk"></a>
                     <div id="nav-top-l">
                         <a href="/" title="Home"><svg xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 -48 512 544" class="home in-icon">
@@ -57,10 +60,6 @@
                                             </a>
                                         </li>
                                     </ol>
-                                </div>
-                                <div class="small">
-                                    Updated
-                                    <time datetime="{{ now()->toIso8601String() }}">{{ now()->format('F d, Y') }}</time>
                                 </div>
                             </div>
                         </div>
@@ -195,7 +194,7 @@
                             <div class="list-tiled"><b>Was this page helpful?</b><a href="#">Yes</a><a
                                     href="#">Needs
                                     work</a></div>
-                            <div class="mb-100">Sharing is what powers GetHuman's free customer service contact
+                            <div class="mb-100">Sharing is what powers CallHelpDesk's free customer service contact
                                 information and tools. You can help!</div>
                             <div class="bar-share"><a class="btn-share-f" rel="noopener" target="_blank"
                                     href="http://www.facebook.com/sharer/sharer.php?m2w&amp;s=100&amp;p[url]=https%3A%2F%2Fgethuman.com%2Fcompanies&amp;p[title]=Customer%20Service%20Information%20%7C%20Companies%20Starting%20with%20A%20%7C%20Page%201">
@@ -450,6 +449,7 @@
     transition: all 0.2s ease;
     min-width: 40px;
     text-align: center;
+    cursor: pointer;
 }
 
 .pagination-link:hover {
@@ -482,6 +482,27 @@
 
     .company-card {
         padding: 12px;
+    }
+
+    /* Mobile Pagination */
+    .pagination-container {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 4px;
+    }
+
+    .pagination-link {
+        padding: 6px 8px;
+        font-size: 14px;
+        min-width: 32px;
+        height: 32px;
+        line-height: 20px;
+    }
+
+    .pagination-link:first-child,
+    .pagination-link:last-child {
+        padding: 6px 12px;
+        min-width: auto;
     }
 }
 </style>
