@@ -427,5 +427,19 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+// where id is richContent is div and it includes img then update alt="image url"
+document.addEventListener('DOMContentLoaded', function() {
+    const richContent = document.getElementById('richContent');
+    if (richContent) {
+        const images = richContent.getElementsByTagName('img');
+        for (let img of images) {
+            if (!img.alt || img.alt.trim() === '') {
+                img.alt = img.src;
+            }
+            console.log('Image alt set to:', img);
+        }
+    }
+});
 </script>
 @endsection

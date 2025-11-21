@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
+use App\Traits\HasSeo;
 use Illuminate\Database\Eloquent\Model;
 
 class Company extends Model
 {
+    use HasSeo;
+
     protected $table = 'company';
     protected $primaryKey = 'id';
     public $incrementing = true;
@@ -38,5 +41,29 @@ class Company extends Model
     public function category()
     {
         return $this->belongsTo(CompanyCategory::class, 'company_category_id', 'id');
+    }
+
+    /**
+     * Get SEO title fallback.
+     */
+    public function getSeoTitleFallback(): ?string
+    {
+        return $this->name;
+    }
+
+    /**
+     * Get SEO description fallback.
+     */
+    public function getSeoDescriptionFallback(): ?string
+    {
+        return strip_tags($this->content) ? mb_substr(strip_tags($this->content), 0, 160) : null;
+    }
+
+    /**
+     * Get SEO image fallback.
+     */
+    public function getSeoImageFallback(): ?string
+    {
+        return $this->right_ad_image;
     }
 }

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b4601b29bd2777be9a7dc68e5b3c3f5c",
+    "content-hash": "02eb2fa11b0ecbd371e882dfe2f8dbb9",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -8335,6 +8335,56 @@
             "transport-options": {
                 "relative": true
             }
+        },
+        {
+            "name": "webvio/filament-seo",
+            "version": "dev-admin_panel",
+            "dist": {
+                "type": "path",
+                "url": "./packages/filament-seo",
+                "reference": "825fe528a04fa50b3c3edfd234105879c692acff"
+            },
+            "require": {
+                "filament/filament": "^3.0|^4.0",
+                "illuminate/support": "^10.0|^11.0|^12.0",
+                "php": "^8.1|^8.2|^8.3"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Webvio\\FilamentSeo\\FilamentSeoServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Webvio\\FilamentSeo\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Webvio",
+                    "email": "info@webvio.com"
+                }
+            ],
+            "description": "Complete SEO meta tag management package for Laravel Filament with polymorphic support for any model",
+            "keywords": [
+                "filament",
+                "laravel",
+                "meta-tags",
+                "open-graph",
+                "polymorphic",
+                "schema-markup",
+                "seo",
+                "twitter-card"
+            ],
+            "transport-options": {
+                "relative": true
+            }
         }
     ],
     "packages-dev": [
@@ -11855,7 +11905,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "webvio/filament-link-nofollow": 20
+        "webvio/filament-link-nofollow": 20,
+        "webvio/filament-seo": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Filament\Resources\ManageCompanies\Pages;
+namespace App\Filament\Resources\StaticPages\Pages;
 
-use App\Filament\Resources\ManageCompanies\ManageCompanyResource;
+use App\Filament\Resources\StaticPages\StaticPageResource;
 use Filament\Actions\DeleteAction;
 use Filament\Resources\Pages\EditRecord;
 
-class EditManageCompany extends EditRecord
+class EditStaticPage extends EditRecord
 {
-    protected static string $resource = ManageCompanyResource::class;
+    protected static string $resource = StaticPageResource::class;
 
     protected function getHeaderActions(): array
     {

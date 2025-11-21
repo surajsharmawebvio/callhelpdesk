@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\ManageCompanies;
 
+use App\Filament\Forms\Components\SeoForm;
 use App\Filament\Resources\ManageCompanies\Pages\{ 
     CreateManageCompany, 
     EditManageCompany, 
@@ -16,8 +17,8 @@ use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 use Filament\Schemas\Components\Section;
-use Filament\Forms\Components\{TextInput, RichEditor, Repeater, Textarea, Toggle, FileUpload};
-use Filament\Forms\Components\Select;
+use Filament\Forms\Components\{TextInput, RichEditor, Repeater, Textarea, Toggle, FileUpload, Select};
+use App\Forms\Components\CustomRichEditor;
 use App\Models\CompanyCategory;
 use Webvio\FilamentLinkNofollow\Plugins\CustomLinkPlugin;
 
@@ -100,7 +101,7 @@ class ManageCompanyResource extends Resource
                                 $record->touch(); // Updates the updated_at timestamp
                             }),
 
-                        RichEditor::make('content')
+                        CustomRichEditor::make('content')
                             ->label('Content')
                             ->required()
                             ->toolbarButtons([
@@ -149,6 +150,9 @@ class ManageCompanyResource extends Resource
                         ->nullable(),
                 ])
                 ->collapsed(),
+
+                // SEO Settings
+                SeoForm::make(),
 
             ]);
     }
