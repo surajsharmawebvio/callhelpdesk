@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "02eb2fa11b0ecbd371e882dfe2f8dbb9",
+    "content-hash": "0f2265b8ecbc4d77179c776c48033904",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -8279,6 +8279,59 @@
             "time": "2024-11-21T01:49:47+00:00"
         },
         {
+            "name": "webvio/dynamic-sitemap",
+            "version": "dev-admin_panel",
+            "dist": {
+                "type": "path",
+                "url": "./packages/dynamic-sitemap",
+                "reference": "2b573d7a0814068028d1bdb1f15005f7b255b418"
+            },
+            "require": {
+                "illuminate/cache": "^10.0|^11.0|^12.0",
+                "illuminate/routing": "^10.0|^11.0|^12.0",
+                "illuminate/support": "^10.0|^11.0|^12.0",
+                "php": "^8.1|^8.2|^8.3"
+            },
+            "require-dev": {
+                "filament/filament": "^3.0|^4.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Webvio\\DynamicSitemap\\DynamicSitemapServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Webvio\\DynamicSitemap\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Webvio",
+                    "email": "info@webvio.com"
+                }
+            ],
+            "description": "Dynamic sitemap generator for Laravel applications with Filament admin integration",
+            "keywords": [
+                "dynamic",
+                "filament",
+                "laravel",
+                "seo",
+                "sitemap",
+                "sitemap-index",
+                "xml"
+            ],
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
             "name": "webvio/filament-link-nofollow",
             "version": "dev-admin_panel",
             "dist": {
@@ -11905,6 +11958,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "webvio/dynamic-sitemap": 20,
         "webvio/filament-link-nofollow": 20,
         "webvio/filament-seo": 20
     },
