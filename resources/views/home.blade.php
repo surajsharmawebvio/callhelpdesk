@@ -164,39 +164,74 @@
         </div>
 
         <div class="faq-list">
-            <div class="faq-item">
-                <h3>Why use CallHelpDesk.com instead of Google for support numbers?</h3>
-                <p>With Call Help Desk, you get support numbers and instant assistance without hunting Google for hours. Our platform is trusted by thousands to get to those customer service lines fast and connect with a human agent, skipping all the hassle.</p>
+            <div class="faq-item active">
+                <div class="faq-question">
+                    <h3>Why use CallHelpDesk.com instead of Google for support numbers?</h3>
+                    <span class="faq-toggle">-</span>
+                </div>
+                <div class="faq-answer">
+                    <p>With Call Help Desk, you get support numbers and instant assistance without hunting Google for hours. Our platform is trusted by thousands to get to those customer service lines fast and connect with a human agent, skipping all the hassle.</p>
+                </div>
             </div>
 
             <div class="faq-item">
-                <h3>Is the Call Help Desk available 24/7?</h3>
-                <p>Yes. Call Help Desk is there for your travel needs round-the-clock, offering you support. We're available anytime you want and get answers to your needs regardless of time zones or emergencies.</p>
+                <div class="faq-question">
+                    <h3>Is the Call Help Desk available 24/7?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes. Call Help Desk is there for your travel needs round-the-clock, offering you support. We're available anytime you want and get answers to your needs regardless of time zones or emergencies.</p>
+                </div>
             </div>
 
             <div class="faq-item">
-                <h3>Does Call Help Desk handle emergency flight issues or last-minute bookings?</h3>
-                <p>If you want support, like for cancellations or rescheduling, Call Help Desk is there for you. For flight bookings or last-minute reservations, we suggest you talk to the concerned company's agent directly or use their emergency support number.</p>
+                <div class="faq-question">
+                    <h3>Does Call Help Desk handle emergency flight issues or last-minute bookings?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>If you want support, like for cancellations or rescheduling, Call Help Desk is there for you. For flight bookings or last-minute reservations, we suggest you talk to the concerned company's agent directly or use their emergency support number.</p>
+                </div>
             </div>
 
             <div class="faq-item">
-                <h3>Is my personal and booking information safe with CallHelpDesk?</h3>
-                <p>Yes. Whatever personal data you provide, Call Help Desk is secure with us. We protect your personal information through secure protocols. For details, we suggest you read our Privacy Policy thoroughly.</p>
+                <div class="faq-question">
+                    <h3>Is my personal and booking information safe with CallHelpDesk?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes. Whatever personal data you provide, Call Help Desk is secure with us. We protect your personal information through secure protocols. For details, we suggest you read our Privacy Policy thoroughly.</p>
+                </div>
             </div>
 
             <div class="faq-item">
-                <h3>Can I book new flights directly through CallHelpDesk?</h3>
-                <p>Yes, you can book a flight to your desired destination from multiple airlines with Call Help Desk. Our goal is to connect you with airline support for inquiries, cancellations, or changes, and also assist you with flight booking whenever needed.</p>
+                <div class="faq-question">
+                    <h3>Can I book new flights directly through CallHelpDesk?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, you can book a flight to your desired destination from multiple airlines with Call Help Desk. Our goal is to connect you with airline support for inquiries, cancellations, or changes, and also assist you with flight booking whenever needed.</p>
+                </div>
             </div>
 
             <div class="faq-item">
-                <h3>Do I need to wait on hold to speak with CallHelpDesk?</h3>
-                <p>No, you don't have to wait longer to speak with an agent here. We aim to reduce the hold time by connecting you to live agents directly and offering "zero wait time" support.</p>
+                <div class="faq-question">
+                    <h3>Do I need to wait on hold to speak with CallHelpDesk?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>No, you don't have to wait longer to speak with an agent here. We aim to reduce the hold time by connecting you to live agents directly and offering "zero wait time" support.</p>
+                </div>
             </div>
 
             <div class="faq-item">
-                <h3>Is CallHelpDesk.com free?</h3>
-                <p>Yes, Call Help Desk is free to use for those seeking airline support. There aren't any charges for getting the assistance, which makes us a convenient resource for travelers.</p>
+                <div class="faq-question">
+                    <h3>Is CallHelpDesk.com free?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, Call Help Desk is free to use for those seeking airline support. There aren't any charges for getting the assistance, which makes us a convenient resource for travelers.</p>
+                </div>
             </div>
         </div>
     </div>
@@ -577,11 +612,12 @@
 
 .faq-item {
     background: white;
-    padding: 30px;
+    padding: 0;
     margin-bottom: 20px;
     border-radius: 16px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
 }
 
 .faq-item:hover {
@@ -589,15 +625,47 @@
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 }
 
-.faq-item h3 {
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.faq-question h3 {
     font-size: 20px;
     font-weight: 700;
     color: #333;
-    margin-bottom: 15px;
+    margin: 0;
     line-height: 1.4;
+    flex: 1;
+    padding-right: 20px;
 }
 
-.faq-item p {
+.faq-toggle {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--primary);
+    min-width: 30px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+    padding: 0 30px;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 500px;
+    padding: 0 30px 30px 30px;
+}
+
+.faq-answer p {
     font-size: 16px;
     line-height: 1.6;
     color: #666;
@@ -610,15 +678,24 @@
         padding: 60px 0;
     }
     
-    .faq-item {
+    .faq-question {
         padding: 25px 20px;
     }
     
-    .faq-item h3 {
+    .faq-question h3 {
         font-size: 18px;
     }
     
-    .faq-item p {
+    .faq-toggle {
+        font-size: 24px;
+        min-width: 25px;
+    }
+    
+    .faq-item.active .faq-answer {
+        padding: 0 20px 25px 20px;
+    }
+    
+    .faq-answer p {
         font-size: 15px;
     }
 }
@@ -860,6 +937,31 @@ document.addEventListener('DOMContentLoaded', function() {
         let nextSlide = (currentSlide + 1) % slides.length;
         goToSlide(nextSlide);
     }, 5000);
+
+    // FAQ Toggle functionality
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        
+        question.addEventListener('click', () => {
+            const isActive = item.classList.contains('active');
+            
+            // Close all FAQ items
+            faqItems.forEach(faq => {
+                faq.classList.remove('active');
+                const toggle = faq.querySelector('.faq-toggle');
+                if (toggle) toggle.textContent = '+';
+            });
+            
+            // Open clicked item if it wasn't active
+            if (!isActive) {
+                item.classList.add('active');
+                const toggle = item.querySelector('.faq-toggle');
+                if (toggle) toggle.textContent = '-';
+            }
+        });
+    });
 });
 </script>
 @endsection

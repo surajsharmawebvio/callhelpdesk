@@ -32,6 +32,12 @@ class SeoMetadata extends Model
         'priority',
     ];
 
+    protected $attributes = [
+        'og_type' => 'website',
+        'index' => true,
+        'follow' => true,
+    ];
+
     protected $casts = [
         'index' => 'boolean',
         'follow' => 'boolean',
@@ -119,16 +125,48 @@ class SeoMetadata extends Model
     }
 
     /**
-     * Clear SEO cache when model is saved.
+     * Boot the model.
      */
     protected static function booted(): void
     {
+        static::creating(function (SeoMetadata $seo) {
+            // Ensure og_type is set to default if not provided
+            if (is_null($seo->og_type)) {
+                $seo->og_type = 'website';
+            }
+        });
+
+        static::saving(function (SeoMetadata $seo) {
+            // Ensure og_type is never null on save
+            if (is_null($seo->og_type)) {
+                $seo->og_type = 'website';
+            }
+        });
+
         static::saved(function (SeoMetadata $seo) {
             Cache::forget("seo.{$seo->seoable_type}.{$seo->seoable_id}");
+            
+            // Clear sitemap cache for the parent model
+            if (class_exists($seo->seoable_type)) {
+                $sitemapManager = app(\Webvio\DynamicSitemap\Services\SitemapManager::class);
+                $sitemapManager->clearModelCache($seo->seoable_type);
+                
+                // Also update the parent model's updated_at to reflect SEO changes
+                $parentModel = $seo->seoable;
+                if ($parentModel && $parentModel->exists) {
+                    $parentModel->touch(); // Updates updated_at timestamp
+                }
+            }
         });
 
         static::deleted(function (SeoMetadata $seo) {
             Cache::forget("seo.{$seo->seoable_type}.{$seo->seoable_id}");
+            
+            // Clear sitemap cache for the parent model
+            if (class_exists($seo->seoable_type)) {
+                $sitemapManager = app(\Webvio\DynamicSitemap\Services\SitemapManager::class);
+                $sitemapManager->clearModelCache($seo->seoable_type);
+            }
         });
     }
 }

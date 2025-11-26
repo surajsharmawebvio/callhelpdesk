@@ -141,6 +141,12 @@ footer {
     font-size: 14px;
 }
 
+@media (min-width: 769px) {
+    .footer-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
 @media (max-width: 768px) {
     .footer-container {
         grid-template-columns: 1fr;

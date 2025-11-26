@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Traits\HasSeo;
 use Illuminate\Database\Eloquent\Model;
+use Webvio\DynamicSitemap\Observers\ModelObserver;
 
 class Company extends Model
 {
@@ -24,6 +25,7 @@ class Company extends Model
         'published',
         'right_ad_image',
         'company_category_id',
+        'sub_category_id',
     ];
 
     protected $casts = [
@@ -41,6 +43,11 @@ class Company extends Model
     public function category()
     {
         return $this->belongsTo(CompanyCategory::class, 'company_category_id', 'id');
+    }
+
+    public function subCategory()
+    {
+        return $this->belongsTo(CompanyCategory::class, 'sub_category_id', 'id');
     }
 
     /**
@@ -65,5 +72,21 @@ class Company extends Model
     public function getSeoImageFallback(): ?string
     {
         return $this->right_ad_image;
+    }
+
+    /**
+     * Scope for published companies.
+     */
+    public function scopePublished($query)
+    {
+        return $query->where('published', true);
+    }
+
+    /**
+     * Boot the model.
+     */
+    protected static function booted(): void
+    {
+        static::observe(ModelObserver::class);
     }
 }

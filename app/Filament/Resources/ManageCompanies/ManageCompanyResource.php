@@ -49,30 +49,27 @@ class ManageCompanyResource extends Resource
 
                         Select::make('company_category_id')
                             ->label('Category')
-                            ->options(CompanyCategory::pluck('name', 'id'))
+                            ->options(CompanyCategory::parents()->pluck('name', 'id'))
                             ->searchable()
                             ->placeholder('Select a category')
-                            ->createOptionForm([
-                                TextInput::make('name')
-                                    ->label('Category Name')
-                                    ->required()
-                                    ->maxLength(255)
-                                    ->unique(CompanyCategory::class, 'name'),
+                            ->required()
+                            ->live(),
 
-                                // TextInput::make('slug')
-                                //     ->label('Slug')
-                                //     ->required()
-                                //     ->maxLength(255)
-                                //     ->unique(CompanyCategory::class, 'slug'),
-
-                                Textarea::make('description')
-                                    ->label('Description')
-                                    ->maxLength(1000)
-                                    ->rows(3),
-                            ])
-                            ->createOptionUsing(function (array $data) {
-                                return CompanyCategory::create($data)->id;
-                            }),
+                        Select::make('sub_category_id')
+                            ->label('Sub Category')
+                            ->options(function (callable $get) {
+                                $categoryId = $get('company_category_id');
+                                if (!$categoryId) {
+                                    return [];
+                                }
+                                return CompanyCategory::where('parent_id', $categoryId)
+                                    ->pluck('name', 'id')
+                                    ->toArray();
+                            })
+                            ->searchable()
+                            ->placeholder('Select a sub-category')
+                            ->disabled(fn (callable $get) => !$get('company_category_id'))
+                            ->dehydrated(fn ($state) => filled($state)),
 
                         TextInput::make('url')
                             ->label('URL')

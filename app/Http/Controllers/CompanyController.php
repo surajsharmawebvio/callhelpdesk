@@ -7,9 +7,9 @@ use App\Models\Company;
 
 class CompanyController extends Controller
 {
-    public function index($companyName)
+    public function index($phoneNumber='company', $companyName)
     {
-        $url = route('company.show', $companyName);
+        $url = route('company.show', ['phoneNumber' => $phoneNumber, 'companyName' => strtolower($companyName)]);
         $parsedUrl = parse_url($url);
         $path = $parsedUrl['path'] ?? '';
 

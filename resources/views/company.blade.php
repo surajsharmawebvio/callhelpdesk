@@ -69,7 +69,7 @@
                             </div>
                         </div>
 
-                        <h1>{{ $company->name ?? '' }}</h1>
+                        <h1>{{ $company->name ?? '' }} Customer Service</h1>
                         <h2>Phone Number & Contact Info</h2><a id="contact"></a>
                         <div class="card stk top">
                             <div>
@@ -161,7 +161,7 @@
                         </div>
 
                         <div class="rich-content" id="richContent">
-                            {!! $company->content ?? '' !!}
+                            {!! preg_replace('/<img([^>]+)>/', '<div class="image-wrapper"><span class="ads-label">Ads</span><img$1></div>', $company->content ?? '') !!}
                         </div>
 
                     </div>
@@ -169,15 +169,15 @@
                     <!-- Right Layout -->
                     <div id="lay-fl-right">
                         <!-- right add -->
-                        <div class="live-agent-card">
-                            <img src="https://picsum.photos/90/90?random=8" alt="Live Agent">
-                            <h2>Talk to a Live Agent</h2>
-                            <p>Talk to a live expert get instant help with {{ $company->name ?? '' }} customer service.</p>
-                            <a href="tel:{{ $company->phone ?? '' }}" class="call-button">
-                                <i class="bi bi-telephone"></i> {{ $company->phone ?? '' }}
-                            </a>
+                        <!-- Advertisement Section -->
+                        
+                        <!-- Random 4:4 Image Banner -->
+                        <div class="random-banner">
+                            <img src="https://picsum.photos/300/300?random={{ rand(1, 1000) }}" 
+                                 alt="Random advertisement banner" 
+                                 style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 20px;">
                         </div>
-
+                        
                         <div>
                             <div class="h4">What's on this page</div>
                             <nav class="list-block mb-u" role="navigation" id="headingsNav">
@@ -397,6 +397,61 @@
     50% { transform: rotate(0deg); }
     100% { transform: rotate(0deg); }
 }
+
+/* Random banner styling */
+.random-banner {
+    margin: 20px 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.random-banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+    /* transition: transform 0.3s ease; */
+}
+
+.random-banner img:hover {
+    /* transform: scale(1.05); */
+}
+
+/* Ads image wrapper */
+.image-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+/* Image styling */
+.image-wrapper img {
+    width: 100%;
+    height: 200px;
+    border-radius: 8px;
+    margin: 20px 0;
+    border: 1px solid #00000052;
+}
+
+/* Ads label hidden by default */
+.ads-label {
+    position: absolute;
+    top: 25px;
+    left: 10px;
+    background: rgb(195 195 195 / 37%);
+    color: #ffffffc2;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 3px 8px;
+    border-radius: 4px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Show only on hover */
+.image-wrapper:hover .ads-label {
+    opacity: 1;
+}
 </style>
 
 <script>
@@ -440,6 +495,18 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log('Image alt set to:', img);
         }
     }
+});
+
+// Ads label hover effect
+document.addEventListener('DOMContentLoaded', function() {
+    const wrappers = document.querySelectorAll('.image-wrapper');
+    wrappers.forEach(wrapper => {
+        const label = wrapper.querySelector('.ads-label');
+        if (label) {
+            wrapper.addEventListener('mouseenter', () => label.style.opacity = '1');
+            wrapper.addEventListener('mouseleave', () => label.style.opacity = '0');
+        }
+    });
 });
 </script>
 @endsection

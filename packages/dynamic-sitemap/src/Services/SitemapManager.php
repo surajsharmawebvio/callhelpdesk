@@ -104,6 +104,9 @@ class SitemapManager
         foreach (config('dynamic-sitemap.sections', []) as $key => $config) {
             if (($config['model'] ?? null) === $modelClass) {
                 $this->clearCache($key);
+                // Also clear the index cache since section lastmod changed
+                $this->clearCache();
+                break;
             }
         }
     }

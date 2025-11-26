@@ -155,11 +155,15 @@ class SitemapGenerator
             foreach ($records as $record) {
                 // Build route parameters
                 $routeParams = [];
-                foreach ($config['route_params'] as $param) {
-                    $column = $param === $config['route_params'][0] 
-                        ? $config['route_param_column'] 
-                        : $param;
-                    $routeParams[$param] = $record->$column;
+                if (isset($config['route_param_values']) && is_callable($config['route_param_values'])) {
+                    $routeParams = call_user_func($config['route_param_values'], $record);
+                } else {
+                    foreach ($config['route_params'] as $param) {
+                        $column = $param === $config['route_params'][0] 
+                            ? $config['route_param_column'] 
+                            : $param;
+                        $routeParams[$param] = $record->$column;
+                    }
                 }
 
                 // Generate URL
