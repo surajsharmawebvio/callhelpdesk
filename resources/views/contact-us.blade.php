@@ -7,8 +7,8 @@
 <section class="hero">
     <div class="hero-container">
         <div class="hero-content">
-            <h1>Get In Touch <span>We're Here to Help</span></h1>
-            <p>Have questions about our service? Need support? Want to partner with us? We'd love to hear from you. Reach out and we'll get back to you as soon as possible.</p>
+            <h1>Talk to <span>Our Team</span></h1>
+            <p>Got something to ask related to CallHelpDesk? Send us a message anytime. Our team will make sure your concerns are noted and addressed at the earliest.</p>
         </div>
     </div>
 </section>
@@ -49,6 +49,12 @@
                         </div>
                         <div class="contact-text">
                             <h4>132 Dartmouth Street Boston, Massachusetts 02156 United States</h4>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-text">
+                            Access updated contact details of customer support departments. All information provided on this platform is for reference purposes only. Call Help Desk gets the details from official pages.
                         </div>
                     </div>
                 </div>

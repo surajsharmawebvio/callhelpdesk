@@ -8,7 +8,7 @@
     <div class="hero-container">
         <div class="hero-content">
             <h1>About <span>Call Help Desk</span></h1>
-            <p>Reliable and Accurate - Call Help Desk makes it easy for you to search for airline customer support numbers</p>
+            <p>We here at CallHelpDesk offer our users a platform where they can search contact information about companies that they require without any additional hassles.</p>
         </div>
     </div>
 </section>
@@ -19,9 +19,9 @@
         <div class="story-wrapper">
             <div class="story-content">
                 <h2>What We Do</h2>
-                <p>On our website, you will find contact details of the customer support departments of various airlines that operate in the United States. All details are verified and sourced from official pages. That is our guarantee.</p>
-                <p>We value the trust of our users. Therefore, our site is developed keeping in mind the factors of credibility and reliability. Each number on our site is frequently reviewed to ensure that it leads to the official and designated support channels of that airline.</p>
-                <p>Through an organized and structured database, we aim to encourage accessibility in information sharing. Our platform serves solely as an informational resource, offering reliable data on airline customer service communication.</p>
+                <p>On our website, you will find contact details of the customer support departments of various companies that operate in the United States. All details are verified and sourced from official pages.</p>
+                <p>We value the trust of our users. Therefore, our site has developed with a strong focus on trust and consistent performance. Each number on our site is frequently reviewed to ensure that it leads to the official and designated support channels of that company.</p>
+                <p>Through an organized and structured resource, we aim to encourage accessibility in information sharing. Our platform serves solely as an informational resource, offering reliable data on customer service communication.</p>
             </div>
             <div class="story-image">
                 <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Team collaboration">
@@ -38,7 +38,7 @@
                 <div class="mv-icon">
                     <i class="fas fa-check-circle"></i>
                 </div>
-                <h3>Accurate Airline Contact Information</h3>
+                <h3>Accurate Contact Information</h3>
                 <p>All customer service contacts are checked for correctness and updated on time</p>
             </div>
             <div class="mv-card">
@@ -46,15 +46,31 @@
                     <i class="fas fa-sync-alt"></i>
                 </div>
                 <h3>Regularity in Information Maintenance</h3>
-                <p>The information is evaluated at regular intervals to ensure that it represents current airline contact information</p>
+                <p>The information is evaluated at regular intervals to ensure that it represents current contact information</p>
             </div>
             <div class="mv-card">
                 <div class="mv-icon">
                     <i class="fas fa-compass"></i>
                 </div>
                 <h3>User-Friendly Access and Navigation</h3>
-                <p>Our site is made with clear navigation so users can easily find the number they are looking for</p>
+                <p>Our site is made with a simple design, so you can reach the number in no time</p>
             </div>
+        </div>
+    </div>
+</section>
+
+<!-- Trusted Source Section -->
+<section class="trusted-source">
+    <div class="container">
+        <div class="trusted-content">
+            <h2>Your Trusted Customer Support Source</h2>
+            <p>Get access to updated contact details whenever you need them</p>
+            <ul>
+                <li>Saves your time by storing everything needed about relevant contacts in one place</li>
+                <li>Website layout is simple; you can search and get contact information quickly</li>
+                <li>Keep the process easy so you don't have to jump from one page to another</li>
+            </ul>
+            <p>We have developed CallHelpDesk in a manner that makes everyone's job easier when it comes to connecting with the correct customer support. At our site, you will get the right contact details in a simple format. We want to make sure that your information is correct, easy to find, and always there when you require it.</p>
         </div>
     </div>
 </section>
@@ -63,7 +79,7 @@
 <section class="commitment-section">
     <div class="container">
         <div class="commitment-content">
-            <p>Verified contact information for several airline customer service departments. All information provided on this platform is for reference purposes only. Call Help Desk gets the details from official airline pages.</p>
+            <p>Access updated contact details of customer support departments. All information provided on this platform is for reference purposes only. CallHelpDesk gets the details from official pages.</p>
         </div>
     </div>
 </section>
@@ -224,7 +240,7 @@
 
 /* Commitment Section */
 .commitment-section {
-    padding: 5rem 0;
+    padding: 0;
     background: var(--light-bg);
 }
 

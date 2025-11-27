@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
+
+    <link rel="icon" href="/fav-1.ico" sizes="any">
+    <link rel="icon" href="/fav-1.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/fav-1.png">
+
     <!-- SEO Meta Tags -->
     @include('partials.seo')
     

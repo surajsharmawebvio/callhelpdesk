@@ -52,7 +52,7 @@ class ManageCompanyResource extends Resource
                             ->options(CompanyCategory::parents()->pluck('name', 'id'))
                             ->searchable()
                             ->placeholder('Select a category')
-                            ->required()
+                            // ->required()
                             ->live(),
 
                         Select::make('sub_category_id')
@@ -69,7 +69,17 @@ class ManageCompanyResource extends Resource
                             ->searchable()
                             ->placeholder('Select a sub-category')
                             ->disabled(fn (callable $get) => !$get('company_category_id'))
-                            ->dehydrated(fn ($state) => filled($state)),
+                            ->dehydrated(fn ($state) => filled($state))
+                            ->createOptionForm([
+                                TextInput::make('name')
+                                    ->label('Sub Category Name')
+                                    ->required(),
+                            ])
+                            ->createOptionUsing(function (array $data, callable $get) {
+                                $categoryId = $get('company_category_id');
+                                $data['parent_id'] = $categoryId;
+                                return CompanyCategory::create($data)->id;
+                            }),
 
                         TextInput::make('url')
                             ->label('URL')

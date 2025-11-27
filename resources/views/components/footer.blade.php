@@ -5,10 +5,9 @@
                 <h3>Elevate Support</h3>
                 <p>Call Help Desk helps you connect with live agents faster and get your airline issues resolved with no waiting times. Whether it's to make bookings, cancellations, refunds, or baggage issues, we're here 24/7 to make your flying simpler.</p>
                 <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=61582322640364"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://x.com/callhelpdesk123"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/callhelpdesk4/?hl=en"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
 
@@ -19,6 +18,7 @@
                     <li><a href="{{ route('companies.index') }}">Companies A-Z</a></li>
                     <li><a href="{{ route('about-us') }}">About Us</a></li>
                     <li><a href="{{ route('contact-us') }}">Contact Us</a></li>
+                    <li><a href="{{ route('sitemap') }}">Sitemap</a></li>
                 </ul>
             </div>
 
@@ -27,7 +27,7 @@
                 <ul>
                     <li><a href="{{ route('privacy-policy') }}">Privacy Policy</a></li>
                     <li><a href="{{ route('terms-and-conditions') }}">Terms & Conditions</a></li>
-                    <li><a href="{{ route('disclaimer') }}">Disclaimer</a></li>
+                    {{-- <li><a href="{{ route('disclaimer') }}">Disclaimer</a></li> --}}
                 </ul>
             </div>
 

@@ -7,8 +7,8 @@
 <section class="hero">
     <div class="container">
         <div class="hero-content">
-            <h1>Skip the Wait. Get Bookings <span>Done Right Away.</span></h1>
-            <p>Tired of spending hours on hold and dealing with endless robotic callers and their responses? Connect with Call Help Desk and speak directly with a live representative to book or resolve any airline issues.</p>
+            <h1>Search, Find & Call Brands with  <span>CallHelpDesk</span></h1>
+            <p>Tired of searching where to call for your issues? Not anymore! CallHelpDesk offers every contact information of leading American companies right at your fingertips! Easy to search, and quick at service! Connect with the experts instantly!</p>
             <div class="search-container" id="searchContainer">
                 <div class="search-wrapper">
                     <input 
@@ -42,24 +42,24 @@
                 <div class="feature-icon">
                     <i class="fas fa-clock"></i>
                 </div>
-                <h3>No More Waiting on Hold</h3>
-                <p>End the endless phone quests and chat with a live agent the second you call, and get bookings done.</p>
+                <h3>Wide Database</h3>
+                <p>Find contact information for US registered companies from all domains only on our platform!</p>
             </div>
 
             <div class="feature-card">
                 <div class="feature-icon">
                     <i class="fas fa-user-friends"></i>
                 </div>
-                <h3>24/7 Support from Real Agents</h3>
-                <p>Whether you need help at 3 am or on Christmas eve, Call Help Desk is here for you round-the-clock.</p>
+                <h3>Available 24/7</h3>
+                <p>Our platform is up & running 24-7 for your convenience, so you can sort out your problems easily</p>
             </div>
 
             <div class="feature-card">
                 <div class="feature-icon">
                     <i class="fas fa-user-tie"></i>
                 </div>
-                <h3>Help from Airline & Travel Experts</h3>
-                <p>Our team has airline and travel experts who'll make your booking, changes, and refunds a total breeze.</p>
+                <h3>Stay Updated</h3>
+                <p>We offer users like you the most updated information available for all the listed companies, so you aren’t left out!</p>
             </div>
         </div>
     </div>
@@ -69,49 +69,54 @@
 <section class="about-us">
     <div class="container">
         <div class="section-title">
-            <h2>About Us</h2>
+            <h2>What We Offer</h2>
         </div>
         <div class="about-content">
-            <p>Getting stuck on the calls for hours is frustrating, and we understand that. That's why CallHelp Desk has made it its mission to assist its users with real human help, no bots. With zero to no waiting time, we are present to help you round-the-clock across the United States. Our focus is simple - to bring focus to the digital chaos and make customer service quick, easy, and hassle-free.</p>
+            <p>CallHelpDesk brings all customer support details together in one place for quick and reliable access</p>
             
             <div class="about-features">
                 <div class="about-feature">
                     <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
+                        <i class="fas fa-search"></i>
                     </div>
                     <div class="feature-text">
-                        <h4>Hassle-free support</h4>
-                        <p>Thousands of travelers have put their trust in us to handle their bookings, changes, and cancellations. Now it's your turn!</p>
+                        <h4>Locating the Correct Number Is Easy as Ever</h4>
+                        <p>An endless search just to contact is tiresome, and we understand this. Our website's interface is as easy as it gets for you to search and find relevant information right away!</p>
+                        <ul style="text-align: left; margin-top: 15px; padding-left: 20px; color: #666;">
+                            <li>Instant access to contact details</li>
+                            <li>Clear and easy navigation</li>
+                            <li>Search without any confusion</li>
+                        </ul>
                     </div>
                 </div>
                 
                 <div class="about-feature">
                     <div class="feature-icon">
-                        <i class="fas fa-globe"></i>
+                        <i class="fas fa-check-circle"></i>
                     </div>
                     <div class="feature-text">
-                        <h4>All-round support</h4>
-                        <p>No matter which customer service numbers you're looking for, all are present on this platform to resolve your issues in one go.</p>
+                        <h4>Reliable Information for Every User</h4>
+                        <p>Our platform is built to make your search effortless, and with that in mind we are offering contact details for all well-known companies across industries right for you! Everything is designed for a smoother experience without any extra steps!</p>
+                        <ul style="text-align: left; margin-top: 15px; padding-left: 20px; color: #666;">
+                            <li>Clear Customer Support Info for Popular US Companies</li>
+                            <li>Easy to Understand User Interface for All</li>
+                            <li>A Smooth Search Experience from Start to Finish</li>
+                        </ul>
                     </div>
                 </div>
                 
                 <div class="about-feature">
                     <div class="feature-icon">
-                        <i class="fas fa-user"></i>
+                        <i class="fas fa-clock"></i>
                     </div>
                     <div class="feature-text">
-                        <h4>Live human representative</h4>
-                        <p>Talk to a real human for your travel needs without the unnecessary wait times and get the help that you need.</p>
-                    </div>
-                </div>
-
-                <div class="about-feature">
-                    <div class="feature-icon">
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <div class="feature-text">
-                        <h4>Expert guidance</h4>
-                        <p>Our experienced travel specialists provide personalized assistance for all your booking and support needs.</p>
+                        <h4>Save Your Time Effortlessly with the Right Helpline!</h4>
+                        <p>Instead of browsing multiple pages and searching through multiple domains, you can find the correct number and right information for your requirement in one place! CallHelpDesk helps you move quickly so you can fix your problem and save time!</p>
+                        <ul style="text-align: left; margin-top: 15px; padding-left: 20px; color: #666;">
+                            <li>We help you avoid unnecessary delays in finding the numbers</li>
+                            <li>Fast Results which offer you an ease of mind</li>
+                            <li>Efficient access to the right company contact details always!</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -119,37 +124,31 @@
     </div>
 </section>
 
-<!-- How It Works Section -->
+<!-- Easy Access Section -->
 <section class="how-it-works">
     <div class="container">
         <div class="section-title">
-            <h2>FEATURES</h2>
-            <p>We provide real travel solutions to real problems without any delays or bots in between.</p>
+            <h2>Easy Access to Customer Care Contact Details</h2>
+            <p>Our website is designed with a clear intention and a simple goal; We are here to provide users updated contact information of all the leading companies of United States for no charges at all! Just type the company name and you get the number within seconds. No delays.</p>
         </div>
 
         <div class="steps">
             <div class="step">
                 <div class="step-number">1</div>
-                <h3>Connect Instantly to a Real Expert</h3>
-                <p>No more waiting and direct calling to a live agent to get the answers to your travel problems. Reschedule your calls at any time that suits your schedule, and speak to an agent.</p>
+                <h3>Get Info Quickly</h3>
+                <p>Search and find contact info of your desired company right away with our platform</p>
             </div>
 
             <div class="step">
                 <div class="step-number">2</div>
-                <h3>Round-the-Clock Support</h3>
-                <p>Travel needs don't arise within business hours. Therefore, we are here for you 24/7 to assist you with a booking or answer your queries. Call us when you feel and get solutions to your problems.</p>
+                <h3>Information Updated Frequently</h3>
+                <p>Our team updates and reviews every piece of information for your convenience</p>
             </div>
 
             <div class="step">
                 <div class="step-number">3</div>
-                <h3>Multi-Brand Assistance</h3>
-                <p>Stop juggling from website to website for contact numbers and simply call us for all your needs. We connect you with whichever company you want to talk to within the United States or even internationally.</p>
-            </div>
-
-            <div class="step">
-                <div class="step-number">4</div>
-                <h3>No Stress, Only Solutions</h3>
-                <p>From early bookings to last-minute ones, get support from Call Help Desk professionals without waiting time. Travel with peace of mind with expert guidance and reliable support at every step.</p>
+                <h3>Clean and Simple Layout</h3>
+                <p>CallHelpDesk is just as easy as it looks with its simple design and layout!</p>
             </div>
         </div>
     </div>
@@ -159,78 +158,58 @@
 <section class="faq">
     <div class="container">
         <div class="section-title">
-            <h2>Frequently Asked Questions</h2>
-            <p>Find answers to common questions about our service</p>
+            <h2>Your Questions, Our Answers</h2>
+            <p>Find answers to the common queries of our users</p>
         </div>
 
         <div class="faq-list">
             <div class="faq-item active">
                 <div class="faq-question">
-                    <h3>Why use CallHelpDesk.com instead of Google for support numbers?</h3>
+                    <h3>Are the customer support details on CallHelpDesk free to use?</h3>
                     <span class="faq-toggle">-</span>
                 </div>
                 <div class="faq-answer">
-                    <p>With Call Help Desk, you get support numbers and instant assistance without hunting Google for hours. Our platform is trusted by thousands to get to those customer service lines fast and connect with a human agent, skipping all the hassle.</p>
+                    <p>Yes. All the numbers are completely free to access. Reach out to us now to get the contact details of any company</p>
                 </div>
             </div>
 
             <div class="faq-item">
                 <div class="faq-question">
-                    <h3>Is the Call Help Desk available 24/7?</h3>
+                    <h3>Are the numbers on CallHelpDesk updated?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>Yes. Call Help Desk is there for your travel needs round-the-clock, offering you support. We're available anytime you want and get answers to your needs regardless of time zones or emergencies.</p>
+                    <p>Yes! Our team regularly checks and updates the numbers to maintain accuracy. Our only goal is to make your job easier</p>
                 </div>
             </div>
 
             <div class="faq-item">
                 <div class="faq-question">
-                    <h3>Does Call Help Desk handle emergency flight issues or last-minute bookings?</h3>
+                    <h3>Can I access CallHelpDesk anytime?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>If you want support, like for cancellations or rescheduling, Call Help Desk is there for you. For flight bookings or last-minute reservations, we suggest you talk to the concerned company's agent directly or use their emergency support number.</p>
+                    <p>CallHelpDesk remains accessible 24/7. You can look for support numbers anytime, day or night, weekend or weekdays, without any restrictions</p>
                 </div>
             </div>
 
             <div class="faq-item">
                 <div class="faq-question">
-                    <h3>Is my personal and booking information safe with CallHelpDesk?</h3>
+                    <h3>Will I get contact numbers for most leading companies on CallHelpDesk?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>Yes. Whatever personal data you provide, Call Help Desk is secure with us. We protect your personal information through secure protocols. For details, we suggest you read our Privacy Policy thoroughly.</p>
+                    <p>CallHelpDesk provides customer support numbers for a wide range of registered companies. This includes all the leading companies as well</p>
                 </div>
             </div>
 
             <div class="faq-item">
                 <div class="faq-question">
-                    <h3>Can I book new flights directly through CallHelpDesk?</h3>
+                    <h3>Are customer numbers of different industries available on CallHelpDesk?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>Yes, you can book a flight to your desired destination from multiple airlines with Call Help Desk. Our goal is to connect you with airline support for inquiries, cancellations, or changes, and also assist you with flight booking whenever needed.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">
-                    <h3>Do I need to wait on hold to speak with CallHelpDesk?</h3>
-                    <span class="faq-toggle">+</span>
-                </div>
-                <div class="faq-answer">
-                    <p>No, you don't have to wait longer to speak with an agent here. We aim to reduce the hold time by connecting you to live agents directly and offering "zero wait time" support.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">
-                    <h3>Is CallHelpDesk.com free?</h3>
-                    <span class="faq-toggle">+</span>
-                </div>
-                <div class="faq-answer">
-                    <p>Yes, Call Help Desk is free to use for those seeking airline support. There aren't any charges for getting the assistance, which makes us a convenient resource for travelers.</p>
+                    <p>Yes, absolutely. We offer customer care contact details of the leading companies in different domains. Our only target is to help you out with the support contact numbers</p>
                 </div>
             </div>
         </div>
@@ -312,9 +291,9 @@
 <!-- CTA Section -->
 <section class="cta">
     <div class="container">
-        <h2>Talk to a Pro in Seconds!</h2>
-        <p>Call Help Desk values your time and thus connects you instantly to an actual human with no waiting times who handles all your travel needs quickly.</p>
-        <a href="#" class="btn">Get Started</a>
+        <h2>Still Searching? Let us Assist You!</h2>
+        <p>We completely understand the feeling, that is why we have our support team ready for help round the clock for your convenience! Call Now to Connect with Our Experts!</p>
+        <a href="#" class="btn">Call Now</a>
     </div>
 </section>
 
@@ -407,6 +386,13 @@
 .search-item.no-results {
     color: #666;
     font-style: italic;
+}
+
+.cta p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto 30px;
+    opacity: .9;
 }
 
 /* Hide search container when scrolling */
@@ -504,7 +490,7 @@
 
 .about-features {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     margin-top: 50px;
 }

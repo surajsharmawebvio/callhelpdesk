@@ -32,12 +32,19 @@ class CompanyController extends Controller
     public function companies(Request $request)
     {
         $letter = $request->get('letter', 'a');
-        $perPage = 20; // Match the Vue component's companiesPerPage
+        $search = $request->get('search');
+        $perPage = 10; // Match the Vue component's companiesPerPage
 
-        // Get paginated companies filtered by letter
-        $companies = Company::where('name', 'like', $letter . '%')
-            ->orderBy('name')
-            ->paginate($perPage);
+        // Add search filter if provided
+        if ($search) {
+             $query = Company::where('name', 'like', '%' . $search . '%');
+        }
+        if (!$search && $letter) {
+            $query = Company::where('name', 'like', $letter . '%');
+        }
+
+        // Get paginated companies
+        $companies = $query->orderBy('name')->paginate($perPage);
 
         return view('companies', [
             'companies' => $companies->items(),

@@ -17,17 +17,19 @@
 <section class="privacy-content">
     <div class="container">
         <div class="content-wrapper">
+            <!--
             <div class="last-updated">
                 <p>Last updated: November 13, 2025</p>
             </div>
+            -->
 
             <div class="policy-section">
-                <p>Call Help Desk ("we," "our," or "us") is committed to respecting the privacy of visitors and users of our website. Everything regarding your data and information is explained on this Privacy Policy page. You will know how it is collected, processed, and safeguarded when you visit our website or use any of our services.</p>
+                <p>CallHelpDesk (“we,” “our,” or “us”) is committed to respecting the privacy of visitors and users. Everything regarding your data and information is explained on this Privacy Policy page. You will know how it is collected, processed, and safeguarded when you visit our platform or use any of our services.</p>
             </div>
 
             <div class="policy-section">
                 <h2>User Information We Handle</h2>
-                <p>While using our site, we may ask for some basic information to further enhance the service of our platform. This information can be:</p>
+                <p>While using CallHelpDesk, we may ask for some basic information to further enhance the service of our platform. This information can be:</p>
                 <ul>
                     <li>We gather basic technical data about your visit, such as the device you are using, the websites you are viewing, and the browser type.</li>
                     <li>Cookies remember your settings, monitor traffic, and monitor how you use your website. However, you have the option to block cookies in your browser. But remember, doing so will make some of our services inaccessible.</li>
@@ -53,7 +55,7 @@
                 <p>Selling or distributing user data for marketing or advertising purposes goes against our policy; we don't do that. Data may be received only under certain, justifiable circumstances, such as:</p>
                 <ul>
                     <li>Compliance with a legal obligation, a request of a government agency, or a court order</li>
-                    <li>Protection of any of Call Help Desk's rights, property, or business integrity</li>
+                    <li>Protection of any of CallHelpDesk's rights, property, or business integrity</li>
                     <li>Cooperation with service providers that assist with website analytics or hosting, all under strict confidentiality agreements</li>
                 </ul>
             </div>
@@ -61,7 +63,7 @@
             <div class="policy-section">
                 <h2>Securing Your Data</h2>
                 <p>We have implemented required technical safeguards to protect the information we collect through our website. These safeguards are to limit the possible risk of unauthorized access, misuse, modification, or disclosure.</p>
-                <p>However, we cannot guarantee the absolute protection of data. We have taken steps to safeguard whatever information we collect from our website, and we always urge our visitors to exercise caution when leaving our site or sharing any personal information over the internet.</p>
+                <p>However, we cannot guarantee absolute protection of data. We have taken steps to safeguard whatever information we collect from our website, and we always urge our visitors to exercise caution when leaving our site or sharing any personal information over the internet.</p>
             </div>
 
             <div class="policy-section">
@@ -72,18 +74,18 @@
 
             <div class="policy-section">
                 <h2>Data Policy for Children</h2>
-                <p>Gathering any minor's data is never our intention. Our website and content are for general informational purposes only and are not intended for children. However, if any such data has been gathered unknowingly, it will be promptly removed from our site. That's our guarantee.</p>
+                <p>Gathering any minor's data is never our intention. Our website and content are for general informational purposes only and are not intended for children. However, if any such data has been gathered unknowingly, it will be promptly removed from our site.</p>
             </div>
 
             <div class="policy-section">
                 <h2>Policy Revisions</h2>
-                <p>We might change some provisions in this policy page from time to time. This will be done to be aligned with any changes to the site, applicable laws, and data protection standards. We will update the changes on the site. If you keep using the website after the changes have been made, you will be considered to have accepted them.</p>
+                <p>We might change some provisions in this policy from time to time. This will be done to be aligned with any changes to the site, applicable laws, and data protection standards. We will update the changes on the site. If you keep using the website after the changes have been made, you will be considered to have accepted them.</p>
             </div>
 
             <div class="policy-section">
                 <h2>How to Get in Touch</h2>
                 <p>Got any more queries regarding the privacy of data? Our team will be glad to help you out.</p>
-                <p>Contact us through privacy@callhelpdesk.com or at +1 (012) 345-6789.</p>
+                <p>Contact us by reaching out at connect@callhelpdesk.com.</p>
             </div>
         </div>
     </div>
@@ -152,7 +154,7 @@
 }
 
 .content-wrapper {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
     background: white;
     border-radius: 20px;
