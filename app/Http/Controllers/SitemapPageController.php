@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Company;
 use App\Models\CompanyCategory;
+use App\Models\StaticPage;
 
 class SitemapPageController extends Controller
 {
@@ -29,7 +30,11 @@ class SitemapPageController extends Controller
         $companies = Company::select('id', 'url', 'name')
             ->orderBy('name')
             ->paginate(200);
+        
+        // Load SEO data for sitemap page
+        $staticPage = StaticPage::where('route_name', 'sitemap')->first();
+        $seo = $staticPage?->seo;
             
-        return view('sitemap', compact('companies'));
+        return view('sitemap', compact('companies', 'seo'));
     }
 }

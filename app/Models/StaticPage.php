@@ -11,8 +11,6 @@ class StaticPage extends Model
 
     protected $fillable = [
         'route_name',
-        'title',
-        'content',
         'published',
     ];
 
@@ -25,7 +23,7 @@ class StaticPage extends Model
      */
     public function getSeoTitleFallback(): ?string
     {
-        return $this->title;
+        return ucwords(str_replace('-', ' ', $this->route_name));
     }
 
     /**
@@ -33,6 +31,6 @@ class StaticPage extends Model
      */
     public function getSeoDescriptionFallback(): ?string
     {
-        return strip_tags($this->content) ? mb_substr(strip_tags($this->content), 0, 160) : null;
+        return 'Visit CallHelpDesk for ' . ucwords(str_replace('-', ' ', $this->route_name)) . ' information and customer service contact details.';
     }
 }

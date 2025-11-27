@@ -20,6 +20,12 @@ class StaticPageResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
+    protected static ?string $navigationLabel = 'SEO Management';
+
+    protected static ?string $modelLabel = 'Page SEO';
+
+    protected static ?string $pluralModelLabel = 'Pages SEO';
+
     public static function form(Schema $schema): Schema
     {
         return StaticPageForm::configure($schema);
