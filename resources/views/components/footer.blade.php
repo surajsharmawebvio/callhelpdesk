@@ -32,7 +32,7 @@
                     <li><i class="fas fa-map-marker-alt"></i> 123 Support Street, NY</li>
                     <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
                     -->
-                    <li><i class="fas fa-envelope"></i> help@callhelpdesk.com</li>
+                    <li><i class="fas fa-envelope"></i> connect@callhelpdesk.com</li>
                 </ul>
                 <div class="social-links">
                     <a href="https://www.facebook.com/profile.php?id=61582322640364"><i class="fab fa-facebook-f"></i></a>
@@ -43,7 +43,7 @@
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; {{ date('Y') }} Elevate Support. All rights reserved.</p>
+            <p>&copy; {{ date('Y') }} <a href="https://callhelpdesk.com" >CallHelpDesk</a>. All rights reserved.</p>
         </div>
     </div>
 </footer>

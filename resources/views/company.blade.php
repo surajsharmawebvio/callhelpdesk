@@ -203,6 +203,7 @@
                             </nav>
                         </div>
 
+                        <!--
                         <div>
                             <div class="h4">Call with our free super-powered phone</div>
                             <ul>
@@ -223,6 +224,7 @@
                             Service</h3>
                         <div class="list-block"><a href="#">AirBnB Customer Service</a><a href="#">Capital One Customer
                                 Service</a><a href="#">Comcast Customer Service</a></div>
+                        -->
                         @if(isset($company->right_ad_image))
                         <div class="sticky-top right-ad-container" style="text-align: center;">
                             <div class="image-wrapper"><span class="ads-label">Ads</span><img
@@ -304,7 +306,7 @@
     .rich-content h4,
     .rich-content h5,
     .rich-content h6 {
-        margin-top: 1.5rem !important;
+        margin-top: 0.75rem !important;
         margin-bottom: 0.75rem !important;
         font-weight: 600 !important;
     }

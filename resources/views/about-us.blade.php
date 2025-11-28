@@ -236,7 +236,7 @@
 }
 
 .trusted-content {
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
     text-align: center;
 }
@@ -310,7 +310,7 @@
 }
 
 .commitment-content {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
     text-align: center;
     background: #f8f9fa;

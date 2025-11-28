@@ -218,6 +218,7 @@
 
 <!-- Testimonials Section -->
 <section class="testimonials">
+    <div class="container">
         <div class="section-title">
             <h2>What Our Users Say</h2>
             <p>Thousands of customers have saved time and frustration with our service.</p>
@@ -227,7 +228,7 @@
             <div class="owl-carousel owl-theme testimonials-carousel">
                 <div class="testimonial-slide">
                     <div class="testimonial-avatar">
-                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="John Vallelonga">
+                        <img src="{{ asset('images/review/John Vallelonga.jpg') }}" alt="John Vallelonga">
                     </div>
                     <p class="testimonial-text">"Call Help Desk just does it right! I found the contact details of my airline within seconds, and I am glad I didn’t go through an hour-long search just to fix my reservation!"</p>
                     <h4 class="testimonial-author">John Vallelonga</h4>
@@ -235,7 +236,7 @@
 
                 <div class="testimonial-slide">
                     <div class="testimonial-avatar">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Sarah Jones">
+                        <img src="{{ asset('images/review/Sarah Jones.jpg') }}" alt="Sarah Jones">
                     </div>
                     <p class="testimonial-text">"I had issues with my reservations, and I couldn’t find my ticket on mail, I found this website, and it has been my life savior! I searched for the airline helpline and called them for assistance right away. Great experience!"</p>
                     <h4 class="testimonial-author">Sarah Jones</h4>
@@ -243,7 +244,7 @@
 
                 <div class="testimonial-slide">
                     <div class="testimonial-avatar">
-                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Michael Turner">
+                        <img src="{{ asset('images/review/Michael Turner.jpg') }}" alt="Michael Turner">
                     </div>
                     <p class="testimonial-text">"Changing my travel dates felt impossible until I landed on Call Help Desk. The site showed me the exact number I needed, and the airline resolved my issue in minutes. It saved me from a long chain of emails."</p>
                     <h4 class="testimonial-author">Michael Turner</h4>
@@ -251,7 +252,7 @@
 
                 <div class="testimonial-slide">
                     <div class="testimonial-avatar">
-                        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Daniel Brooks">
+                        <img src="{{ asset('images/review/Daniel Brooks.jpg') }}" alt="Daniel Brooks">
                     </div>
                     <p class="testimonial-text">"I was stuck with a payment error while booking, and the app kept crashing. I came across this platform and got the official support line without any confusion. Quick, simple, and genuinely helpful."</p>
                     <h4 class="testimonial-author">Daniel Brooks</h4>
@@ -259,7 +260,7 @@
 
                 <div class="testimonial-slide">
                     <div class="testimonial-avatar">
-                        <img src="https://randomuser.me/api/portraits/women/55.jpg" alt="Ana Ribeiro">
+                        <img src="{{ asset('images/review/Ana Ribeiro.jpg') }}" alt="Ana Ribeiro">
                     </div>
                     <p class="testimonial-text">"I needed to update the passenger name on my reservation, and most websites sent me in circles. Call Help Desk directed me to the right team straightaway. The clarity and accuracy really impressed me."</p>
                     <h4 class="testimonial-author">Ana Ribeiro</h4>
@@ -267,7 +268,7 @@
 
                 <div class="testimonial-slide">
                     <div class="testimonial-avatar">
-                        <img src="https://randomuser.me/api/portraits/women/55.jpg" alt="Leonard White">
+                        <img src="{{ asset('images/review/Leonard White.jpg') }}" alt="Leonard White">
                     </div>
                     <p class="testimonial-text">"My flight got canceled suddenly, and I was unsure how to request compensation. I used Call Help Desk to get the official helpline, called in, and sorted everything without hassle. A dependable resource every traveler should bookmark."</p>
                     <h4 class="testimonial-author">Leonard White</h4>
@@ -280,8 +281,8 @@
 <section class="cta">
     <div class="container">
         <h2>Still Searching? Let us Assist You!</h2>
-        <p>We completely understand the feeling, that is why we have our support team ready for help round the clock for your convenience! Call Now to Connect with Our Experts!</p>
-        <a href="#" class="btn">Call Now</a>
+        <p>We completely understand the feeling, that is why we have our support team ready for help round the clock for your convenience! Connect Now to Connect with Our Experts!</p>
+        <a href="mailto:connect@callhelpdesk.com" class="btn">Connect Now</a>
     </div>
 </section>
 
@@ -459,7 +460,7 @@
 }
 
 .about-content {
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
     text-align: center;
 }
@@ -578,7 +579,7 @@
 }
 
 .faq .container {
-    max-width: 1000px;
+    max-width: 1200px;
 }
 
 .accordion-flush .accordion-item {
