@@ -92,7 +92,7 @@
                                     <div class="ul-pad tile-right" style="margin-bottom: 0">
                                         {!! $company->ulpad ?? '' !!}
                                     </div>
-
+                                    <!--
                                     <div><b>Free tools for easier calling</b></div>
                                     <div class="ul-pad tile-right">
                                         <a style="margin-right: 1.5rem" class="und" href="#">
@@ -105,6 +105,7 @@
                                             Schedule a call
                                         </a>
                                     </div>
+                                -->
                                 </div>
                             </div>
                         </div>
@@ -522,6 +523,19 @@
         background-color: #1565ff;
         transform: translateY(-2px);
     }
+
+/* Social media specific hover colors */
+.social-links a[href*="facebook.com"]:hover {
+    background-color: #1877F2;
+}
+
+.social-links a[href*="x.com"]:hover {
+    background-color: #1DA1F2;
+}
+
+.social-links a[href*="instagram.com"]:hover {
+    background-color: #E4405F;
+}
 </style>
 
 <script>

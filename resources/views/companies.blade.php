@@ -592,5 +592,18 @@
         background-color: #1565ff;
         transform: translateY(-2px);
     }
+
+/* Social media specific hover colors */
+.social-links a[href*="facebook.com"]:hover {
+    background-color: #1877F2;
+}
+
+.social-links a[href*="x.com"]:hover {
+    background-color: #1DA1F2;
+}
+
+.social-links a[href*="instagram.com"]:hover {
+    background-color: #E4405F;
+}
 </style>
 @endsection
