@@ -3,7 +3,7 @@
         <div class="footer-container">
             <div class="footer-col">
                 <h3>Elevate Support</h3>
-                <p>Call Help Desk helps you connect with live agents faster and get your airline issues resolved with no waiting times. Whether it's to make bookings, cancellations, refunds, or baggage issues, we're here 24/7 to make your flying simpler.</p>
+                <p>Call Help Desk connects you to official helplines for companies in every sector. From start to finish, we are here to aid you with your queries. Find the right official helpline information as we ease the process so you spend less time searching and more time getting solutions. </p>
                 <div class="social-links">
                     <a href="https://www.facebook.com/profile.php?id=61582322640364"><i class="fab fa-facebook-f"></i></a>
                     <a href="https://x.com/callhelpdesk123"><i class="fab fa-twitter"></i></a>
@@ -34,8 +34,10 @@
             <div class="footer-col">
                 <h3>Contact Us</h3>
                 <ul>
+                    <!--
                     <li><i class="fas fa-map-marker-alt"></i> 123 Support Street, NY</li>
                     <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                    -->
                     <li><i class="fas fa-envelope"></i> help@callhelpdesk.com</li>
                 </ul>
             </div>

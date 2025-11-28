@@ -9,9 +9,9 @@ class DisclaimerController extends Controller
 {
     public function index()
     {
-        $staticPage = StaticPage::where('route_name', 'disclaimer')->first();
-        $seo = $staticPage?->seo;
+        $page = StaticPage::where('route_name', 'disclaimer')->first();
+        $seo = $page?->seo;
 
-        return view('disclaimer', compact('seo'));
+        return view('disclaimer', compact('seo', 'page'));
     }
 }

@@ -9,9 +9,9 @@ class AboutUsController extends Controller
 {
     public function index()
     {
-        $staticPage = StaticPage::where('route_name', 'about-us')->first();
-        $seo = $staticPage?->seo;
+        $page = StaticPage::where('route_name', 'about-us')->first();
+        $seo = $page?->seo;
 
-        return view('about-us', compact('seo'));
+        return view('about-us', compact('seo', 'page'));
     }
 }

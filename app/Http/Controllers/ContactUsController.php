@@ -9,9 +9,9 @@ class ContactUsController extends Controller
 {
     public function index()
     {
-        $staticPage = StaticPage::where('route_name', 'contact-us')->first();
-        $seo = $staticPage?->seo;
+        $page = StaticPage::where('route_name', 'contact-us')->first();
+        $seo = $page?->seo;
 
-        return view('contact-us', compact('seo'));
+        return view('contact-us', compact('seo', 'page'));
     }
 }

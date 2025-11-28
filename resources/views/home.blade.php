@@ -33,8 +33,8 @@
 <section class="features">
     <div class="container">
         <div class="section-title">
-            <h2>Features</h2>
-            <p>We provide real travel solutions to real problems without any delays or bots in between</p>
+            <h2>The Callhelpdesk Advantage </h2>
+            <p>Just search for the brand and find contact information without any hassle! </p>
         </div>
 
         <div class="features-grid">
@@ -69,7 +69,7 @@
 <section class="about-us">
     <div class="container">
         <div class="section-title">
-            <h2>What We Offer</h2>
+            <h2>What We Provide</h2>
         </div>
         <div class="about-content">
             <p>CallHelpDesk brings all customer support details together in one place for quick and reliable access</p>
@@ -81,12 +81,7 @@
                     </div>
                     <div class="feature-text">
                         <h4>Locating the Correct Number Is Easy as Ever</h4>
-                        <p>An endless search just to contact is tiresome, and we understand this. Our website's interface is as easy as it gets for you to search and find relevant information right away!</p>
-                        <ul style="text-align: left; margin-top: 15px; padding-left: 20px; color: #666;">
-                            <li>Instant access to contact details</li>
-                            <li>Clear and easy navigation</li>
-                            <li>Search without any confusion</li>
-                        </ul>
+                        <p>An endless search just to contact information of a brand is nothing but tiresome, and we understand this. Our website's interface is as easy as it gets for you to search and find relevant information right away! Just read along right now</p>
                     </div>
                 </div>
                 
@@ -95,13 +90,8 @@
                         <i class="fas fa-check-circle"></i>
                     </div>
                     <div class="feature-text">
-                        <h4>Reliable Information for Every User</h4>
+                        <h4>Find Customer Helpline for Every Brand</h4>
                         <p>Our platform is built to make your search effortless, and with that in mind we are offering contact details for all well-known companies across industries right for you! Everything is designed for a smoother experience without any extra steps!</p>
-                        <ul style="text-align: left; margin-top: 15px; padding-left: 20px; color: #666;">
-                            <li>Clear Customer Support Info for Popular US Companies</li>
-                            <li>Easy to Understand User Interface for All</li>
-                            <li>A Smooth Search Experience from Start to Finish</li>
-                        </ul>
                     </div>
                 </div>
                 
@@ -112,11 +102,6 @@
                     <div class="feature-text">
                         <h4>Save Your Time Effortlessly with the Right Helpline!</h4>
                         <p>Instead of browsing multiple pages and searching through multiple domains, you can find the correct number and right information for your requirement in one place! CallHelpDesk helps you move quickly so you can fix your problem and save time!</p>
-                        <ul style="text-align: left; margin-top: 15px; padding-left: 20px; color: #666;">
-                            <li>We help you avoid unnecessary delays in finding the numbers</li>
-                            <li>Fast Results which offer you an ease of mind</li>
-                            <li>Efficient access to the right company contact details always!</li>
-                        </ul>
                     </div>
                 </div>
             </div>
@@ -135,7 +120,7 @@
         <div class="steps">
             <div class="step">
                 <div class="step-number">1</div>
-                <h3>Get Info Quickly</h3>
+                <h3>Get Helpline Info Quickly</h3>
                 <p>Search and find contact info of your desired company right away with our platform</p>
             </div>
 
@@ -162,54 +147,69 @@
             <p>Find answers to the common queries of our users</p>
         </div>
 
-        <div class="faq-list">
-            <div class="faq-item active">
-                <div class="faq-question">
-                    <h3>Are the customer support details on CallHelpDesk free to use?</h3>
-                    <span class="faq-toggle">-</span>
-                </div>
-                <div class="faq-answer">
-                    <p>Yes. All the numbers are completely free to access. Reach out to us now to get the contact details of any company</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">
-                    <h3>Are the numbers on CallHelpDesk updated?</h3>
-                    <span class="faq-toggle">+</span>
-                </div>
-                <div class="faq-answer">
-                    <p>Yes! Our team regularly checks and updates the numbers to maintain accuracy. Our only goal is to make your job easier</p>
+        <div class="accordion accordion-flush" id="faqAccordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                        Are the customer support details on CallHelpDesk free to use?
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Yes. All the numbers are completely free to access. Reach out to us now to get the contact details of any company
+                    </div>
                 </div>
             </div>
 
-            <div class="faq-item">
-                <div class="faq-question">
-                    <h3>Can I access CallHelpDesk anytime?</h3>
-                    <span class="faq-toggle">+</span>
-                </div>
-                <div class="faq-answer">
-                    <p>CallHelpDesk remains accessible 24/7. You can look for support numbers anytime, day or night, weekend or weekdays, without any restrictions</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">
-                    <h3>Will I get contact numbers for most leading companies on CallHelpDesk?</h3>
-                    <span class="faq-toggle">+</span>
-                </div>
-                <div class="faq-answer">
-                    <p>CallHelpDesk provides customer support numbers for a wide range of registered companies. This includes all the leading companies as well</p>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Are the numbers on CallHelpDesk updated?
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Yes! Our team regularly checks and updates the numbers to maintain accuracy. Our only goal is to make your job easier
+                    </div>
                 </div>
             </div>
 
-            <div class="faq-item">
-                <div class="faq-question">
-                    <h3>Are customer numbers of different industries available on CallHelpDesk?</h3>
-                    <span class="faq-toggle">+</span>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Can I access CallHelpDesk anytime?
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        CallHelpDesk remains accessible 24/7. You can look for support numbers anytime, day or night, weekend or weekdays, without any restrictions
+                    </div>
                 </div>
-                <div class="faq-answer">
-                    <p>Yes, absolutely. We offer customer care contact details of the leading companies in different domains. Our only target is to help you out with the support contact numbers</p>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFour">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        Will I get contact numbers for most leading companies on CallHelpDesk?
+                    </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        CallHelpDesk provides customer support numbers for a wide range of registered companies. This includes all the leading companies as well
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFive">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                        Are customer numbers of different industries available on CallHelpDesk?
+                    </button>
+                </h2>
+                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Yes, absolutely. We offer customer care contact details of the leading companies in different domains. Our only target is to help you out with the support contact numbers
+                    </div>
                 </div>
             </div>
         </div>
@@ -218,74 +218,62 @@
 
 <!-- Testimonials Section -->
 <section class="testimonials">
-    <div class="container">
         <div class="section-title">
             <h2>What Our Users Say</h2>
             <p>Thousands of customers have saved time and frustration with our service.</p>
         </div>
 
         <div class="testimonials-container">
-            <div class="testimonial-slider">
-                <div class="testimonial-track">
-                    <div class="testimonial-slide">
-                        <div class="testimonial-avatar">
-                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Johnson">
-                        </div>
-                        <p class="testimonial-text">"I was on hold for over an hour with my airline. With Elevate, I
-                            got through to a representative in just 4 minutes! This service is a lifesaver."</p>
-                        <h4 class="testimonial-author">Sarah Johnson</h4>
-                        <p class="testimonial-role">Frequent Traveler</p>
+            <div class="owl-carousel owl-theme testimonials-carousel">
+                <div class="testimonial-slide">
+                    <div class="testimonial-avatar">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="John Vallelonga">
                     </div>
+                    <p class="testimonial-text">"Call Help Desk just does it right! I found the contact details of my airline within seconds, and I am glad I didn’t go through an hour-long search just to fix my reservation!"</p>
+                    <h4 class="testimonial-author">John Vallelonga</h4>
+                </div>
 
-                    <div class="testimonial-slide">
-                        <div class="testimonial-avatar">
-                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen">
-                        </div>
-                        <p class="testimonial-text">"As a small business owner, time is money. Elevate has saved me
-                            countless hours navigating automated phone systems. Worth every penny!"</p>
-                        <h4 class="testimonial-author">Michael Chen</h4>
-                        <p class="testimonial-role">Business Owner</p>
+                <div class="testimonial-slide">
+                    <div class="testimonial-avatar">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Sarah Jones">
                     </div>
+                    <p class="testimonial-text">"I had issues with my reservations, and I couldn’t find my ticket on mail, I found this website, and it has been my life savior! I searched for the airline helpline and called them for assistance right away. Great experience!"</p>
+                    <h4 class="testimonial-author">Sarah Jones</h4>
+                </div>
 
-                    <div class="testimonial-slide">
-                        <div class="testimonial-avatar">
-                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Jessica Williams">
-                        </div>
-                        <p class="testimonial-text">"I used to dread calling customer service. Now with Elevate, I
-                            know I'll get help quickly. The peace of mind is incredible."</p>
-                        <h4 class="testimonial-author">Jessica Williams</h4>
-                        <p class="testimonial-role">Satisfied Customer</p>
+                <div class="testimonial-slide">
+                    <div class="testimonial-avatar">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Michael Turner">
                     </div>
+                    <p class="testimonial-text">"Changing my travel dates felt impossible until I landed on Call Help Desk. The site showed me the exact number I needed, and the airline resolved my issue in minutes. It saved me from a long chain of emails."</p>
+                    <h4 class="testimonial-author">Michael Turner</h4>
+                </div>
 
-                    <div class="testimonial-slide">
-                        <div class="testimonial-avatar">
-                            <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="David Rodriguez">
-                        </div>
-                        <p class="testimonial-text">"CallHelpDesk has revolutionized how I help my clients. No more long waits on hold - we get answers instantly!"</p>
-                        <h4 class="testimonial-author">David Rodriguez</h4>
-                        <p class="testimonial-role">Travel Agent</p>
+                <div class="testimonial-slide">
+                    <div class="testimonial-avatar">
+                        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Daniel Brooks">
                     </div>
+                    <p class="testimonial-text">"I was stuck with a payment error while booking, and the app kept crashing. I came across this platform and got the official support line without any confusion. Quick, simple, and genuinely helpful."</p>
+                    <h4 class="testimonial-author">Daniel Brooks</h4>
+                </div>
 
-                    <div class="testimonial-slide">
-                        <div class="testimonial-avatar">
-                            <img src="https://randomuser.me/api/portraits/women/55.jpg" alt="Emily Davis">
-                        </div>
-                        <p class="testimonial-text">"As someone who travels frequently for work, CallHelpDesk saves me hours every month. Their service is exceptional!"</p>
-                        <h4 class="testimonial-author">Emily Davis</h4>
-                        <p class="testimonial-role">Busy Professional</p>
+                <div class="testimonial-slide">
+                    <div class="testimonial-avatar">
+                        <img src="https://randomuser.me/api/portraits/women/55.jpg" alt="Ana Ribeiro">
                     </div>
+                    <p class="testimonial-text">"I needed to update the passenger name on my reservation, and most websites sent me in circles. Call Help Desk directed me to the right team straightaway. The clarity and accuracy really impressed me."</p>
+                    <h4 class="testimonial-author">Ana Ribeiro</h4>
+                </div>
+
+                <div class="testimonial-slide">
+                    <div class="testimonial-avatar">
+                        <img src="https://randomuser.me/api/portraits/women/55.jpg" alt="Leonard White">
+                    </div>
+                    <p class="testimonial-text">"My flight got canceled suddenly, and I was unsure how to request compensation. I used Call Help Desk to get the official helpline, called in, and sorted everything without hassle. A dependable resource every traveler should bookmark."</p>
+                    <h4 class="testimonial-author">Leonard White</h4>
                 </div>
             </div>
-
-            <div class="slider-nav">
-                <div class="slider-dot active" data-slide="0"></div>
-                <div class="slider-dot" data-slide="1"></div>
-                <div class="slider-dot" data-slide="2"></div>
-                <div class="slider-dot" data-slide="3"></div>
-                <div class="slider-dot" data-slide="4"></div>
-            </div>
         </div>
-    </div>
 </section>
 
 <!-- CTA Section -->
@@ -591,71 +579,52 @@
     background-color: #f8f9fa;
 }
 
-.faq-list {
+.faq .container {
     max-width: 1000px;
-    margin: 0 auto;
 }
 
-.faq-item {
-    background: white;
-    padding: 0;
-    margin-bottom: 20px;
-    border-radius: 16px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden;
+.accordion-flush .accordion-item {
+    border-left: 0;
+    border-right: 0;
+    border-radius: 0;
 }
 
-.faq-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+.accordion-flush .accordion-item:first-child {
+    border-top: 0;
 }
 
-.faq-question {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 30px;
-    cursor: pointer;
-    user-select: none;
+.accordion-flush .accordion-item:last-child {
+    border-bottom: 0;
 }
 
-.faq-question h3 {
-    font-size: 20px;
-    font-weight: 700;
-    color: #333;
-    margin: 0;
-    line-height: 1.4;
-    flex: 1;
-    padding-right: 20px;
+.accordion-button {
+    background-color: #fff;
+    border: 0;
+    border-radius: 0 !important;
+    box-shadow: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #212529;
+    padding: 1rem 1.25rem;
 }
 
-.faq-toggle {
-    font-size: 28px;
-    font-weight: 700;
+.accordion-button:not(.collapsed) {
+    background-color: #fff;
     color: var(--primary);
-    min-width: 30px;
-    text-align: center;
-    transition: transform 0.3s ease;
+    box-shadow: none;
 }
 
-.faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease, padding 0.4s ease;
-    padding: 0 30px;
+.accordion-button:focus {
+    box-shadow: none !important;
+    outline: none !important;
 }
 
-.faq-item.active .faq-answer {
-    max-height: 500px;
-    padding: 0 30px 30px 30px;
-}
-
-.faq-answer p {
-    font-size: 16px;
+.accordion-body {
+    padding: 0 1.25rem 1rem 1.25rem;
+    background-color: #f8f9fa;
+    color: #6c757d;
+    font-size: 1rem;
     line-height: 1.6;
-    color: #666;
-    margin: 0;
 }
 
 /* Responsive adjustments for FAQ */
@@ -664,25 +633,14 @@
         padding: 60px 0;
     }
     
-    .faq-question {
-        padding: 25px 20px;
+    .accordion-button {
+        padding: 0.75rem 1rem;
+        font-size: 1rem;
     }
     
-    .faq-question h3 {
-        font-size: 18px;
-    }
-    
-    .faq-toggle {
-        font-size: 24px;
-        min-width: 25px;
-    }
-    
-    .faq-item.active .faq-answer {
-        padding: 0 20px 25px 20px;
-    }
-    
-    .faq-answer p {
-        font-size: 15px;
+    .accordion-body {
+        padding: 0 1rem 0.75rem 1rem;
+        font-size: 0.95rem;
     }
 }
 button {
@@ -691,6 +649,18 @@ button {
 .hero-content{
     text-align: center;
 }
+.testimonial-text {
+    font-size: 1.1rem !important;
+    height: 280px !important;
+}
+.testimonial-slide {
+    padding: 50px 50px 20px 50px !important;
+}
+.accordion-button {
+    background: #ffffff78 !important;
+    color: #212529 !important;
+}
+
 </style>
 
 <script>
@@ -895,58 +865,23 @@ document.addEventListener('DOMContentLoaded', function() {
         headerSearchBtn.addEventListener('click', handleSearch);
     }
 
-    // Testimonial slider
-    const track = document.querySelector('.testimonial-track');
-    const slides = document.querySelectorAll('.testimonial-slide');
-    const dots = document.querySelectorAll('.slider-dot');
-    let currentSlide = 0;
-
-    function goToSlide(slideIndex) {
-        track.style.transform = `translateX(-${slideIndex * 100}%)`;
-
-        // Update active dot
-        dots.forEach(dot => dot.classList.remove('active'));
-        dots[slideIndex].classList.add('active');
-
-        currentSlide = slideIndex;
-    }
-
-    // Add click events to dots
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            goToSlide(index);
-        });
-    });
-
-    // Auto slide
-    setInterval(() => {
-        let nextSlide = (currentSlide + 1) % slides.length;
-        goToSlide(nextSlide);
-    }, 5000);
-
-    // FAQ Toggle functionality
-    const faqItems = document.querySelectorAll('.faq-item');
-    
-    faqItems.forEach(item => {
-        const question = item.querySelector('.faq-question');
-        
-        question.addEventListener('click', () => {
-            const isActive = item.classList.contains('active');
-            
-            // Close all FAQ items
-            faqItems.forEach(faq => {
-                faq.classList.remove('active');
-                const toggle = faq.querySelector('.faq-toggle');
-                if (toggle) toggle.textContent = '+';
-            });
-            
-            // Open clicked item if it wasn't active
-            if (!isActive) {
-                item.classList.add('active');
-                const toggle = item.querySelector('.faq-toggle');
-                if (toggle) toggle.textContent = '-';
+    // Initialize Owl Carousel for testimonials
+    $('.testimonials-carousel').owlCarousel({
+        loop: true,
+        margin: 20,
+        nav: false,
+        dots: true,
+        autoplay: true,
+        autoplayTimeout: 2500,
+        autoplayHoverPause: false,
+        responsive: {
+            0: {
+                items: 1
+            },
+            768: {
+                items: 3
             }
-        });
+        }
     });
 });
 </script>

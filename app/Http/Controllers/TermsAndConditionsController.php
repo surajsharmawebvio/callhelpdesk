@@ -9,9 +9,9 @@ class TermsAndConditionsController extends Controller
 {
     public function index()
     {
-        $staticPage = StaticPage::where('route_name', 'terms-and-conditions')->first();
-        $seo = $staticPage?->seo;
+        $page = StaticPage::where('route_name', 'terms-and-conditions')->first();
+        $seo = $page?->seo;
 
-        return view('terms-and-conditions', compact('seo'));
+        return view('terms-and-conditions', compact('seo', 'page'));
     }
 }

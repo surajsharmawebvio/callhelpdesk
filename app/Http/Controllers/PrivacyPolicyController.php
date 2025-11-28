@@ -9,9 +9,9 @@ class PrivacyPolicyController extends Controller
 {
     public function index()
     {
-        $staticPage = StaticPage::where('route_name', 'privacy-policy')->first();
-        $seo = $staticPage?->seo;
+        $page = StaticPage::where('route_name', 'privacy-policy')->first();
+        $seo = $page?->seo;
 
-        return view('privacy-policy', compact('seo'));
+        return view('privacy-policy', compact('seo', 'page'));
     }
 }

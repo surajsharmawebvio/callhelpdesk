@@ -231,27 +231,61 @@ class SeoForm
     protected static function schemaMarkupFields(): array
     {
         return [
-            KeyValue::make('seo.schema_markup')
-                ->label('Schema Markup (JSON-LD)')
-                ->keyLabel('Property')
-                ->valueLabel('Value')
-                ->addActionLabel('Add Schema Property')
-                ->helperText('Add custom schema.org JSON-LD properties')
-                ->columnSpanFull(),
-
-            Textarea::make('seo_schema_preview')
-                ->label('Schema JSON Preview')
-                ->placeholder('Schema markup will appear here...')
-                ->rows(8)
+            Textarea::make('auto_generated_schema_preview')
+                ->label('Auto-Generated Schema Preview')
+                ->placeholder('Auto-generated schema will appear here...')
+                ->rows(10)
                 ->disabled()
-                ->helperText('Preview of generated schema markup (read-only)')
+                ->helperText('This is a preview of the default schema markup. You can edit the full schema in the field below.')
                 ->columnSpanFull()
                 ->formatStateUsing(function ($state, $record) {
-                    if (!$record || !$record->seo || !$record->seo->schema_markup) {
+                    if (!$record) {
+                        return 'Save the page first to see auto-generated schema markup.';
+                    }
+                    
+                    // Check if the model has the generateDefaultSchemaMarkup method
+                    if (!method_exists($record, 'generateDefaultSchemaMarkup')) {
+                        return 'Auto-generated schema is only available for static pages.';
+                    }
+                    
+                    // Get the auto-generated schema from the model
+                    $schema = $record->generateDefaultSchemaMarkup();
+                    return json_encode($schema, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
+                }),
+
+            Textarea::make('seo.schema_markup_json')
+                ->label('Edit Schema Markup (JSON)')
+                ->placeholder('Enter custom JSON-LD schema markup...')
+                ->rows(20)
+                ->helperText('Edit the complete schema markup in JSON format. Leave empty to use auto-generated schema. This will override the default schema.')
+                ->columnSpanFull()
+                ->formatStateUsing(function ($state, $record) {
+                    // If there's saved JSON schema, show it
+                    if ($state) {
+                        return is_string($state) ? $state : json_encode($state, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
+                    }
+                    
+                    // Otherwise show the auto-generated schema for editing (only for models that support it)
+                    if ($record && method_exists($record, 'generateDefaultSchemaMarkup')) {
+                        $schema = $record->generateDefaultSchemaMarkup();
+                        return json_encode($schema, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
+                    }
+                    
+                    return null;
+                })
+                ->dehydrateStateUsing(function ($state) {
+                    // Convert JSON string to array before saving
+                    if (empty($state)) {
                         return null;
                     }
                     
-                    return json_encode($record->seo->schema_markup, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
+                    $decoded = json_decode($state, true);
+                    if (json_last_error() !== JSON_ERROR_NONE) {
+                        // If invalid JSON, return null or throw validation error
+                        return null;
+                    }
+                    
+                    return $decoded;
                 }),
         ];
     }

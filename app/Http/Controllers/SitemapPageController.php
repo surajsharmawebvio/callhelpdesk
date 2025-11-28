@@ -13,6 +13,7 @@ class SitemapPageController extends Controller
     {
         if ($request->ajax()) {
             $companies = Company::select('id', 'url', 'name')
+                ->published()
                 ->orderBy('name')
                 ->paginate(50);
                 
@@ -28,13 +29,14 @@ class SitemapPageController extends Controller
         }
         
         $companies = Company::select('id', 'url', 'name')
+            ->published()
             ->orderBy('name')
             ->paginate(200);
         
         // Load SEO data for sitemap page
-        $staticPage = StaticPage::where('route_name', 'sitemap')->first();
-        $seo = $staticPage?->seo;
+        $page = StaticPage::where('route_name', 'sitemap')->first();
+        $seo = $page?->seo;
             
-        return view('sitemap', compact('companies', 'seo'));
+        return view('sitemap', compact('companies', 'seo', 'page'));
     }
 }

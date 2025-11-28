@@ -15,6 +15,7 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware): void {
         $middleware->web(append: [
             AddLinkHeadersForPreloadedAssets::class,
+            \App\Http\Middleware\LowercaseRouteParameters::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {

@@ -7,8 +7,8 @@
 <section class="hero">
     <div class="hero-container">
         <div class="hero-content">
-            <h1>About <span>Call Help Desk</span></h1>
-            <p>We here at CallHelpDesk offer our users a platform where they can search contact information about companies that they require without any additional hassles.</p>
+            <h1>About Us <span>Call Help Desk</span></h1>
+            <p>We here at CallHelpDesk offer our users a platform where they can search contact information about companies that they require without any additional hassles</p>
         </div>
     </div>
 </section>
@@ -46,7 +46,7 @@
                     <i class="fas fa-sync-alt"></i>
                 </div>
                 <h3>Regularity in Information Maintenance</h3>
-                <p>The information is evaluated at regular intervals to ensure that it represents current contact information</p>
+                <p>The website is evaluated at regularly to ensure that it represents updated information </p>
             </div>
             <div class="mv-card">
                 <div class="mv-icon">
@@ -81,15 +81,6 @@
         <div class="commitment-content">
             <p>Access updated contact details of customer support departments. All information provided on this platform is for reference purposes only. CallHelpDesk gets the details from official pages.</p>
         </div>
-    </div>
-</section>
-
-<!-- CTA Section -->
-<section class="cta">
-    <div class="container">
-        <h2>Ready to Experience Better Support?</h2>
-        <p>Join thousands of customers who trust Call Help Desk for accurate airline contact information.</p>
-        <a href="#" class="btn btn-primary">Get Started Today</a>
     </div>
 </section>
 
@@ -238,27 +229,102 @@
     line-height: 1.6;
 }
 
+/* Trusted Source Section */
+.trusted-source {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
+.trusted-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.trusted-content h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+.trusted-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.trusted-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 40px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.trusted-content li {
+    background: white;
+    padding: 25px 20px;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+    position: relative;
+    padding-left: 50px;
+}
+
+.trusted-content li:before {
+    content: "✓";
+    position: absolute;
+    left: 20px;
+    top: 25px;
+    color: var(--primary);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.trusted-content li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.trusted-content p:last-child {
+    font-size: 16px;
+    margin-top: 40px;
+    margin-bottom: 0;
+}
+
 /* Commitment Section */
 .commitment-section {
-    padding: 0;
-    background: var(--light-bg);
+    padding: 60px 0;
+    background-color: white;
 }
 
 .commitment-content {
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
-    background: white;
-    padding: 3rem;
+    background: #f8f9fa;
+    padding: 40px 30px;
     border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
 .commitment-content p {
-    font-size: 1.1rem;
+    font-size: 16px;
     line-height: 1.6;
-    color: var(--text-muted);
+    color: #666;
     margin: 0;
+    font-style: italic;
 }
 
 /* CTA Section */
@@ -375,21 +441,55 @@
     }
 }
 
-@media (max-width: 480px) {
-    .hero-content h1 {
+/* Responsive adjustments for Trusted Source */
+@media (max-width: 768px) {
+    .trusted-source {
+        padding: 60px 0;
+    }
+    
+    .trusted-content h2 {
         font-size: 2rem;
     }
-
-    .story-content h2 {
-        font-size: 1.75rem;
+    
+    .trusted-content p {
+        font-size: 16px;
+        margin-bottom: 25px;
     }
-
-    .cta h2 {
-        font-size: 1.75rem;
+    
+    .trusted-content ul {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin: 30px 0;
     }
+    
+    .trusted-content li {
+        padding: 20px 15px;
+        padding-left: 45px;
+        font-size: 15px;
+    }
+    
+    .trusted-content li:before {
+        left: 15px;
+        top: 20px;
+    }
+    
+    .trusted-content p:last-child {
+        margin-top: 30px;
+    }
+}
 
-    .mv-card {
-        padding: 1.5rem;
+/* Responsive adjustments for Commitment Section */
+@media (max-width: 768px) {
+    .commitment-section {
+        padding: 40px 0;
+    }
+    
+    .commitment-content {
+        padding: 30px 20px;
+    }
+    
+    .commitment-content p {
+        font-size: 15px;
     }
 }
 

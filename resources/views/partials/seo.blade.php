@@ -53,9 +53,19 @@
 <meta name="twitter:creator" content="{{ $seoData?->twitter_creator ?? config('seo.twitter_creator') }}">
 
 {{-- Schema.org JSON-LD --}}
-@if($seoData?->schema_markup && is_array($seoData->schema_markup))
+@php
+    // Get schema markup from the page object or SEO data
+    $schemaMarkup = null;
+    if (isset($page) && method_exists($page, 'getSchemaMarkup')) {
+        $schemaMarkup = $page->getSchemaMarkup();
+    } elseif ($seoData?->schema_markup && is_array($seoData->schema_markup)) {
+        $schemaMarkup = $seoData->schema_markup;
+    }
+@endphp
+
+@if($schemaMarkup)
     <script type="application/ld+json">
-    {!! json_encode($seoData->schema_markup, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
+    {!! json_encode($schemaMarkup, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}
     </script>
 @endif
 

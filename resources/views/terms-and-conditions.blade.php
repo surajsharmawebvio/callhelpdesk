@@ -89,7 +89,7 @@
 
             <div class="policy-section">
                 <h2>13. Contact Info</h2>
-                <p>Got some more queries on the policies? Please contact us through [CONTACT_NO] or connect@callhelpdesk.com.</p>
+                <p>Got some more queries on the policies? Please contact us through connect@callhelpdesk.com.</p>
             </div>
         </div>
     </div>

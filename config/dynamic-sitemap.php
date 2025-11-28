@@ -102,10 +102,8 @@ return [
                 ];
             },
             'path' => '/sitemap-companies.xml',
-            'changefreq' => 'daily',
-            'priority' => 0.9,
             'date_column' => 'updated_at',
-            'query_scope' => 'published', // Optional: model scope to filter records
+            'query_scope' => 'published',
             'chunk_size' => 1000, // Process records in chunks for large datasets
         ],
 

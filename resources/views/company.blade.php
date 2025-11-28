@@ -65,7 +65,7 @@
                                         </li>
                                     </ol>
                                 </div>
-                                @if($company->updated_at)
+                                @if(optional($company)->updated_at)
                                 <div class="small">
                                     Updated
                                     <time datetime="{{ $company->updated_at->toIso8601String() }}">{{ $company->updated_at->format('F d, Y') }}</time>
@@ -110,8 +110,9 @@
                         </div>
 
                         <!-- FAQ Section -->
+                        @if(isset($company->questions) && count($company->questions) > 0)
                         <div class="card bot">
-                            @if(isset($company->questions) && count($company->questions) > 0)
+                            
                             @foreach($company->questions as $question)
                             <div>
                                 <div class="ul-pad text-sembld"><span class="bul">Q:</span>
@@ -121,16 +122,10 @@
                                         !!}</span></div>
                             </div>
                             @endforeach
-                            @else
-                            <div>
-                                <div class="ul-pad text-sembld"><span class="bul">Q:</span>
-                                    <h3>How do I talk to a live human at {{ $company->name ?? '' }}?</h3>
-                                </div>
-                                <div class="ul-pad mt-r"><span class="bul">A:</span><span>Our free phone can help you
-                                        navigate phone menus to get a live human for you.</span></div>
-                            </div>
-                            @endif
                         </div>
+                        @else
+                        <br>
+                        @endif
 
                         <!--
                         <div>
@@ -191,13 +186,15 @@
                         <!-- Advertisement Section -->
 
                         <!-- Random 4:4 Image Banner -->
+                        @if(isset($company->bottom_right_ad_image))
                         <div class="random-banner">
                             <div class="image-wrapper"><span class="ads-label">Ads</span><img
-                                    src="https://picsum.photos/300/300?random={{ rand(1, 1000) }}"
-                                    alt="Random advertisement banner"
+                                    src="/storage/{{ $company->bottom_right_ad_image }}"
+                                    alt="Company advertisement"
                                     style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 20px;"></div>
 
                         </div>
+                        @endif
 
                         <div>
                             <div class="h4">What's on this page</div>
@@ -269,7 +266,7 @@
                                             <meta itemprop="position" content="2" /></a></li>
                                 </ol>
                             </div>
-                            @if ($company->updated_at)
+                            @if (optional($company)->updated_at)
                                 <div class="small">Updated <time
                                     datetime="{{ $company->updated_at->toIso8601String() }}">{{ $company->updated_at->format('F d, Y') }}</time></div>
                             @endif
@@ -442,7 +439,7 @@
         margin: 20px 0;
         border-radius: 8px;
         overflow: hidden;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); */
     }
 
     .random-banner img {

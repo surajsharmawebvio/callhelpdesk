@@ -86,10 +86,6 @@ class SitemapGenerator
                 $xml .= '<lastmod>' . $route['lastmod'] . '</lastmod>';
             }
             
-            if (isset($route['changefreq'])) {
-                $xml .= '<changefreq>' . $route['changefreq'] . '</changefreq>';
-            }
-            
             if (isset($route['priority'])) {
                 $xml .= '<priority>' . $route['priority'] . '</priority>';
             }
@@ -117,8 +113,12 @@ class SitemapGenerator
             $xml .= '<url>';
             $xml .= '<loc>' . htmlspecialchars($baseUrl . $route['uri']) . '</loc>';
             $xml .= '<lastmod>' . now()->toW3cString() . '</lastmod>';
-            $xml .= '<changefreq>' . $config['changefreq'] . '</changefreq>';
-            $xml .= '<priority>' . $config['priority'] . '</priority>';
+            
+            // Only add priority if it's set in config
+            if (isset($config['priority'])) {
+                $xml .= '<priority>' . $config['priority'] . '</priority>';
+            }
+            
             $xml .= '</url>';
         }
 
@@ -181,8 +181,11 @@ class SitemapGenerator
                     $xml .= '<lastmod>' . Carbon::parse($record->{$config['date_column']})->toW3cString() . '</lastmod>';
                 }
                 
-                $xml .= '<changefreq>' . $config['changefreq'] . '</changefreq>';
-                $xml .= '<priority>' . $config['priority'] . '</priority>';
+                // Only add priority if it's set in config
+                if (isset($config['priority'])) {
+                    $xml .= '<priority>' . $config['priority'] . '</priority>';
+                }
+                
                 $xml .= '</url>';
             }
         });

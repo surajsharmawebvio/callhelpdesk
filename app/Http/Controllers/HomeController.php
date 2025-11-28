@@ -10,9 +10,9 @@ class HomeController extends Controller
     public function index()
     {
         // Load SEO data for home page
-        $staticPage = StaticPage::where('route_name', 'home')->first();
-        $seo = $staticPage?->seo;
+        $page = StaticPage::where('route_name', 'home')->first();
+        $seo = $page?->seo;
 
-        return view('home', compact('seo'));
+        return view('home', compact('seo', 'page'));
     }
 }

@@ -149,8 +149,15 @@ class ManageCompanyResource extends Resource
                 Section::make('Right Ads')
                 ->schema([
                     // make upload image component for right ads
-                    FileUpload::make('right_ad_image')
-                        ->label('Right Ad Image')
+                    FileUpload::make('bottom_right_ad_image')
+                        ->label('Top Right Ad Image')
+                        ->disk('public')
+                        ->directory('company-ads')
+                        ->image()
+                        ->nullable(),
+
+                        FileUpload::make('right_ad_image')
+                        ->label('Bottom Right Ad Image')
                         ->disk('public')
                         ->directory('company-ads')
                         ->image()

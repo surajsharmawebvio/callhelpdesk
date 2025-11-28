@@ -8,7 +8,7 @@
     <div class="hero-container">
         <div class="hero-content">
             <h1>Privacy <span>Policy</span></h1>
-            <p>Protecting your personal information with trust, integrity, and transparency.</p>
+            <p>Protecting your personal information with trust, integrity, and transparency</p>
         </div>
     </div>
 </section>

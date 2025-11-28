@@ -13,6 +13,23 @@
     </div>
 </section>
 
+<!-- Success/Error Messages -->
+@if(session('success'))
+<div class="alert alert-success" style="background: #d4edda; color: #155724; padding: 15px; margin: 20px auto; max-width: 1200px; border-radius: 8px; border: 1px solid #c3e6cb;">
+    {{ session('success') }}
+</div>
+@endif
+
+@if($errors->any())
+<div class="alert alert-danger" style="background: #f8d7da; color: #721c24; padding: 15px; margin: 20px auto; max-width: 1200px; border-radius: 8px; border: 1px solid #f5c6cb;">
+    <ul style="margin: 0; padding-left: 20px;">
+        @foreach($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
+
 <!-- Contact Section -->
 <section class="contact-section">
     <div class="container">
@@ -25,6 +42,7 @@
                 </div>
 
                 <div class="contact-details">
+                    <!--
                     <div class="contact-item">
                         <div class="contact-icon">
                             <i class="fas fa-phone"></i>
@@ -33,6 +51,7 @@
                             <h4>+1012 3456 789</h4>
                         </div>
                     </div>
+                        -->
 
                     <div class="contact-item">
                         <div class="contact-icon">
@@ -43,6 +62,7 @@
                         </div>
                     </div>
 
+                    <!--
                     <div class="contact-item">
                         <div class="contact-icon">
                             <i class="fas fa-map-marker-alt"></i>
@@ -51,6 +71,7 @@
                             <h4>132 Dartmouth Street Boston, Massachusetts 02156 United States</h4>
                         </div>
                     </div>
+                        -->
 
                     <div class="contact-item">
                         <div class="contact-text">
@@ -59,6 +80,7 @@
                     </div>
                 </div>
 
+                <!--
                 <div class="social-links">
                     <a href="#" class="social-link">
                         <i class="fab fa-twitter"></i>
@@ -70,6 +92,7 @@
                         <i class="fab fa-discord"></i>
                     </a>
                 </div>
+                -->
             </div>
 
             <!-- Contact Form -->
@@ -156,6 +179,7 @@
 </section>
 
 <!-- Map Section -->
+<!--
 <section class="map-section">
     <div class="container">
         <div class="map-container">
@@ -171,6 +195,7 @@
         </div>
     </div>
 </section>
+-->
 
 @include('components.footer')
 

@@ -28,6 +28,7 @@ class SeoMetadata extends Model
         'index',
         'follow',
         'schema_markup',
+        'schema_markup_json',
         'locale',
         'priority',
     ];
@@ -42,6 +43,7 @@ class SeoMetadata extends Model
         'index' => 'boolean',
         'follow' => 'boolean',
         'schema_markup' => 'array',
+        'schema_markup_json' => 'array',
     ];
 
     /**

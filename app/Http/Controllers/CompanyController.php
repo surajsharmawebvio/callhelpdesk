@@ -13,10 +13,17 @@ class CompanyController extends Controller
         $parsedUrl = parse_url($url);
         $path = $parsedUrl['path'] ?? '';
 
-        $company = Company::with('questions')->where('url', $path)->first();
+        $company = Company::with('questions')->where('url', $path)->published()->first();
+
+        // dd($company);
+
+        // Load SEO data for company page
+        $seo = $company?->seo;
 
         return view('company', [
-            'company' => $company
+            'company' => $company,
+            'seo' => $seo,
+            'page' => $company
         ]);
     }
 
@@ -24,7 +31,7 @@ class CompanyController extends Controller
     {
         $query = $request->input('query');
 
-        $companies = Company::where('name', 'like', '%' . $query . '%')->limit(10)->get()->toArray();
+        $companies = Company::where('name', 'like', '%' . $query . '%')->published()->limit(10)->get()->toArray();
 
         return response()->json(array_values($companies));
     }
@@ -37,10 +44,10 @@ class CompanyController extends Controller
 
         // Add search filter if provided
         if ($search) {
-             $query = Company::where('name', 'like', '%' . $search . '%');
+             $query = Company::where('name', 'like', '%' . $search . '%')->published();
         }
         if (!$search && $letter) {
-            $query = Company::where('name', 'like', $letter . '%');
+            $query = Company::where('name', 'like', $letter . '%')->published();
         }
 
         // Get paginated companies
