@@ -543,7 +543,16 @@
                     link.addEventListener('click', function (e) {
                         if (window.innerWidth >= 768) {
                             e.preventDefault();
-                            h2.scrollIntoView({
+                            const stickyCard = document.querySelector('.card.stk.top');
+                            let offset = 0;
+                            if (stickyCard) {
+                                offset = stickyCard.offsetHeight + 20; // Add some padding
+                            }
+                            const elementPosition = h2.getBoundingClientRect().top;
+                            const offsetPosition = elementPosition + window.pageYOffset - offset;
+                            
+                            window.scrollTo({
+                                top: offsetPosition,
                                 behavior: 'smooth'
                             });
                         }

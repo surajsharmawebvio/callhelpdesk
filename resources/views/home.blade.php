@@ -399,7 +399,6 @@
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .hero {
-        padding-top: 70px;
         overflow: visible;
     }
     
@@ -456,8 +455,7 @@
 
 /* About Us Section Styles */
 .about-us {
-    padding: 80px 0;
-    background-color: #f8f9fa;
+    padding: 0 !important;
 }
 
 .about-content {
@@ -539,7 +537,7 @@
 
 @media (max-width: 768px) {
     .about-us {
-        padding: 60px 0;
+        padding: 0 !important;
     }
     
     .about-content p {
@@ -575,7 +573,7 @@
 
 /* FAQ Section Styles */
 .faq {
-    padding: 80px 0;
+    padding: 0 !important;
     background-color: #f8f9fa;
 }
 
@@ -630,7 +628,7 @@
 /* Responsive adjustments for FAQ */
 @media (max-width: 768px) {
     .faq {
-        padding: 60px 0;
+        padding: 0 !important;
     }
     
     .accordion-button {

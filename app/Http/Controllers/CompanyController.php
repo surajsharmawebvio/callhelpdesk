@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Company;
+use App\Models\StaticPage;
 
 class CompanyController extends Controller
 {
@@ -14,8 +15,6 @@ class CompanyController extends Controller
         $path = $parsedUrl['path'] ?? '';
 
         $company = Company::with('questions')->where('url', $path)->published()->first();
-
-        // dd($company);
 
         // Load SEO data for company page
         $seo = $company?->seo;
@@ -53,13 +52,19 @@ class CompanyController extends Controller
         // Get paginated companies
         $companies = $query->orderBy('name')->paginate($perPage);
 
+        // Load SEO data for companies page
+        $page = StaticPage::where('route_name', 'companies')->first();
+        $seo = $page?->seo;
+
         return view('companies', [
             'companies' => $companies->items(),
             'currentLetter' => $letter,
             'currentPage' => $companies->currentPage(),
             'totalPages' => $companies->lastPage(),
             'totalCompanies' => $companies->total(),
-            'pagination' => $companies
+            'pagination' => $companies,
+            'seo' => $seo,
+            'page' => $page
         ]);
     }
 }

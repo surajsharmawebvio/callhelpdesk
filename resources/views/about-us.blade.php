@@ -99,7 +99,7 @@
 <style scoped>
 /* Hero Section */
 .hero {
-    padding-top: 80px;
+    padding: 0 !important;
     background: linear-gradient(135deg, var(--primary), var(--secondary));
     color: white;
     min-height: 50vh;
@@ -142,7 +142,7 @@
 
 /* Story Section */
 .story-section {
-    padding: 5rem 0;
+    padding: 0 !important;
     background: var(--light-bg);
 }
 
@@ -181,7 +181,7 @@
 
 /* Mission Vision Section */
 .mission-vision {
-    padding: 5rem 0;
+    padding: 0 !important;
     background: white;
 }
 
@@ -231,7 +231,7 @@
 
 /* Trusted Source Section */
 .trusted-source {
-    padding: 80px 0;
+    padding: 0 !important;
     background-color: #f8f9fa;
 }
 
@@ -305,7 +305,7 @@
 
 /* Commitment Section */
 .commitment-section {
-    padding: 60px 0;
+    padding: 0 !important;
     background-color: white;
 }
 
@@ -416,7 +416,7 @@
 
 @media (max-width: 768px) {
     .hero {
-        padding-top: 70px;
+        padding: 0 !important;
         min-height: 40vh;
     }
 
@@ -444,7 +444,7 @@
 /* Responsive adjustments for Trusted Source */
 @media (max-width: 768px) {
     .trusted-source {
-        padding: 60px 0;
+        padding: 0 !important;
     }
     
     .trusted-content h2 {
@@ -481,7 +481,7 @@
 /* Responsive adjustments for Commitment Section */
 @media (max-width: 768px) {
     .commitment-section {
-        padding: 40px 0;
+        padding: 0 !important;
     }
     
     .commitment-content {

@@ -4,11 +4,6 @@
             <div class="footer-col">
                 <h3>Elevate Support</h3>
                 <p>Call Help Desk connects you to official helplines for companies in every sector. From start to finish, we are here to aid you with your queries. Find the right official helpline information as we ease the process so you spend less time searching and more time getting solutions. </p>
-                <div class="social-links">
-                    <a href="https://www.facebook.com/profile.php?id=61582322640364"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://x.com/callhelpdesk123"><i class="fab fa-twitter"></i></a>
-                    <a href="https://www.instagram.com/callhelpdesk4/?hl=en"><i class="fab fa-instagram"></i></a>
-                </div>
             </div>
 
             <div class="footer-col">
@@ -16,8 +11,6 @@
                 <ul>
                     <li><a href="{{ route('home') }}">Home</a></li>
                     <li><a href="{{ route('companies.index') }}">Companies A-Z</a></li>
-                    <li><a href="{{ route('about-us') }}">About Us</a></li>
-                    <li><a href="{{ route('contact-us') }}">Contact Us</a></li>
                     <li><a href="{{ route('sitemap') }}">Sitemap</a></li>
                 </ul>
             </div>
@@ -27,7 +20,8 @@
                 <ul>
                     <li><a href="{{ route('privacy-policy') }}">Privacy Policy</a></li>
                     <li><a href="{{ route('terms-and-conditions') }}">Terms & Conditions</a></li>
-                    {{-- <li><a href="{{ route('disclaimer') }}">Disclaimer</a></li> --}}
+                    <li><a href="{{ route('about-us') }}">About Us</a></li>
+                    <li><a href="{{ route('contact-us') }}">Contact Us</a></li>
                 </ul>
             </div>
 
@@ -40,6 +34,11 @@
                     -->
                     <li><i class="fas fa-envelope"></i> help@callhelpdesk.com</li>
                 </ul>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/profile.php?id=61582322640364"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://x.com/callhelpdesk123"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/callhelpdesk4/?hl=en"><i class="fab fa-instagram"></i></a>
+                </div>
             </div>
         </div>
 

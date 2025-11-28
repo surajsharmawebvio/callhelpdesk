@@ -162,6 +162,11 @@ class Company extends Model
             ],
         ];
 
+        // Ensure questions are loaded
+        if (!$this->relationLoaded('questions')) {
+            $this->load('questions');
+        }
+
         // Add FAQ schema if company has questions
         if ($this->questions && $this->questions->count() > 0) {
             $faqItems = $this->questions->map(function ($question) {
