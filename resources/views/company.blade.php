@@ -189,11 +189,13 @@
                         <!-- Random 4:4 Image Banner -->
                         @if(isset($company->bottom_right_ad_image))
                         <div class="random-banner">
-                            <div class="image-wrapper"><span class="ads-label">Ads</span><img
+                            <div class="image-wrapper">
+                                <span class="ads-label">Ads</span>
+                                <img
                                     src="/storage/{{ $company->bottom_right_ad_image }}"
                                     alt="Company advertisement"
-                                    style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 20px;"></div>
-
+                                    style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 20px;">
+                            </div>
                         </div>
                         @endif
 
@@ -314,7 +316,7 @@
 
     .rich-content ul,
     .rich-content ol {
-        margin-left: 1.5rem !important;
+        margin-left: 0 !important;
         margin-bottom: 1rem !important;
     }
 
@@ -588,7 +590,6 @@
                 if (!img.alt || img.alt.trim() === '') {
                     img.alt = img.src;
                 }
-                console.log('Image alt set to:', img);
             }
         }
     });
@@ -604,6 +605,44 @@
             }
         });
     });
+
+    // Ads label positioning relative to image
+document.addEventListener('DOMContentLoaded', function () {
+    const wrappers = document.querySelectorAll('.image-wrapper');
+    wrappers.forEach(wrapper => {
+        const label = wrapper.querySelector('.ads-label');
+        const img = wrapper.querySelector('img');
+        
+        if (label && img) {
+            // Function to position label relative to image
+            function positionLabel() {
+                const imgRect = img.getBoundingClientRect();
+                const wrapperRect = wrapper.getBoundingClientRect();
+                
+                // Calculate position relative to wrapper
+                const relativeTop = imgRect.top - wrapperRect.top + 10; // 10px from top of image
+                const relativeLeft = imgRect.left - wrapperRect.left + 10; // 10px from left of image
+                
+                label.style.position = 'absolute';
+                label.style.top = relativeTop + 'px';
+                label.style.left = relativeLeft + 'px';
+                label.style.opacity = '0'; // Hidden by default
+            }
+            
+            // Position on load and resize
+            positionLabel();
+            window.addEventListener('resize', positionLabel);
+            
+            // Show/hide on hover
+            wrapper.addEventListener('mouseenter', () => {
+                label.style.opacity = '1';
+            });
+            wrapper.addEventListener('mouseleave', () => {
+                label.style.opacity = '0';
+            });
+        }
+    });
+});
 
 </script>
 @endsection

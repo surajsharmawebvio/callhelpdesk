@@ -93,14 +93,7 @@ return [
             'model' => \App\Models\Company::class,
             'route' => 'company.show',
             'route_params' => ['phoneNumber', 'companyName'], // Route parameter names in order
-            'route_param_values' => function($model) {
-                // Extract phoneNumber and companyName from the model's url field
-                $urlParts = explode('/', trim($model->url, '/'));
-                return [
-                    'phoneNumber' => $urlParts[0] ?? '',
-                    'companyName' => $urlParts[1] ?? '',
-                ];
-            },
+            'route_param_values' => ['phoneNumber' => 'company', 'companyName' => 'name'], // Map route params to model attributes
             'path' => '/sitemap-companies.xml',
             'date_column' => 'updated_at',
             'query_scope' => 'published',
