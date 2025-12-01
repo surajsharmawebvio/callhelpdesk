@@ -58,7 +58,7 @@
                             <i class="fas fa-envelope"></i>
                         </div>
                         <div class="contact-text">
-                            <h4>demo@gmail.com</h4>
+                            <h4>connect@callhelpdesk.com</h4>
                         </div>
                     </div>
 

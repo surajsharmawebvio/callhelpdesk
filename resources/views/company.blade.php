@@ -135,7 +135,6 @@
                                     style="width: 100%; height: 200px; border-radius: 8px; margin: 20px 0;"></div>
 
                         </div>
-                        -->
 
                         <div><a name="phone-numbers"></a>
                             <h2>{{ $company->name ?? '' }} Customer Phone Numbers</h2>
@@ -160,7 +159,7 @@
                                     <div><a href="#">More details</a></div>
                                 </div>
                             </div>
-                            <!--
+                            
                             <div>
                                 <div>
                                     <div class="image-wrapper"><span class="ads-label">Ads</span><img
@@ -169,8 +168,9 @@
                                     </div>
                                 </div>
                             </div>
-                            -->
+                           
                         </div>
+                         -->
 
                         <div class="rich-content" id="richContent">
                             {!! preg_replace('/<img([^>]+)>/', '<div class="image-wrapper"><span

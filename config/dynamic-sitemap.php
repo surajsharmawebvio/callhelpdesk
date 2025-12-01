@@ -50,7 +50,7 @@ return [
     */
 
     'static_routes' => [
-        'enabled' => true,
+        'enabled' => false, // Disabled to use custom sections instead
         'path' => '/sitemap-pages.xml',
         'changefreq' => 'weekly',
         'priority' => 0.8,
@@ -105,6 +105,49 @@ return [
             'date_column' => 'updated_at',
             'query_scope' => 'published',
             'chunk_size' => 1000, // Process records in chunks for large datasets
+        ],
+
+        // Home page sitemap
+        'home' => [
+            'enabled' => true,
+            'type' => 'routes',
+            'routes' => [
+                [
+                    'url' => '/',
+                    'lastmod' => now()->toW3cString(),
+                    'changefreq' => 'daily',
+                ],
+            ],
+            'path' => '/sitemap-home.xml',
+        ],
+
+        // Legal pages sitemap
+        'legal' => [
+            'enabled' => true,
+            'type' => 'routes',
+            'routes' => [
+                [
+                    'url' => '/privacy-policy',
+                    'lastmod' => now()->toW3cString(),
+                    'changefreq' => 'monthly',
+                ],
+                [
+                    'url' => '/terms-and-conditions',
+                    'lastmod' => now()->toW3cString(),
+                    'changefreq' => 'monthly',
+                ],
+                [
+                    'url' => '/about-us',
+                    'lastmod' => now()->toW3cString(),
+                    'changefreq' => 'monthly',
+                ],
+                [
+                    'url' => '/contact-us',
+                    'lastmod' => now()->toW3cString(),
+                    'changefreq' => 'monthly',
+                ],
+            ],
+            'path' => '/sitemap-legal.xml',
         ],
 
         // Blog posts sitemap (example - disabled by default)

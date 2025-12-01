@@ -35,7 +35,7 @@ return [
     */
 
     'cache' => [
-        'enabled' => env('SITEMAP_CACHE_ENABLED', true),
+        'enabled' => true,
         'ttl' => env('SITEMAP_CACHE_TTL', 3600), // 1 hour in seconds
         'key_prefix' => 'sitemap',
     ],
@@ -50,7 +50,7 @@ return [
     */
 
     'static_routes' => [
-        'enabled' => true,
+        'enabled' => false, // Disabled to use custom sections instead
         'path' => '/sitemap-pages.xml',
         'changefreq' => 'weekly',
         'priority' => 0.8,
@@ -100,6 +100,54 @@ return [
             'date_column' => 'updated_at',
             'query_scope' => 'published', // Optional: model scope to filter records
             'chunk_size' => 1000, // Process records in chunks for large datasets
+        ],
+
+        // Home page sitemap
+        'home' => [
+            'enabled' => true,
+            'type' => 'routes',
+            'routes' => [
+                [
+                    'url' => '/',
+                    'lastmod' => now()->toW3cString(),
+                    'changefreq' => 'daily',
+                    'priority' => 1.0,
+                ],
+            ],
+            'path' => '/sitemap-home.xml',
+        ],
+
+        // Legal pages sitemap
+        'legal' => [
+            'enabled' => true,
+            'type' => 'routes',
+            'routes' => [
+                [
+                    'url' => '/privacy-policy',
+                    'lastmod' => now()->toW3cString(),
+                    'changefreq' => 'monthly',
+                    'priority' => 0.6,
+                ],
+                [
+                    'url' => '/terms-and-conditions',
+                    'lastmod' => now()->toW3cString(),
+                    'changefreq' => 'monthly',
+                    'priority' => 0.6,
+                ],
+                [
+                    'url' => '/about-us',
+                    'lastmod' => now()->toW3cString(),
+                    'changefreq' => 'monthly',
+                    'priority' => 0.7,
+                ],
+                [
+                    'url' => '/contact-us',
+                    'lastmod' => now()->toW3cString(),
+                    'changefreq' => 'monthly',
+                    'priority' => 0.7,
+                ],
+            ],
+            'path' => '/sitemap-legal.xml',
         ],
 
         // Blog posts sitemap (example - disabled by default)
