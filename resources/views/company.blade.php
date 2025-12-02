@@ -495,7 +495,7 @@
     }
 
     /* Hide right ad on mobile */
-    @media (max-width: 768px) {
+    @media (max-width: 700px) {
         .right-ad-container {
             display: none;
         }

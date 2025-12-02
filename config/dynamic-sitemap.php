@@ -35,7 +35,7 @@ return [
     */
 
     'cache' => [
-        'enabled' => env('SITEMAP_CACHE_ENABLED', true),
+        'enabled' => env('SITEMAP_CACHE_ENABLED', false),
         'ttl' => env('SITEMAP_CACHE_TTL', 3600), // 1 hour in seconds
         'key_prefix' => 'sitemap',
     ],
@@ -92,9 +92,15 @@ return [
             'type' => 'model',
             'model' => \App\Models\Company::class,
             'route' => 'company.show',
-            'route_params' => ['phoneNumber', 'companyName'], // Route parameter names in order
-            'route_param_values' => ['phoneNumber' => 'company', 'companyName' => 'name'], // Map route params to model attributes
-            'path' => '/sitemap-companies.xml',
+            'route_param_values' => function($model) {
+                // Extract phoneNumber and companyName from the model's url field
+                $urlParts = explode('/', trim($model->url, '/'));
+                return [
+                    'phoneNumber' => $urlParts[0] ?? '',
+                    'companyName' => $urlParts[1] ?? '',
+                ];
+            },
+            'path' => '/company/sitemap.xml',
             'date_column' => 'updated_at',
             'query_scope' => 'published',
             'chunk_size' => 1000, // Process records in chunks for large datasets
@@ -110,13 +116,29 @@ return [
                     'lastmod' => now()->toW3cString(),
                     'changefreq' => 'daily',
                 ],
+                [
+                    'url' => '/about-us',
+                    'lastmod' => now()->toW3cString(),
+                ],
+                [
+                    'url' => '/privacy-policy',
+                    'lastmod' => now()->toW3cString(),
+                ],
+                [
+                    'url' => '/terms-and-conditions',
+                    'lastmod' => now()->toW3cString(),
+                ],
+                [
+                    'url' => '/contact-us',
+                    'lastmod' => now()->toW3cString(),
+                ],
             ],
-            'path' => '/sitemap-home.xml',
+            'path' => '/sitemap-legal.xml',
         ],
 
         // Legal pages sitemap
         'legal' => [
-            'enabled' => true,
+            'enabled' => false,
             'type' => 'routes',
             'routes' => [
                 [

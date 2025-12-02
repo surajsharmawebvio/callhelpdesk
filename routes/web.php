@@ -6,6 +6,10 @@ use App\Http\Controllers\{ HomeController, CompanyController, ContactController,
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/companies', [CompanyController::class, 'companies'])->name('companies.index');
 Route::get('/sitemap', [SitemapPageController::class, 'index'])->name('sitemap');
+Route::get('/company/sitemap.xml', function () {
+    $xml = app(\Webvio\DynamicSitemap\Services\SitemapManager::class)->getSectionByPath('/company/sitemap.xml');
+    return response($xml, 200, config('dynamic-sitemap.headers'));
+})->name('sitemap.company');
 Route::get('/{phoneNumber}/{companyName}', [CompanyController::class, 'index'])
     ->name('company.show')
     ->where([
