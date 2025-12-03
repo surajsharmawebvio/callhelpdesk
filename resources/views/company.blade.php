@@ -179,6 +179,61 @@
                                 </div>', $company->content ?? '') !!}
                         </div>
 
+                        <!-- Show Author -->
+                        @if($company->author)
+                        <div class="author-section">
+                            <h3 class="author-heading">About the Author</h3>
+                            <a href="/author#{{ \Illuminate\Support\Str::slug($company->author->name) }}" class="author-card-link">
+                                <div class="author-card">
+                                    <div class="author-image-wrapper">
+                                        @if($company->author->profile_image)
+                                            <img src="{{ asset('storage/' . $company->author->profile_image) }}" 
+                                                 alt="{{ $company->author->name }}" 
+                                                 class="author-image"
+                                                 onerror="this.src='https://ui-avatars.com/api/?name={{ urlencode($company->author->name) }}&size=150&background=4361ee&color=ffffff'">
+                                        @else
+                                            <img src="https://ui-avatars.com/api/?name={{ urlencode($company->author->name) }}&size=150&background=4361ee&color=ffffff" 
+                                                 alt="{{ $company->author->name }}" 
+                                                 class="author-image">
+                                        @endif
+                                    </div>
+                                    <div class="author-content">
+                                        <div class="author-header">
+                                            <div>
+                                                <h4 class="author-name">{{ $company->author->name }}</h4>
+                                                <p class="author-designation">{{ $company->author->designation }}</p>
+                                            </div>
+                                        @if($company->author->linkedin_url || $company->author->twitter_url || $company->author->github_url || $company->author->website_url)
+                                        <div class="author-social">
+                                            @if($company->author->linkedin_url)
+                                                <a href="{{ $company->author->linkedin_url }}" target="_blank" rel="noopener noreferrer" class="social-icon linkedin" title="LinkedIn">
+                                                    <i class="fab fa-linkedin-in"></i>
+                                                </a>
+                                            @endif
+                                            @if($company->author->twitter_url)
+                                                <a href="{{ $company->author->twitter_url }}" target="_blank" rel="noopener noreferrer" class="social-icon twitter" title="Twitter">
+                                                    <i class="fab fa-twitter"></i>
+                                                </a>
+                                            @endif
+                                            @if($company->author->github_url)
+                                                <a href="{{ $company->author->github_url }}" target="_blank" rel="noopener noreferrer" class="social-icon github" title="GitHub">
+                                                    <i class="fab fa-github"></i>
+                                                </a>
+                                            @endif
+                                            @if($company->author->website_url)
+                                                <a href="{{ $company->author->website_url }}" target="_blank" rel="noopener noreferrer" class="social-icon website" title="Website">
+                                                    <i class="fas fa-globe"></i>
+                                                </a>
+                                            @endif
+                                        </div>
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
+                            </a>
+                        </div>
+                        @endif
+
                     </div>
 
                     <!-- Right Layout -->
@@ -205,29 +260,7 @@
                                 <!-- Headings will be populated by JavaScript -->
                             </nav>
                         </div>
-
-                        <!--
-                        <div>
-                            <div class="h4">Call with our free super-powered phone</div>
-                            <ul>
-                                <li>Can talk to customer service for you</li>
-                                <li>Can wait on hold for you</li>
-                                <li>Automatically re-schedules if they're closed</li>
-                                <li>Get a summary & transcript after</li>
-                                <li>Easy to re-try if needed</li>
-                                <li>Free and no account needed</li>
-                            </ul>
-                            <div class="mt-u"><a
-                                    title="Call {{ $company->name ?? '' }} Customer Service phone number {{ $company->phone ?? '' }}"
-                                    href="tel:{{ $company->phone ?? '' }}"><span style="margin-left: 1.5rem;">Call
-                                        {{ $company->phone ?? '' }} Now</span></a>
-                            </div>
-                        </div>
-                        <h3 class="min" style="margin-bottom: 0.67rem">Compare {{ $company->name ?? '' }} Customer
-                            Service</h3>
-                        <div class="list-block"><a href="#">AirBnB Customer Service</a><a href="#">Capital One Customer
-                                Service</a><a href="#">Comcast Customer Service</a></div>
-                        -->
+                        <!-- Right Advertisement -->
                         @if(isset($company->right_ad_image))
                         <div class="sticky-top right-ad-container" style="text-align: center;">
                             <div class="image-wrapper"><span class="ads-label">Ads</span><img
@@ -536,6 +569,234 @@
     a.p-r {
         color: var(--primary, #4361ee) !important;
         text-decoration: none !important;
+    }
+
+    /* Author Section Styles */
+    .author-section {
+        margin-top: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .author-heading {
+        font-size: 1.125rem;
+        font-weight: 600;
+        color: #1a202c;
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid #4361ee;
+        display: inline-block;
+    }
+
+    .author-card-link {
+        text-decoration: none;
+        display: block;
+        color: inherit;
+    }
+
+    .author-card {
+        display: flex;
+        gap: 1.25rem;
+        padding: 1.25rem;
+        background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+        border-radius: 12px;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+        border: 1px solid #e5e7eb;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        align-items: flex-start;
+        cursor: pointer;
+    }
+
+    .author-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 20px rgba(67, 97, 238, 0.12);
+    }
+
+    .author-card-link:hover .author-card {
+        border-color: #4361ee;
+    }
+
+    .author-image-wrapper {
+        flex-shrink: 0;
+        position: relative;
+    }
+
+    .author-image {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid #4361ee;
+        box-shadow: 0 4px 12px rgba(67, 97, 238, 0.15);
+        transition: transform 0.3s ease;
+    }
+
+    .author-card:hover .author-image {
+        transform: scale(1.05);
+    }
+
+    .author-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .author-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+    }
+
+    .author-name {
+        font-size: 1.125rem;
+        font-weight: 600;
+        color: #1a202c;
+        margin: 0 0 0.375rem 0;
+        line-height: 1.3;
+    }
+
+    .author-designation {
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: #4361ee;
+        margin: 0;
+        padding: 0.2rem 0.6rem;
+        background: rgba(67, 97, 238, 0.1);
+        border-radius: 16px;
+        display: inline-block;
+    }
+
+    .author-bio {
+        font-size: 0.9rem;
+        line-height: 1.6;
+        color: #4a5568;
+        margin: 0;
+        text-align: justify;
+    }
+
+    .author-social {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+    }
+
+    .social-icon {
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        text-decoration: none;
+        font-size: 0.875rem;
+        transition: all 0.3s ease;
+        background: #fff;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    }
+
+    .social-icon.linkedin {
+        color: #0077b5;
+    }
+
+    .social-icon.linkedin:hover {
+        background: #0077b5;
+        color: #fff;
+        transform: translateY(-3px);
+        box-shadow: 0 4px 12px rgba(0, 119, 181, 0.3);
+    }
+
+    .social-icon.twitter {
+        color: #1da1f2;
+    }
+
+    .social-icon.twitter:hover {
+        background: #1da1f2;
+        color: #fff;
+        transform: translateY(-3px);
+        box-shadow: 0 4px 12px rgba(29, 161, 242, 0.3);
+    }
+
+    .social-icon.github {
+        color: #333;
+    }
+
+    .social-icon.github:hover {
+        background: #333;
+        color: #fff;
+        transform: translateY(-3px);
+        box-shadow: 0 4px 12px rgba(51, 51, 51, 0.3);
+    }
+
+    .social-icon.website {
+        color: #4361ee;
+    }
+
+    .social-icon.website:hover {
+        background: #4361ee;
+        color: #fff;
+        transform: translateY(-3px);
+        box-shadow: 0 4px 12px rgba(67, 97, 238, 0.3);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .author-card {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 1.25rem;
+        }
+
+        .author-header {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .author-bio {
+            text-align: center;
+        }
+
+        .author-image {
+            width: 70px;
+            height: 70px;
+        }
+
+        .author-name {
+            font-size: 1rem;
+        }
+
+        .author-social {
+            justify-content: center;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .author-section {
+            margin-top: 1.5rem;
+        }
+
+        .author-heading {
+            font-size: 1rem;
+        }
+
+        .author-card {
+            padding: 1rem;
+            gap: 0.75rem;
+        }
+
+        .author-image {
+            width: 60px;
+            height: 60px;
+            border: 2px solid #4361ee;
+        }
+
+        .social-icon {
+            width: 28px;
+            height: 28px;
+            font-size: 0.8rem;
+        }
     }
 </style>
 

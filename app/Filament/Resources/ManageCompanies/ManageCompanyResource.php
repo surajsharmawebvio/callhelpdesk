@@ -37,6 +37,13 @@ class ManageCompanyResource extends Resource
             ->schema([
                 Section::make('Company Details')
                     ->schema([
+                        Select::make('author_id')
+                            ->label('Author')
+                            ->options(\App\Models\Author::where('is_active', true)->orderBy('name')->pluck('name', 'id'))
+                            ->searchable()
+                            ->placeholder('Select an author')
+                            ->helperText('Select the author for this company'),
+
                         TextInput::make('name')
                             ->label('Company Name')
                             ->required()

@@ -16,6 +16,7 @@ class Company extends Model
     public $incrementing = true;
 
     protected $fillable = [
+        'author_id',
         'content',
         'name',
         'phone',
@@ -48,6 +49,11 @@ class Company extends Model
     public function questions()
     {
         return $this->hasMany(CompanyQuestion::class, 'company_id', 'id');
+    }
+
+    public function author()
+    {
+        return $this->belongsTo(Author::class);
     }
 
     public function category()

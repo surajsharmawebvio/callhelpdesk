@@ -14,7 +14,7 @@ class CompanyController extends Controller
         $parsedUrl = parse_url($url);
         $path = $parsedUrl['path'] ?? '';
 
-        $company = Company::with('questions')->where('url', $path)->published()->first();
+        $company = Company::with(['questions', 'author'])->where('url', $path)->published()->first();
 
         // Load SEO data for company page
         $seo = $company?->seo;
