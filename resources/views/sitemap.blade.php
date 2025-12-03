@@ -19,6 +19,7 @@
                     <div class="col-4 sitemap-item"><a href="{{ route('companies.index') }}">All Companies</a></div>
                     <div class="col-4 sitemap-item"><a href="{{ route('about-us') }}">About Us</a></div>
                     <div class="col-4 sitemap-item"><a href="{{ route('contact-us') }}">Contact Us</a></div>
+                    <div class="col-4 sitemap-item"><a href="{{ route('author') }}">Authors</a></div>
                     <div class="col-4 sitemap-item"><a href="{{ route('privacy-policy') }}">Privacy Policy</a></div>
                     <div class="col-4 sitemap-item"><a href="{{ route('terms-and-conditions') }}">Terms and Conditions</a></div>
                 </div>

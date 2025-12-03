@@ -132,6 +132,11 @@ return [
                     'url' => '/contact-us',
                     'lastmod' => now()->toW3cString(),
                 ],
+                [
+                    'url' => '/author',
+                    'lastmod' => now()->toW3cString(),
+                    'changefreq' => 'weekly',
+                ],
             ],
             'path' => '/sitemap-legal.xml',
         ],
