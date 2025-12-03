@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\{ HomeController, CompanyController, ContactController, ContactUsController, AboutUsController, PrivacyPolicyController, TermsAndConditionsController, DisclaimerController, SitemapPageController };
+use App\Http\Controllers\{ HomeController, CompanyController, ContactController, ContactUsController, AboutUsController, PrivacyPolicyController, TermsAndConditionsController, SitemapPageController };
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/companies', [CompanyController::class, 'companies'])->name('companies.index');

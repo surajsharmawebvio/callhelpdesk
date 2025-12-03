@@ -59,7 +59,7 @@
                                         <li itemprop="itemListElement" itemtype="http://schema.org/ListItem"
                                             itemscope="">
                                             <a itemprop="item" class="p-r" href="{{ $company->url ?? '#' }}">
-                                                <span itemprop="name">{{ $company->name ?? '' }}</span>
+                                                <span itemprop="name">{{ $company->name ?? '' }}  Customer Service</span>
                                                 <meta itemprop="position" content="2" />
                                             </a>
                                         </li>
@@ -485,13 +485,8 @@
         font-weight: bold;
         padding: 3px 8px;
         border-radius: 4px;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-    }
-
-    /* Show only on hover */
-    .image-wrapper:hover .ads-label {
         opacity: 1;
+        transition: opacity 0.3s ease;
     }
 
     /* Hide right ad on mobile */
@@ -526,18 +521,22 @@
         transform: translateY(-2px);
     }
 
-/* Social media specific hover colors */
-.social-links a[href*="facebook.com"]:hover {
-    background-color: #1877F2;
-}
+    /* Social media specific hover colors */
+    .social-links a[href*="facebook.com"]:hover {
+        background-color: #1877F2;
+    }
 
-.social-links a[href*="x.com"]:hover {
-    background-color: #1DA1F2;
-}
+    .social-links a[href*="x.com"]:hover {
+        background-color: #1DA1F2;
+    }
 
-.social-links a[href*="instagram.com"]:hover {
-    background-color: #E4405F;
-}
+    .social-links a[href*="instagram.com"]:hover {
+        background-color: #E4405F;
+    }
+    a.p-r {
+        color: var(--primary, #4361ee) !important;
+        text-decoration: none !important;
+    }
 </style>
 
 <script>
@@ -594,55 +593,33 @@
         }
     });
 
-    // Ads label hover effect
+    // Ads label positioning relative to image
     document.addEventListener('DOMContentLoaded', function () {
         const wrappers = document.querySelectorAll('.image-wrapper');
         wrappers.forEach(wrapper => {
             const label = wrapper.querySelector('.ads-label');
-            if (label) {
-                wrapper.addEventListener('mouseenter', () => label.style.opacity = '1');
-                wrapper.addEventListener('mouseleave', () => label.style.opacity = '0');
+            const img = wrapper.querySelector('img');
+            
+            if (label && img) {
+                // Function to position label relative to image
+                function positionLabel() {
+                    const imgRect = img.getBoundingClientRect();
+                    const wrapperRect = wrapper.getBoundingClientRect();
+                    
+                    // Calculate position relative to wrapper
+                    const relativeTop = imgRect.top - wrapperRect.top + 10; // 10px from top of image
+                    const relativeLeft = imgRect.left - wrapperRect.left + 10; // 10px from left of image
+                    
+                    label.style.position = 'absolute';
+                    label.style.top = relativeTop + 'px';
+                    label.style.left = relativeLeft + 'px';
+                    label.style.opacity = '1'; // Always visible
+                }
+                
+                // Position on load and resize
+                positionLabel();
+                window.addEventListener('resize', positionLabel);
             }
         });
-    });
-
-    // Ads label positioning relative to image
-document.addEventListener('DOMContentLoaded', function () {
-    const wrappers = document.querySelectorAll('.image-wrapper');
-    wrappers.forEach(wrapper => {
-        const label = wrapper.querySelector('.ads-label');
-        const img = wrapper.querySelector('img');
-        
-        if (label && img) {
-            // Function to position label relative to image
-            function positionLabel() {
-                const imgRect = img.getBoundingClientRect();
-                const wrapperRect = wrapper.getBoundingClientRect();
-                
-                // Calculate position relative to wrapper
-                const relativeTop = imgRect.top - wrapperRect.top + 10; // 10px from top of image
-                const relativeLeft = imgRect.left - wrapperRect.left + 10; // 10px from left of image
-                
-                label.style.position = 'absolute';
-                label.style.top = relativeTop + 'px';
-                label.style.left = relativeLeft + 'px';
-                label.style.opacity = '0'; // Hidden by default
-            }
-            
-            // Position on load and resize
-            positionLabel();
-            window.addEventListener('resize', positionLabel);
-            
-            // Show/hide on hover
-            wrapper.addEventListener('mouseenter', () => {
-                label.style.opacity = '1';
-            });
-            wrapper.addEventListener('mouseleave', () => {
-                label.style.opacity = '0';
-            });
-        }
-    });
-});
-
-</script>
+    });</script>
 @endsection
