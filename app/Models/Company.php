@@ -99,6 +99,19 @@ class Company extends Model
     }
 
     /**
+     * Get route parameters for sitemap generation.
+     */
+    public static function getSitemapRouteParams($model): array
+    {
+        // Extract phoneNumber and companyName from the model's url field
+        $urlParts = explode('/', trim($model->url, '/'));
+        return [
+            'phoneNumber' => $urlParts[0] ?? '',
+            'companyName' => $urlParts[1] ?? '',
+        ];
+    }
+
+    /**
      * Get breadcrumbs for the company page.
      */
     protected function getBreadcrumbs(): array
