@@ -172,6 +172,30 @@ class ManageCompanyResource extends Resource
                 ])
                 ->collapsed(),
 
+                Section::make('Breadcrumbs')
+                    ->schema([
+                        Repeater::make('breadcrumbs')
+                            ->label('Breadcrumb Navigation')
+                            ->schema([
+                                TextInput::make('title')
+                                    ->label('Breadcrumb Title')
+                                    ->required()
+                                    ->placeholder('e.g., Home, Companies, Company Name'),
+
+                                TextInput::make('url')
+                                    ->label('URL')
+                                    ->required()
+                                    ->placeholder('e.g., /, /companies, /company/phone/company-name')
+                                    ->url(),
+                            ])
+                            ->columns(2)
+                            ->defaultItems(0)
+                            ->addActionLabel('Add Breadcrumb')
+                            ->helperText('Leave empty to use default breadcrumbs. Add custom breadcrumbs to override the default navigation.')
+                            ->collapsible(),
+                    ])
+                    ->collapsed(),
+
                 // SEO Settings
                 SeoForm::make(),
 

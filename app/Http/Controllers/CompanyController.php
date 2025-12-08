@@ -19,10 +19,19 @@ class CompanyController extends Controller
         // Load SEO data for company page
         $seo = $company?->seo;
 
+        // Get breadcrumbs - use custom breadcrumbs if available, otherwise use default
+        $breadcrumbs = $company && $company->breadcrumbs && count($company->breadcrumbs) > 0
+            ? $company->breadcrumbs
+            : [
+                ['title' => 'All Companies', 'url' => route('companies.index')],
+                ['title' => ($company->name ?? 'Company') . ' Customer Service', 'url' => $url],
+            ];
+
         return view('company', [
             'company' => $company,
             'seo' => $seo,
-            'page' => $company
+            'page' => $company,
+            'breadcrumbs' => $breadcrumbs,
         ]);
     }
 

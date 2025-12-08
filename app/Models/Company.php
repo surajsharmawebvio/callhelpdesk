@@ -29,6 +29,7 @@ class Company extends Model
         'bottom_right_ad_image',
         'company_category_id',
         'sub_category_id',
+        'breadcrumbs',
     ];
 
     protected $casts = [
@@ -36,6 +37,7 @@ class Company extends Model
         'ad_id' => 'integer',
         'popup_id' => 'integer',
         'company_category_id' => 'integer',
+        'breadcrumbs' => 'array',
     ];
 
     /**

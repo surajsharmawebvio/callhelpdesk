@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\{ HomeController, CompanyController, ContactController, ContactUsController, AboutUsController, AuthorController, PrivacyPolicyController, TermsAndConditionsController, SitemapPageController };
+use App\Http\Controllers\{ HomeController, CompanyController, ContactController, ContactUsController, AboutUsController, AuthorController, PrivacyPolicyController, TermsAndConditionsController, SitemapPageController, DisclaimerController };
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/companies', [CompanyController::class, 'companies'])->name('companies.index');
@@ -16,7 +16,7 @@ Route::get('/about-us', [AboutUsController::class, 'index'])->name('about-us');
 Route::get('/author', [AuthorController::class, 'index'])->name('author');
 Route::get('/privacy-policy', [PrivacyPolicyController::class, 'index'])->name('privacy-policy');
 Route::get('/terms-and-conditions', [TermsAndConditionsController::class, 'index'])->name('terms-and-conditions');
-// Route::get('/disclaimer', [DisclaimerController::class, 'index'])->name('disclaimer');
+#Route::get('/disclaimer', [DisclaimerController::class, 'index'])->name('disclaimer');
 Route::get('/{phoneNumber}/{companyName}', [CompanyController::class, 'index'])
     ->name('company.show')
     ->where([

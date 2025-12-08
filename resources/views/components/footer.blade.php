@@ -12,7 +12,6 @@
                     <li><a href="{{ route('home') }}">Home</a></li>
                     <li><a href="{{ route('companies.index') }}">Companies A-Z</a></li>
                     <li><a href="{{ route('sitemap') }}">Sitemap</a></li>
-                    <li><a href="{{ route('author') }}">Authors</a></li>
                 </ul>
             </div>
 
@@ -36,9 +35,9 @@
                     <li><i class="fas fa-envelope"></i> connect@callhelpdesk.com</li>
                 </ul>
                 <div class="social-links">
-                    <a href="https://www.facebook.com/profile.php?id=61582322640364"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://x.com/callhelpdesk123"><i class="fab fa-twitter"></i></a>
-                    <a href="https://www.instagram.com/callhelpdesk4/?hl=en"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=61582322640364" rel="nofollow"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://x.com/callhelpdesk123" rel="nofollow"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/callhelpdesk4/?hl=en" rel="nofollow"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
         </div>

@@ -188,10 +188,10 @@
                             <div class="mb-100">Sharing is what powers CallHelpDesk's free customer service contact
                                 information and tools. You can help!</div>
                             <div class="social-links">
-                                <a href="https://www.facebook.com/profile.php?id=61582322640364"><i
+                                <a href="https://www.facebook.com/profile.php?id=61582322640364" rel="nofollow"><i
                                         class="fab fa-facebook-f"></i></a>
-                                <a href="https://x.com/callhelpdesk123"><i class="fab fa-twitter"></i></a>
-                                <a href="https://www.instagram.com/callhelpdesk4/?hl=en"><i
+                                <a href="https://x.com/callhelpdesk123" rel="nofollow"><i class="fab fa-twitter"></i></a>
+                                <a href="https://www.instagram.com/callhelpdesk4/?hl=en" rel="nofollow"><i
                                         class="fab fa-instagram"></i></a>
                             </div>
                         </div>

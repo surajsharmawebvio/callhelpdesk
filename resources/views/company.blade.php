@@ -48,21 +48,17 @@
                             <div class="extremes">
                                 <div class="trunc">
                                     <ol itemscope="" itemtype="http://schema.org/BreadcrumbList">
-                                        <li itemprop="itemListElement" itemtype="http://schema.org/ListItem"
-                                            itemscope="">
-                                            <a itemprop="item" class="p-r" href="/companies">
-                                                <span itemprop="name">All Companies</span>
-                                                <meta itemprop="position" content="1" />
+                                        @foreach($breadcrumbs as $index => $breadcrumb)
+                                        <li itemprop="itemListElement" itemtype="http://schema.org/ListItem" itemscope="">
+                                            <a itemprop="item" class="p-r" href="{{ $breadcrumb['url'] }}">
+                                                <span itemprop="name">{{ $breadcrumb['title'] }}</span>
+                                                <meta itemprop="position" content="{{ $index + 1 }}" />
                                             </a>
+                                            @if(!$loop->last)
                                             <span>&nbsp;&rsaquo;&nbsp;</span>
+                                            @endif
                                         </li>
-                                        <li itemprop="itemListElement" itemtype="http://schema.org/ListItem"
-                                            itemscope="">
-                                            <a itemprop="item" class="p-r" href="{{ $company->url ?? '#' }}">
-                                                <span itemprop="name">{{ $company->name ?? '' }}  Customer Service</span>
-                                                <meta itemprop="position" content="2" />
-                                            </a>
-                                        </li>
+                                        @endforeach
                                     </ol>
                                 </div>
                                 @if(optional($company)->updated_at)
@@ -281,10 +277,10 @@
                             <div class="mb-100">Sharing is what powers CallHelpDesk's free customer service contact
                                 information and tools. You can help!</div>
                             <div class="social-links">
-                                <a href="https://www.facebook.com/profile.php?id=61582322640364"><i
+                                <a href="https://www.facebook.com/profile.php?id=61582322640364" rel="nofollow"><i
                                         class="fab fa-facebook-f"></i></a>
-                                <a href="https://x.com/callhelpdesk123"><i class="fab fa-twitter"></i></a>
-                                <a href="https://www.instagram.com/callhelpdesk4/?hl=en"><i
+                                <a href="https://x.com/callhelpdesk123" rel="nofollow"><i class="fab fa-twitter"></i></a>
+                                <a href="https://www.instagram.com/callhelpdesk4/?hl=en" rel="nofollow"><i
                                         class="fab fa-instagram"></i></a>
                             </div>
                         </div>
@@ -293,15 +289,17 @@
                         <div>
                             <div>
                                 <ol itemscope="" itemtype="http://schema.org/BreadcrumbList">
-                                    <li itemprop="itemListElement" itemtype="http://schema.org/ListItem" itemscope=""><a
-                                            itemprop="item" class="p-r" href="/companies"><span itemprop="name">All
-                                                Companies</span>
-                                            <meta itemprop="position" content="1" />
-                                        </a><span>&nbsp;&rsaquo;&nbsp;</span></li>
-                                    <li itemprop="itemListElement" itemtype="http://schema.org/ListItem" itemscope=""><a
-                                            itemprop="item" class="p-r" href="{{ $company->url ?? '#' }}"><span
-                                                itemprop="name">{{ $company->name ?? '' }} Customer Service</span>
-                                            <meta itemprop="position" content="2" /></a></li>
+                                    @foreach($breadcrumbs as $index => $breadcrumb)
+                                    <li itemprop="itemListElement" itemtype="http://schema.org/ListItem" itemscope="">
+                                        <a itemprop="item" class="p-r" href="{{ $breadcrumb['url'] }}">
+                                            <span itemprop="name">{{ $breadcrumb['title'] }}</span>
+                                            <meta itemprop="position" content="{{ $index + 1 }}" />
+                                        </a>
+                                        @if(!$loop->last)
+                                        <span>&nbsp;&rsaquo;&nbsp;</span>
+                                        @endif
+                                    </li>
+                                    @endforeach
                                 </ol>
                             </div>
                             @if (optional($company)->updated_at)
