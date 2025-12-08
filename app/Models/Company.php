@@ -211,6 +211,68 @@ class Company extends Model
     }
 
     /**
+     * Generate schema markup from provided questions data (for form previews).
+     */
+    public function generateSchemaMarkupFromData(?array $questionsData = null): array
+    {
+        $url = url()->current();
+        $siteName = config('app.name');
+
+        $schema = [
+            '@context' => 'https://schema.org',
+            '@graph' => [
+                // WebSite schema
+                [
+                    '@type' => 'WebSite',
+                    'name' => $siteName,
+                    'url' => url('/'),
+                    'potentialAction' => [
+                        '@type' => 'SearchAction',
+                        'target' => [
+                            '@type' => 'EntryPoint',
+                            'urlTemplate' => url('/companies?search={search_term_string}'),
+                        ],
+                        'query-input' => 'required name=search_term_string',
+                    ],
+                ],
+                // WebPage schema
+                [
+                    '@type' => 'WebPage',
+                    'name' => $this->seo?->meta_title ?? $this->getSeoTitleFallback(),
+                    'description' => $this->seo?->meta_description ?? $this->getSeoDescriptionFallback(),
+                    'url' => $url,
+                    'isPartOf' => [
+                        '@id' => url('/') . '#website',
+                    ],
+                ],
+                // Breadcrumb schema
+                $this->generateBreadcrumbSchema(),
+            ],
+        ];
+
+        // Add FAQ schema if questions data is provided
+        if (!empty($questionsData)) {
+            $faqItems = collect($questionsData)->map(function ($q) {
+                return [
+                    '@type' => 'Question',
+                    'name' => $q['question'] ?? '',
+                    'acceptedAnswer' => [
+                        '@type' => 'Answer',
+                        'text' => $q['answer'] ?? '',
+                    ],
+                ];
+            })->toArray();
+
+            $schema['@graph'][] = [
+                '@type' => 'FAQPage',
+                'mainEntity' => $faqItems,
+            ];
+        }
+
+        return $schema;
+    }
+
+    /**
      * Boot the model.
      */
     protected static function booted(): void

@@ -150,7 +150,19 @@ class ManageCompanyResource extends Resource
                             ->label('Frequently Asked Questions')
                             ->collapsible()
                             ->defaultItems(0)
-                            ->addActionLabel('Add Question'),
+                            ->addActionLabel('Add Question')
+                            ->live(onBlur: true)
+                            ->afterStateUpdated(function ($state, $set, $record) {
+                                if ($record && method_exists($record, 'generateSchemaMarkupFromData')) {
+                                    // Generate fresh schema from current form state
+                                    $schema = $record->generateSchemaMarkupFromData($state);
+                                    $schemaJson = json_encode($schema, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
+                                    
+                                    // Update both preview and editable fields
+                                    $set('auto_generated_schema_preview', $schemaJson);
+                                    $set('seo.schema_markup_json', $schemaJson);
+                                }
+                            }),
                     ])->collapsed(),
 
                 Section::make('Right Ads')
