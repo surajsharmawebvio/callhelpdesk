@@ -23,6 +23,7 @@ Route::get('/{phoneNumber}/{companyName}', [CompanyController::class, 'index'])
         'phoneNumber' => '[a-zA-Z0-9]+',  // Allow letters and numbers
         'companyName' => '[a-zA-Z0-9-]+'   // Allow letters, numbers, hyphens
     ]);
+Route::get('/search-companies', [CompanyController::class, 'searchCompanies'])->name('companies.search');
 
 // Redirect all 404 pages to home
 Route::fallback(function () {
