@@ -68,6 +68,11 @@ class Company extends Model
         return $this->belongsTo(CompanyCategory::class, 'sub_category_id', 'id');
     }
 
+    public function popularCompany()
+    {
+        return $this->hasOne(PopularCompany::class);
+    }
+
     /**
      * Get SEO title fallback.
      */

@@ -15,7 +15,21 @@ class PopularCompanyForm
             ->components([
                 Select::make('company_id')
                     ->label('Company')
-                    ->options(Company::all()->pluck('name', 'id'))
+                    ->options(function ($record) {
+                        $query = Company::where('published', true);
+
+                        if ($record) {
+                            // When editing, exclude the current company's ID from the "already linked" check
+                            $query->whereDoesntHave('popularCompany', function ($q) use ($record) {
+                                $q->where('id', '!=', $record->id);
+                            });
+                        } else {
+                            // When creating, exclude all companies that already have popular companies
+                            $query->whereDoesntHave('popularCompany');
+                        }
+
+                        return $query->pluck('name', 'id');
+                    })
                     ->required()
                     ->searchable(),
                 TextInput::make('order')

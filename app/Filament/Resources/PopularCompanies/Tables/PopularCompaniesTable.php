@@ -29,6 +29,11 @@ class PopularCompaniesTable
             ->filters([
                 //
             ])
+            ->modifyQueryUsing(function ($query) {
+                return $query->whereHas('company', function ($companyQuery) {
+                    $companyQuery->where('published', true);
+                });
+            })
             ->recordActions([
                 EditAction::make(),
             ])
