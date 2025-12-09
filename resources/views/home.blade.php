@@ -162,9 +162,9 @@
                     <i class="fas fa-clock"></i>
                     <span>Current wait: <strong>3 minutes</strong></span>
                 </div>
-                <p class="popular-1"><i class="fas fa-info-circle"></i> Best time to call: Weekdays 8-11 AM EST</p>
+                <p><i class="fas fa-info-circle"></i> Best time to call: Weekdays 8-11 AM EST</p>
                 <div class="tips">
-                    <p class="popular-2"><i class="fas fa-lightbulb"></i> <strong>Quick Tip:</strong> Say "representative" immediately or
+                    <p><i class="fas fa-lightbulb"></i> <strong>Quick Tip:</strong> Say "representative" immediately or
                         press 0 repeatedly to bypass automated system.</p>
                 </div>
             </div>
@@ -180,9 +180,9 @@
                     <i class="fas fa-clock"></i>
                     <span>Current wait: <strong>8 minutes</strong></span>
                 </div>
-                <p class="popular-1"><i class="fas fa-info-circle"></i> Best time to call: Tues-Thurs 7-9 PM EST</p>
+                <p><i class="fas fa-info-circle"></i> Best time to call: Tues-Thurs 7-9 PM EST</p>
                 <div class="tips">
-                    <p class="popular-2"><i class="fas fa-lightbulb"></i> <strong>Quick Tip:</strong> Use the My Verizon app for faster
+                    <p><i class="fas fa-lightbulb"></i> <strong>Quick Tip:</strong> Use the My Verizon app for faster
                         support or request a callback to avoid waiting on hold.</p>
                 </div>
             </div>
@@ -198,9 +198,9 @@
                     <i class="fas fa-clock"></i>
                     <span>Current wait: <strong>2 minutes</strong></span>
                 </div>
-                <p class="popular-1"><i class="fas fa-info-circle"></i> Best time to call: Any weekday 9 AM - 7 PM EST</p>
+                <p><i class="fas fa-info-circle"></i> Best time to call: Any weekday 9 AM - 7 PM EST</p>
                 <div class="tips">
-                    <p class="popular-2"><i class="fas fa-lightbulb"></i> <strong>Quick Tip:</strong> Schedule a call through the Apple
+                    <p><i class="fas fa-lightbulb"></i> <strong>Quick Tip:</strong> Schedule a call through the Apple
                         Support website to get a callback at your preferred time.</p>
                 </div>
             </div>

@@ -40,7 +40,7 @@ class SeoForm
                     ->columnSpanFull(),
             ])
             ->collapsible()
-            ->collapsed(false);
+            ->collapsed(true);
     }
 
     /**

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\PopularCompany;
 use App\Models\StaticPage;
 use Illuminate\Http\Request;
 
@@ -13,6 +14,9 @@ class HomeController extends Controller
         $page = StaticPage::where('route_name', 'home')->first();
         $seo = $page?->seo;
 
-        return view('home', compact('seo', 'page'));
+        // Load popular companies
+        $popularCompanies = PopularCompany::with('company.category')->orderBy('order')->get();
+
+        return view('home', compact('seo', 'page', 'popularCompanies'));
     }
 }
