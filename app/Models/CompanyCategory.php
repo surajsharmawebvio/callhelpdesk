@@ -13,6 +13,11 @@ class CompanyCategory extends Model
         'description',
         'slug',
         'parent_id',
+        'is_main',
+    ];
+
+    protected $casts = [
+        'is_main' => 'boolean',
     ];
 
     public function companies()
@@ -37,11 +42,22 @@ class CompanyCategory extends Model
 
     public function scopeParents($query)
     {
-        return $query->whereNull('parent_id');
+        return $query->where('is_main', true);
     }
 
     public function scopeChildren($query)
     {
-        return $query->whereNotNull('parent_id');
+        return $query->where('is_main', false);
+    }
+
+    /**
+     * Boot the model.
+     */
+    protected static function booted(): void
+    {
+        static::saving(function ($category) {
+            // Automatically set is_main based on parent_id
+            $category->is_main = is_null($category->parent_id);
+        });
     }
 }

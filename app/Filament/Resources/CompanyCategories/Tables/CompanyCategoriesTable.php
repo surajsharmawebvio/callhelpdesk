@@ -19,13 +19,12 @@ class CompanyCategoriesTable
                     ->searchable()
                     ->sortable(),
 
-                TextColumn::make('parent.name')
-                    ->label('Parent Category')
-                    ->searchable()
+                TextColumn::make('children_count')
+                    ->label('Sub Categories')
+                    ->counts('children')
                     ->sortable()
-                    ->default('Main Category')
                     ->badge()
-                    ->color(fn ($record) => $record->parent_id ? 'gray' : 'success'),
+                    ->color('primary'),
 
                 TextColumn::make('created_at')
                     ->label('Created')
@@ -36,6 +35,9 @@ class CompanyCategoriesTable
             ->filters([
                 //
             ])
+            ->modifyQueryUsing(function ($query) {
+                return $query->where('is_main', true);
+            })
             ->recordActions([
                 EditAction::make(),
             ])
