@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>CallHelpDesk - Companies Directory</title>
+    <description>Latest companies and their contact information</description>
+    <link>https://yourdomain.com/companies</link>
+    <atom:link href="https://yourdomain.com/rss/companies.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Tue, 10 Dec 2025 06:55:33 +0000</lastBuildDate>
+    <generator>CallHelpDesk</generator>
+    <item>
+      <title>Acme Corporation</title>
+      <link>https://yourdomain.com/1234567890/acme-corporation</link>
+      <guid isPermaLink="true">https://yourdomain.com/1234567890/acme-corporation</guid>
+      <pubDate>Mon, 09 Dec 2025 08:55:02 +0000</pubDate>
+      <atom:updated>2025-12-10T06:55:33+00:00</atom:updated>
+      <category>Technology</category>
+      <author>admin@yourdomain.com</author>
+      <description>Phone: 1-234-567-8900
+
+Acme Corporation provides innovative technology solutions for businesses worldwide. Contact our customer service team for support and inquiries.</description>
+      <content:encoded><![CDATA[<p>Acme Corporation provides innovative technology solutions for businesses worldwide.</p><p>Our customer service team is available 24/7 to assist you with any questions or concerns.</p>]]></content:encoded>
+      <enclosure url="https://yourdomain.com/storage/company-images/acme.jpg" type="image/jpeg" />
+    </item>
+    <item>
+      <title>Delta Airlines</title>
+      <link>https://yourdomain.com/8005551234/delta-airlines</link>
+      <guid isPermaLink="true">https://yourdomain.com/8005551234/delta-airlines</guid>
+      <pubDate>Sun, 28 Nov 2025 08:57:39 +0000</pubDate>
+      <atom:updated>2025-12-01T11:36:30+00:00</atom:updated>
+      <category>Airlines</category>
+      <author>support@yourdomain.com</author>
+      <description>Phone: 1-800-555-1234
+
+Delta Airlines customer service contact information. Get help with bookings, flight changes, and general inquiries.</description>
+      <content:encoded><![CDATA[<p>Delta Airlines customer service is here to help you with all your travel needs.</p><p>Contact us for flight bookings, changes, cancellations, and more.</p>]]></content:encoded>
+      <enclosure url="https://yourdomain.com/storage/company-images/delta.jpg" type="image/jpeg" />
+    </item>
+  </channel>
+</rss>

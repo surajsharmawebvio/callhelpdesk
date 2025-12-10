@@ -32,6 +32,8 @@ class CompanyController extends Controller
             'seo' => $seo,
             'page' => $company,
             'breadcrumbs' => $breadcrumbs,
+            'phoneNumber' => $phoneNumber,
+            'companyName' => $companyName,
         ]);
     }
 

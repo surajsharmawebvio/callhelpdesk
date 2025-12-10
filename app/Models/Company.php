@@ -283,5 +283,6 @@ class Company extends Model
     protected static function booted(): void
     {
         static::observe(ModelObserver::class);
+        static::observe(\App\Observers\CompanyRssCacheObserver::class);
     }
 }

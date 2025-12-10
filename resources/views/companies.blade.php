@@ -4,6 +4,9 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
 <link rel="stylesheet" href="{{ asset('css/company_detail.css') }}">
 
+{{-- RSS Feed Auto-Discovery --}}
+<x-rss-feed-link type="companies" title="Companies Directory RSS Feed" />
+
 <div class="viewMainServer">
     <div>
         <div id="lay-fl" class="google-auto-placed">
@@ -115,6 +118,13 @@
                                             <i class="bi bi-search"></i>
                                         </button>
                                     </form>
+                                    <div style="margin-top: 12px;">
+                                        <x-rss-feed-button 
+                                            type="companies"
+                                            text="Subscribe to RSS Feed"
+                                            size="sm"
+                                        />
+                                    </div>
                                 </div>
                             </div>
                             <div class="companies-grid">
