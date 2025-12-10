@@ -42,9 +42,11 @@ class CompanyCategoryForm
                             ->maxLength(255),
                     ])
                     ->columns(1)
+                    ->collapsible()
+                    ->collapsed()
                     ->addActionLabel('Add New Sub Category')
                     ->helperText('Add new sub-categories that will be created for this category')
-                    ->visible(fn ($record, $get) => $record !== null && $get('is_main')),
+                    ->visible(fn ($get) => $get('is_main')),
 
                 Select::make('attach_existing_sub_categories')
                     ->label('Attach Existing Sub Categories')
@@ -52,7 +54,7 @@ class CompanyCategoryForm
                     ->options(fn () => CompanyCategory::where('is_main', false)->pluck('name', 'id'))
                     ->searchable()
                     ->helperText('Select existing sub-categories to attach to this category')
-                    ->visible(fn ($record, $get) => $record !== null && $get('is_main')),
+                    ->visible(fn ($get) => $get('is_main')),
             ]);
     }
 }
