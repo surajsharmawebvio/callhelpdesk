@@ -103,36 +103,37 @@ return [
         'home' => [
             'enabled' => true,
             'type' => 'routes',
+            'lastmod' => '2025-12-11T00:00:00+00:00',
             'routes' => [
                 [
                     'url' => '/',
-                    'lastmod' => now()->toW3cString(),
+                    'lastmod' => '2025-12-11T00:00:00+00:00',
                     'changefreq' => 'daily',
                 ],
                 [
                     'url' => '/add-business',
-                    'lastmod' => now()->toW3cString(),
+                    'lastmod' => '2025-12-11T00:00:00+00:00',
                     'changefreq' => 'monthly',
                 ],
                 [
                     'url' => '/about-us',
-                    'lastmod' => now()->toW3cString(),
+                    'lastmod' => '2025-11-13T00:00:00+00:00',
                 ],
                 [
                     'url' => '/privacy-policy',
-                    'lastmod' => now()->toW3cString(),
+                    'lastmod' => '2025-11-13T00:00:00+00:00',
                 ],
                 [
                     'url' => '/terms-and-conditions',
-                    'lastmod' => now()->toW3cString(),
+                    'lastmod' => '2025-11-13T00:00:00+00:00',
                 ],
                 [
                     'url' => '/contact-us',
-                    'lastmod' => now()->toW3cString(),
+                    'lastmod' => '2025-11-13T00:00:00+00:00',
                 ],
                 [
                     'url' => '/author',
-                    'lastmod' => now()->toW3cString(),
+                    'lastmod' => '2025-12-11T00:00:00+00:00',
                     'changefreq' => 'weekly',
                 ],
             ],

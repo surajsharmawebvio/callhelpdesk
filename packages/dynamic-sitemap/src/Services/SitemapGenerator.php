@@ -283,6 +283,11 @@ class SitemapGenerator
      */
     protected function getSectionLastModified(string $key, array $section): ?string
     {
+        // Check if a static lastmod is defined in the section config
+        if (isset($section['lastmod'])) {
+            return $section['lastmod'];
+        }
+
         if (($section['type'] ?? 'model') === 'model' && isset($section['model']) && class_exists($section['model'])) {
             $modelClass = $section['model'];
             $dateColumn = $section['date_column'] ?? 'updated_at';
