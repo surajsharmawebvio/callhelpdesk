@@ -136,6 +136,18 @@
                             <input type="file" id="fileInput" name="document" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" style="display: none;">
                         </div>
 
+                        <!-- Google reCAPTCHA -->
+                        <div class="form-group full-width recaptcha-container" style="grid-column: 1 / -1; display: flex; justify-content: center; margin-bottom: 30px;">
+                            @if($recaptchaSiteKey)
+                                <div class="g-recaptcha" data-sitekey="{{ $recaptchaSiteKey }}"></div>
+                            @else
+                                <div class="recaptcha-error" style="color: #dc3545; font-size: 0.9rem; text-align: center;">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                    reCAPTCHA configuration is missing. Please contact administrator.
+                                </div>
+                            @endif
+                        </div>
+
                         <!-- Submit Button -->
                         <button type="submit" class="submit-btn" style="width: 100%; padding: 22px; background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #10b981 100%); color: white; border: none; border-radius: 12px; font-size: 1.2rem; font-weight: 700; cursor: pointer; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1); display: flex; justify-content: center; align-items: center; gap: 15px; position: relative; overflow: hidden;">
                             <i class="fas fa-paper-plane"></i>
@@ -215,6 +227,9 @@
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.26.4/dist/sweetalert2.all.min.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.26.4/dist/sweetalert2.min.css" rel="stylesheet">
+
+<!-- Google reCAPTCHA -->
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 <script>
     // Country code data
@@ -454,6 +469,13 @@
                     return;
                 }
 
+                // Validate reCAPTCHA
+                const recaptchaResponse = typeof grecaptcha !== 'undefined' ? grecaptcha.getResponse() : '';
+                if (!recaptchaResponse) {
+                    alert('Please complete the reCAPTCHA verification');
+                    return;
+                }
+
                 // Show loading state
                 const originalText = submitBtn.innerHTML;
                 submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> PROCESSING...';
@@ -463,6 +485,7 @@
                 const formData = new FormData(form);
                 formData.append('country_code', selectedCountry.dialCode);
                 formData.append('country_name', selectedCountry.name);
+                formData.append('g-recaptcha-response', recaptchaResponse);
 
                 // Send AJAX request
                 fetch('{{ route("add.business.store") }}', {
@@ -479,6 +502,11 @@
                         // Reset form
                         form.reset();
                         selectCountry(countries[0]); // Reset to default country
+
+                        // Reset reCAPTCHA
+                        if (typeof grecaptcha !== 'undefined') {
+                            grecaptcha.reset();
+                        }
 
                         // Reset upload area
                         if (uploadArea) {
