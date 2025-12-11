@@ -151,8 +151,8 @@
             </div>
 
             <!-- Benefits Panel -->
-            <div class="benefits-panel" style="flex: 1; min-width: 500px;">
-                <div class="benefits-card" style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); border-radius: 20px; padding: 50px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); margin-bottom: 30px; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);">
+            <div class="benefits-panel" style="flex: 1; min-width: 500px; ">
+                <div class="benefits-card" style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); border-radius: 20px; padding: 70px 50px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); margin-bottom: 30px; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);">
                     <div class="benefits-header" style="margin-bottom: 40px;">
                         <h2 style="font-size: 2.2rem; font-weight: 800; background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #10b981 100%); -webkit-background-clip: text; background-clip: text; color: transparent; margin-bottom: 15px;">Why Choose CallHelpDesk?</h2>
                     </div>
@@ -189,7 +189,7 @@
                 </div>
 
                 <!-- Stats Card -->
-                <div class="stats-card" style="background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #10b981 100%); border-radius: 20px; padding: 40px; color: white; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);">
+                <div class="stats-card" style="background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #10b981 100%); border-radius: 20px; padding: 65px 40px; color: white; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);">
                     <h3 style="font-size: 1.8rem; font-weight: 800; margin-bottom: 30px;">Join Our Growing Community</h3>
                     <div class="stats-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
                         <div class="stat" style="text-align: center;">
@@ -213,15 +213,8 @@
 
 @include('components.footer')
 
-<!-- Success Message -->
-<div class="success-message" id="successMessage" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 40px; border-radius: 20px; box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3); z-index: 1000; opacity: 0; visibility: hidden; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1); text-align: center; max-width: 400px;">
-    <div class="success-icon" style="width: 80px; height: 80px; background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #10b981 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; color: white; font-size: 2rem;">
-        <i class="fas fa-check"></i>
-    </div>
-    <h2 style="font-size: 2rem; margin-bottom: 15px; color: #1f2937;">Successfully Submitted!</h2>
-    <p style="color: #6b7280; margin-bottom: 30px; font-size: 1.1rem;">Your business listing is being processed. You'll receive a confirmation email shortly.</p>
-    <button id="closeSuccess" style="background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #10b981 100%); color: white; border: none; padding: 15px 30px; border-radius: 10px; font-weight: 600; cursor: pointer; font-size: 1rem;">Continue</button>
-</div>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.26.4/dist/sweetalert2.all.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.26.4/dist/sweetalert2.min.css" rel="stylesheet">
 
 <script>
     // Country code data
@@ -448,7 +441,6 @@
         // Form submission
         const form = document.getElementById('businessForm');
         const submitBtn = form ? form.querySelector('.submit-btn') : null;
-        const successMessage = document.getElementById('successMessage');
 
         if (form && submitBtn) {
             form.addEventListener('submit', function(e) {
@@ -498,14 +490,21 @@
                             }
                         }
 
-                        // Show success message with actual message from server
-                        if (successMessage) {
-                            const messageText = successMessage.querySelector('p');
-                            if (messageText) {
-                                messageText.textContent = data.message;
+                        // Show success message with SweetAlert2
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Successfully Submitted!',
+                            text: data.message,
+                            confirmButtonText: 'Continue',
+                            confirmButtonColor: '#6366f1',
+                            background: '#ffffff',
+                            color: '#1f2937',
+                            customClass: {
+                                popup: 'swal-custom-popup',
+                                title: 'swal-custom-title',
+                                confirmButton: 'swal-custom-confirm'
                             }
-                            successMessage.classList.add('active');
-                        }
+                        });
                     } else {
                         // Handle validation errors
                         let errorMessage = 'Please check the form and try again.';
@@ -527,14 +526,6 @@
                     submitBtn.innerHTML = originalText;
                     submitBtn.disabled = false;
                 });
-            });
-        }
-
-        // Close success message
-        const closeSuccess = document.getElementById('closeSuccess');
-        if (closeSuccess && successMessage) {
-            closeSuccess.addEventListener('click', function() {
-                successMessage.classList.remove('active');
             });
         }
 
@@ -716,41 +707,6 @@
         filter: blur(40px);
     }
 
-    .success-message {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: white;
-        padding: 40px;
-        border-radius: 20px;
-        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
-        z-index: 1000;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
-        text-align: center;
-        max-width: 400px;
-    }
-
-    .success-message.active {
-        opacity: 1;
-        visibility: visible;
-    }
-
-    .success-icon {
-        width: 80px;
-        height: 80px;
-        background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #10b981 100%);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto 20px;
-        color: white;
-        font-size: 2rem;
-    }
-
     .upload-area:hover {
         border-color: #6366f1;
         background: rgba(99, 102, 241, 0.02);
@@ -793,7 +749,7 @@
         }
 
         .form-panel, .benefits-panel {
-            padding: 30px;
+            /* padding: 30px; */
         }
 
         .form-grid {
@@ -817,7 +773,7 @@
         }
 
         .form-panel, .benefits-panel {
-            padding: 20px;
+            /* padding: 20px; */
         }
 
         .submit-btn {
