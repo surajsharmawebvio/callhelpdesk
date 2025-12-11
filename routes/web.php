@@ -1,9 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\{ HomeController, CompanyController, ContactController, ContactUsController, AboutUsController, AuthorController, PrivacyPolicyController, TermsAndConditionsController, SitemapPageController, DisclaimerController, RssFeedController };
+use App\Http\Controllers\{ HomeController, CompanyController, ContactController, ContactUsController, AboutUsController, AuthorController, PrivacyPolicyController, TermsAndConditionsController, SitemapPageController, DisclaimerController, RssFeedController, AddBusinessController };
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/add-business', [AddBusinessController::class, 'index'])->name('add.business');
+Route::post('/add-business', [AddBusinessController::class, 'store'])->name('add.business.store');
 Route::get('/companies', [CompanyController::class, 'companies'])->name('companies.index');
 Route::get('/sitemap', [SitemapPageController::class, 'index'])->name('sitemap');
 Route::get('/company/sitemap.xml', function () {
@@ -12,14 +14,14 @@ Route::get('/company/sitemap.xml', function () {
 })->name('sitemap.company');
 
 // RSS Feed Routes
-Route::get('/rss/companies.xml', [RssFeedController::class, 'companies'])->name('rss.companies');
-Route::get('/rss/companies/category/{categoryId}.xml', [RssFeedController::class, 'companyCategory'])->name('rss.companies.category');
-Route::get('/rss/company/{phoneNumber}/{companyName}.xml', [RssFeedController::class, 'company'])
-    ->name('rss.company')
-    ->where([
-        'phoneNumber' => '[a-zA-Z0-9]+',
-        'companyName' => '[a-zA-Z0-9-]+'
-    ]);
+// Route::get('/rss/companies.xml', [RssFeedController::class, 'companies'])->name('rss.companies');
+// Route::get('/rss/companies/category/{categoryId}.xml', [RssFeedController::class, 'companyCategory'])->name('rss.companies.category');
+// Route::get('/rss/company/{phoneNumber}/{companyName}.xml', [RssFeedController::class, 'company'])
+//     ->name('rss.company')
+//     ->where([
+//         'phoneNumber' => '[a-zA-Z0-9]+',
+//         'companyName' => '[a-zA-Z0-9-]+'
+//     ]);
 
 Route::get('/contact-us', [ContactUsController::class, 'index'])->name('contact-us');
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');

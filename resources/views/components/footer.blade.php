@@ -11,6 +11,7 @@
                 <ul>
                     <li><a href="{{ route('home') }}">Home</a></li>
                     <li><a href="{{ route('companies.index') }}">Companies A-Z</a></li>
+                    <li><a href="{{ route('add.business') }}">Add Business</a></li>
                     <li><a href="{{ route('sitemap') }}">Sitemap</a></li>
                 </ul>
             </div>

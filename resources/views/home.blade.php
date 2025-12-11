@@ -151,59 +151,23 @@
     <h2 class="section-title">Most Requested Customer Service Numbers</h2>
     <div class="popular-container">
         <div class="owl-carousel owl-theme popular-carousel">
-            <!-- Amazon -->
+            @foreach($popularCompanies as $popularCompany)
             <div class="company-card">
                 <div class="company-header">
-                    <h3 class="company-name">Amazon</h3>
-                    <span class="category-tag">Retail</span>
+                    <h3 class="company-name">{{ $popularCompany->company->name }}</h3>
+                    <span class="category-tag">{{ $popularCompany->company->category->name ?? 'General' }}</span>
                 </div>
-                <a href="tel:1-888-280-4331" class="phone-number">1-888-280-4331</a>
+                <a href="tel:{{ $popularCompany->company->phone }}" class="phone-number">{{ $popularCompany->company->phone }}</a>
                 <div class="wait-time low">
                     <i class="fas fa-clock"></i>
-                    <span>Current wait: <strong>3 minutes</strong></span>
+                    <span>Current wait: <strong>Available</strong></span>
                 </div>
-                <p><i class="fas fa-info-circle"></i> Best time to call: Weekdays 8-11 AM EST</p>
+                <p class="populer-1"><i class="fas fa-info-circle"></i> Best time to call: Weekdays 9 AM - 5 PM EST</p>
                 <div class="tips">
-                    <p><i class="fas fa-lightbulb"></i> <strong>Quick Tip:</strong> Say "representative" immediately or
-                        press 0 repeatedly to bypass automated system.</p>
+                    <p class="populer-2"><i class="fas fa-lightbulb"></i> <strong>Quick Tip:</strong> Have your account details ready when calling for faster service.</p>
                 </div>
             </div>
-
-            <!-- Verizon -->
-            <div class="company-card">
-                <div class="company-header">
-                    <h3 class="company-name">Verizon Wireless</h3>
-                    <span class="category-tag">Telecom</span>
-                </div>
-                <a href="tel:1-800-922-0204" class="phone-number">1-800-922-0204</a>
-                <div class="wait-time medium">
-                    <i class="fas fa-clock"></i>
-                    <span>Current wait: <strong>8 minutes</strong></span>
-                </div>
-                <p><i class="fas fa-info-circle"></i> Best time to call: Tues-Thurs 7-9 PM EST</p>
-                <div class="tips">
-                    <p><i class="fas fa-lightbulb"></i> <strong>Quick Tip:</strong> Use the My Verizon app for faster
-                        support or request a callback to avoid waiting on hold.</p>
-                </div>
-            </div>
-
-            <!-- Apple -->
-            <div class="company-card">
-                <div class="company-header">
-                    <h3 class="company-name">Apple Support</h3>
-                    <span class="category-tag">Technology</span>
-                </div>
-                <a href="tel:1-800-275-2273" class="phone-number">1-800-275-2273</a>
-                <div class="wait-time low">
-                    <i class="fas fa-clock"></i>
-                    <span>Current wait: <strong>2 minutes</strong></span>
-                </div>
-                <p><i class="fas fa-info-circle"></i> Best time to call: Any weekday 9 AM - 7 PM EST</p>
-                <div class="tips">
-                    <p><i class="fas fa-lightbulb"></i> <strong>Quick Tip:</strong> Schedule a call through the Apple
-                        Support website to get a callback at your preferred time.</p>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>
@@ -857,6 +821,13 @@
     }
     .popular-2{
         height: 40px;
+    }
+
+    .populer-1{
+        height: 40px;
+    }
+    .populer-2{
+        height: 60px;
     }
 
 </style>

@@ -2,13 +2,6 @@
 
 @push('styles')
 <link rel="stylesheet" href="/css/company_detail.css">
-{{-- RSS Feed Auto-Discovery --}}
-<x-rss-feed-link 
-    type="company" 
-    :phoneNumber="$phoneNumber"
-    :companyName="$companyName"
-    :title="($company->name ?? 'Company') . ' RSS Feed'"
-/>
 @endpush
 
 @section('content')
@@ -78,20 +71,7 @@
                         </div>
 
                         <h1>{{ $company->name ?? '' }} Customer Service</h1>
-                        <h2>Phone Number & Contact Info</h2>
-                        
-                        {{-- RSS Feed Button --}}
-                        <div style="margin: 16px 0;">
-                            <x-rss-feed-button 
-                                type="company"
-                                :phoneNumber="$phoneNumber"
-                                :companyName="$companyName"
-                                text="Subscribe to Updates"
-                                size="sm"
-                            />
-                        </div>
-                        
-                        <a id="contact"></a>
+                        <h2>Phone Number & Contact Info</h2><a id="contact"></a>
                         <div class="card stk top">
                             <div>
                                 <div>

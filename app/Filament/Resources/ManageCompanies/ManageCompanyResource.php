@@ -60,7 +60,10 @@ class ManageCompanyResource extends Resource
                             ->searchable()
                             ->placeholder('Select a category')
                             // ->required()
-                            ->live(),
+                            ->live()
+                            ->afterStateUpdated(function ($state, callable $set) {
+                                $set('sub_category_id', null); // Clear sub-category when category changes
+                            }),
 
                         Select::make('sub_category_id')
                             ->label('Sub Category')
@@ -70,6 +73,7 @@ class ManageCompanyResource extends Resource
                                     return [];
                                 }
                                 return CompanyCategory::where('parent_id', $categoryId)
+                                    ->orderBy('name')
                                     ->pluck('name', 'id')
                                     ->toArray();
                             })
@@ -77,6 +81,7 @@ class ManageCompanyResource extends Resource
                             ->placeholder('Select a sub-category')
                             ->disabled(fn (callable $get) => !$get('company_category_id'))
                             ->dehydrated(fn ($state) => filled($state))
+                            ->live()
                             ->createOptionForm([
                                 TextInput::make('name')
                                     ->label('Sub Category Name')
@@ -84,6 +89,9 @@ class ManageCompanyResource extends Resource
                             ])
                             ->createOptionUsing(function (array $data, callable $get) {
                                 $categoryId = $get('company_category_id');
+                                if (!$categoryId) {
+                                    throw new \Exception('Please select a category first.');
+                                }
                                 $data['parent_id'] = $categoryId;
                                 return CompanyCategory::create($data)->id;
                             }),

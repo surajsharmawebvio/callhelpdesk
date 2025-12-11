@@ -110,6 +110,11 @@ return [
                     'changefreq' => 'daily',
                 ],
                 [
+                    'url' => '/add-business',
+                    'lastmod' => now()->toW3cString(),
+                    'changefreq' => 'monthly',
+                ],
+                [
                     'url' => '/about-us',
                     'lastmod' => now()->toW3cString(),
                 ],
