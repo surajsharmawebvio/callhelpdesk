@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\{ HomeController, CompanyController, ContactController, ContactUsController, AboutUsController, AuthorController, PrivacyPolicyController, TermsAndConditionsController, SitemapPageController, DisclaimerController, RssFeedController, AddBusinessController };
+use App\Http\Controllers\{ HomeController, CompanyController, ContactController, ContactUsController, AboutUsController, AuthorController, PrivacyPolicyController, TermsAndConditionsController, SitemapPageController, DisclaimerController, RssFeedController, AddBusinessController, AdminController, ContentHumenize};
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/add-business', [AddBusinessController::class, 'index'])->name('add.business');
@@ -13,15 +13,17 @@ Route::get('/company/sitemap.xml', function () {
     return response($xml, 200, config('dynamic-sitemap.headers'));
 })->name('sitemap.company');
 
+Route::get('/content-humanize', [ContentHumenize::class, 'index'])->name('content.humanize');
+
 // RSS Feed Routes
-// Route::get('/rss/companies.xml', [RssFeedController::class, 'companies'])->name('rss.companies');
-// Route::get('/rss/companies/category/{categoryId}.xml', [RssFeedController::class, 'companyCategory'])->name('rss.companies.category');
-// Route::get('/rss/company/{phoneNumber}/{companyName}.xml', [RssFeedController::class, 'company'])
-//     ->name('rss.company')
-//     ->where([
-//         'phoneNumber' => '[a-zA-Z0-9]+',
-//         'companyName' => '[a-zA-Z0-9-]+'
-//     ]);
+Route::get('/feed.xml', [RssFeedController::class, 'companies'])->name('feed.xml');
+Route::get('/rss/companies/category/{categoryId}.xml', [RssFeedController::class, 'companyCategory'])->name('rss.companies.category');
+Route::get('/rss/company/{phoneNumber}/{companyName}.xml', [RssFeedController::class, 'company'])
+    ->name('rss.company')
+    ->where([
+        'phoneNumber' => '[a-zA-Z0-9]+',
+        'companyName' => '[a-zA-Z0-9-]+'
+    ]);
 
 Route::get('/contact-us', [ContactUsController::class, 'index'])->name('contact-us');
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
@@ -30,6 +32,16 @@ Route::get('/author', [AuthorController::class, 'index'])->name('author');
 Route::get('/privacy-policy', [PrivacyPolicyController::class, 'index'])->name('privacy-policy');
 Route::get('/terms-and-conditions', [TermsAndConditionsController::class, 'index'])->name('terms-and-conditions');
 #Route::get('/disclaimer', [DisclaimerController::class, 'index'])->name('disclaimer');
+
+Route::get('/login', function () {
+    return redirect()->route('filament.admin.auth.login');
+})->name('login');
+
+// Admin protected routes
+Route::middleware('auth')->group(function () {
+    Route::get('/admin/download-document/{id}', [AdminController::class, 'downloadDocument'])->name('admin.download.document');
+});
+
 Route::get('/{phoneNumber}/{companyName}', [CompanyController::class, 'index'])
     ->name('company.show')
     ->where([

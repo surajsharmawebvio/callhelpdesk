@@ -129,7 +129,7 @@
                         </div>
 
                         <!-- Upload Area -->
-                        <div class="upload-area" id="uploadArea" style="border: 2px dashed #e5e7eb; border-radius: 12px; padding: 30px; text-align: center; cursor: pointer; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1); margin-bottom: 30px; background: #f9fafb;">
+                        <div class="upload-area" id="uploadArea" style="border: 2px dashed #e5e7eb; border-radius: 12px; padding: 1px; text-align: center; cursor: pointer; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1); margin-bottom: 30px; background: #f9fafb;">
                             <i class="fas fa-file-upload" style="font-size: 3rem; color: #6366f1; margin-bottom: 15px;"></i>
                             <div class="upload-text" style="font-weight: 600; color: #1f2937; margin-bottom: 8px;">Upload Business Document</div>
                             <div class="upload-subtext" style="color: #6b7280; font-size: 0.9rem;">PDF, DOC, DOCX up to 5MB</div>
@@ -163,8 +163,8 @@
             </div>
 
             <!-- Benefits Panel -->
-            <div class="benefits-panel" style="flex: 1; min-width: 500px; ">
-                <div class="benefits-card" style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); border-radius: 20px; padding: 70px 50px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); margin-bottom: 30px; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);">
+            <div class="benefits-panel" style="flex: 1; min-width: 500px;">
+                <div class="benefits-card" style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); border-radius: 20px; padding: 40px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); margin-bottom: 30px; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);">
                     <div class="benefits-header" style="margin-bottom: 40px;">
                         <h2 style="font-size: 2.2rem; font-weight: 800; background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #10b981 100%); -webkit-background-clip: text; background-clip: text; color: transparent; margin-bottom: 15px;">Why Choose CallHelpDesk?</h2>
                     </div>
@@ -198,10 +198,20 @@
                             <p style="color: #6b7280; line-height: 1.6;">Boost your online presence and attract more customers with our premium listings.</p>
                         </div>
                     </div>
+
+                    <div class="benefit-item" style="display: flex; align-items: flex-start; gap: 20px; margin-bottom: 30px; padding: 20px; border-radius: 12px; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1); cursor: default;">
+                        <div class="benefit-icon" style="width: 60px; height: 60px; background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #10b981 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; flex-shrink: 0;">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h3 style="font-size: 1.3rem; font-weight: 700; color: #1f2937; margin-bottom: 8px;">24/7 Customer Support</h3>
+                            <p style="color: #6b7280; line-height: 1.6;">Get round-the-clock assistance and help desk support for all your business needs.</p>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Stats Card -->
-                <div class="stats-card" style="background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #10b981 100%); border-radius: 20px; padding: 65px 40px; color: white; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);">
+                <div class="stats-card" style="background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #10b981 100%); border-radius: 20px; padding: 40px; color: white; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);">
                     <h3 style="font-size: 1.8rem; font-weight: 800; margin-bottom: 30px;">Join Our Growing Community</h3>
                     <div class="stats-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
                         <div class="stat" style="text-align: center;">
@@ -268,7 +278,192 @@
         { code: "PL", name: "Poland", dialCode: "+48", flag: "🇵🇱" },
         { code: "CZ", name: "Czech Republic", dialCode: "+420", flag: "🇨🇿" },
         { code: "GR", name: "Greece", dialCode: "+30", flag: "🇬🇷" },
-        { code: "PT", name: "Portugal", dialCode: "+351", flag: "🇵🇹" }
+        { code: "PT", name: "Portugal", dialCode: "+351", flag: "🇵🇹" },
+        { code: "AR", name: "Argentina", dialCode: "+54", flag: "🇦🇷" },
+        { code: "CL", name: "Chile", dialCode: "+56", flag: "🇨🇱" },
+        { code: "CO", name: "Colombia", dialCode: "+57", flag: "🇨🇴" },
+        { code: "PE", name: "Peru", dialCode: "+51", flag: "🇵🇪" },
+        { code: "VE", name: "Venezuela", dialCode: "+58", flag: "🇻🇪" },
+        { code: "EC", name: "Ecuador", dialCode: "+593", flag: "🇪🇨" },
+        { code: "BO", name: "Bolivia", dialCode: "+591", flag: "🇧🇴" },
+        { code: "PY", name: "Paraguay", dialCode: "+595", flag: "🇵🇾" },
+        { code: "UY", name: "Uruguay", dialCode: "+598", flag: "🇺🇾" },
+        { code: "CR", name: "Costa Rica", dialCode: "+506", flag: "🇨🇷" },
+        { code: "PA", name: "Panama", dialCode: "+507", flag: "🇵🇦" },
+        { code: "GT", name: "Guatemala", dialCode: "+502", flag: "🇬🇹" },
+        { code: "HN", name: "Honduras", dialCode: "+504", flag: "🇭🇳" },
+        { code: "SV", name: "El Salvador", dialCode: "+503", flag: "🇸🇻" },
+        { code: "NI", name: "Nicaragua", dialCode: "+505", flag: "🇳🇮" },
+        { code: "DO", name: "Dominican Republic", dialCode: "+1", flag: "🇩🇴" },
+        { code: "HT", name: "Haiti", dialCode: "+509", flag: "🇭🇹" },
+        { code: "JM", name: "Jamaica", dialCode: "+1", flag: "🇯🇲" },
+        { code: "TT", name: "Trinidad and Tobago", dialCode: "+1", flag: "🇹🇹" },
+        { code: "BB", name: "Barbados", dialCode: "+1", flag: "🇧🇧" },
+        { code: "BS", name: "Bahamas", dialCode: "+1", flag: "🇧🇸" },
+        { code: "BZ", name: "Belize", dialCode: "+501", flag: "🇧🇿" },
+        { code: "GY", name: "Guyana", dialCode: "+592", flag: "🇬🇾" },
+        { code: "SR", name: "Suriname", dialCode: "+597", flag: "🇸🇷" },
+        { code: "AW", name: "Aruba", dialCode: "+297", flag: "🇦🇼" },
+        { code: "CW", name: "Curaçao", dialCode: "+599", flag: "🇨🇼" },
+        { code: "SX", name: "Sint Maarten", dialCode: "+1", flag: "🇸🇽" },
+        { code: "BQ", name: "Bonaire, Sint Eustatius and Saba", dialCode: "+599", flag: "🇧🇶" },
+        { code: "KY", name: "Cayman Islands", dialCode: "+1", flag: "🇰🇾" },
+        { code: "BM", name: "Bermuda", dialCode: "+1", flag: "🇧🇲" },
+        { code: "VG", name: "British Virgin Islands", dialCode: "+1", flag: "🇻🇬" },
+        { code: "TC", name: "Turks and Caicos Islands", dialCode: "+1", flag: "🇹🇨" },
+        { code: "MS", name: "Montserrat", dialCode: "+1", flag: "🇲🇸" },
+        { code: "KN", name: "Saint Kitts and Nevis", dialCode: "+1", flag: "🇰🇳" },
+        { code: "LC", name: "Saint Lucia", dialCode: "+1", flag: "🇱🇨" },
+        { code: "VC", name: "Saint Vincent and the Grenadines", dialCode: "+1", flag: "🇻🇨" },
+        { code: "GD", name: "Grenada", dialCode: "+1", flag: "🇬🇩" },
+        { code: "AG", name: "Antigua and Barbuda", dialCode: "+1", flag: "🇦🇬" },
+        { code: "DM", name: "Dominica", dialCode: "+1", flag: "🇩🇲" },
+        { code: "ID", name: "Indonesia", dialCode: "+62", flag: "🇮🇩" },
+        { code: "MY", name: "Malaysia", dialCode: "+60", flag: "🇲🇾" },
+        { code: "TH", name: "Thailand", dialCode: "+66", flag: "🇹🇭" },
+        { code: "VN", name: "Vietnam", dialCode: "+84", flag: "🇻🇳" },
+        { code: "PH", name: "Philippines", dialCode: "+63", flag: "🇵🇭" },
+        { code: "HK", name: "Hong Kong", dialCode: "+852", flag: "🇭🇰" },
+        { code: "MO", name: "Macau", dialCode: "+853", flag: "🇲🇴" },
+        { code: "TW", name: "Taiwan", dialCode: "+886", flag: "🇹🇼" },
+        { code: "BD", name: "Bangladesh", dialCode: "+880", flag: "🇧🇩" },
+        { code: "PK", name: "Pakistan", dialCode: "+92", flag: "🇵🇰" },
+        { code: "LK", name: "Sri Lanka", dialCode: "+94", flag: "🇱🇰" },
+        { code: "NP", name: "Nepal", dialCode: "+977", flag: "🇳🇵" },
+        { code: "BT", name: "Bhutan", dialCode: "+975", flag: "🇧🇹" },
+        { code: "MV", name: "Maldives", dialCode: "+960", flag: "🇲🇻" },
+        { code: "AF", name: "Afghanistan", dialCode: "+93", flag: "🇦🇫" },
+        { code: "TJ", name: "Tajikistan", dialCode: "+992", flag: "🇹🇯" },
+        { code: "TM", name: "Turkmenistan", dialCode: "+993", flag: "🇹🇲" },
+        { code: "UZ", name: "Uzbekistan", dialCode: "+998", flag: "🇺🇿" },
+        { code: "KG", name: "Kyrgyzstan", dialCode: "+996", flag: "🇰🇬" },
+        { code: "KZ", name: "Kazakhstan", dialCode: "+7", flag: "🇰🇿" },
+        { code: "MN", name: "Mongolia", dialCode: "+976", flag: "🇲🇳" },
+        { code: "KP", name: "North Korea", dialCode: "+850", flag: "🇰🇵" },
+        { code: "BN", name: "Brunei", dialCode: "+673", flag: "🇧🇳" },
+        { code: "KH", name: "Cambodia", dialCode: "+855", flag: "🇰🇭" },
+        { code: "LA", name: "Laos", dialCode: "+856", flag: "🇱🇦" },
+        { code: "MM", name: "Myanmar", dialCode: "+95", flag: "🇲🇲" },
+        { code: "PG", name: "Papua New Guinea", dialCode: "+675", flag: "🇵🇬" },
+        { code: "FJ", name: "Fiji", dialCode: "+679", flag: "🇫🇯" },
+        { code: "TO", name: "Tonga", dialCode: "+676", flag: "🇹🇴" },
+        { code: "WS", name: "Samoa", dialCode: "+685", flag: "🇼🇸" },
+        { code: "KI", name: "Kiribati", dialCode: "+686", flag: "🇰🇮" },
+        { code: "MH", name: "Marshall Islands", dialCode: "+692", flag: "🇲🇭" },
+        { code: "FM", name: "Micronesia", dialCode: "+691", flag: "🇫🇲" },
+        { code: "PW", name: "Palau", dialCode: "+680", flag: "🇵🇼" },
+        { code: "NR", name: "Nauru", dialCode: "+674", flag: "🇳🇷" },
+        { code: "TV", name: "Tuvalu", dialCode: "+688", flag: "🇹🇻" },
+        { code: "VU", name: "Vanuatu", dialCode: "+678", flag: "🇻🇺" },
+        { code: "NC", name: "New Caledonia", dialCode: "+687", flag: "🇳🇨" },
+        { code: "PF", name: "French Polynesia", dialCode: "+689", flag: "🇵🇫" },
+        { code: "WF", name: "Wallis and Futuna", dialCode: "+681", flag: "🇼🇫" },
+        { code: "CK", name: "Cook Islands", dialCode: "+682", flag: "🇨🇰" },
+        { code: "NU", name: "Niue", dialCode: "+683", flag: "🇳🇺" },
+        { code: "TK", name: "Tokelau", dialCode: "+690", flag: "🇹🇰" },
+        { code: "PN", name: "Pitcairn", dialCode: "+64", flag: "🇵🇳" },
+        { code: "SH", name: "Saint Helena", dialCode: "+290", flag: "🇸🇭" },
+        { code: "GS", name: "South Georgia and the South Sandwich Islands", dialCode: "+500", flag: "🇬🇸" },
+        { code: "FK", name: "Falkland Islands", dialCode: "+500", flag: "🇫🇰" },
+        { code: "AI", name: "Anguilla", dialCode: "+1", flag: "🇦🇮" },
+        { code: "IR", name: "Iran", dialCode: "+98", flag: "🇮🇷" },
+        { code: "IQ", name: "Iraq", dialCode: "+964", flag: "🇮🇶" },
+        { code: "JO", name: "Jordan", dialCode: "+962", flag: "🇯🇴" },
+        { code: "LB", name: "Lebanon", dialCode: "+961", flag: "🇱🇧" },
+        { code: "SY", name: "Syria", dialCode: "+963", flag: "🇸🇾" },
+        { code: "YE", name: "Yemen", dialCode: "+967", flag: "🇾🇪" },
+        { code: "OM", name: "Oman", dialCode: "+968", flag: "🇴🇲" },
+        { code: "KW", name: "Kuwait", dialCode: "+965", flag: "🇰🇼" },
+        { code: "BH", name: "Bahrain", dialCode: "+973", flag: "🇧🇭" },
+        { code: "QA", name: "Qatar", dialCode: "+974", flag: "🇶🇦" },
+        { code: "IL", name: "Israel", dialCode: "+972", flag: "🇮🇱" },
+        { code: "PS", name: "Palestine", dialCode: "+970", flag: "🇵🇸" },
+        { code: "MT", name: "Malta", dialCode: "+356", flag: "🇲🇹" },
+        { code: "CY", name: "Cyprus", dialCode: "+357", flag: "🇨🇾" },
+        { code: "EE", name: "Estonia", dialCode: "+372", flag: "🇪🇪" },
+        { code: "LV", name: "Latvia", dialCode: "+371", flag: "🇱🇻" },
+        { code: "LT", name: "Lithuania", dialCode: "+370", flag: "🇱🇹" },
+        { code: "LU", name: "Luxembourg", dialCode: "+352", flag: "🇱🇺" },
+        { code: "MC", name: "Monaco", dialCode: "+377", flag: "🇲🇨" },
+        { code: "AD", name: "Andorra", dialCode: "+376", flag: "🇦🇩" },
+        { code: "SM", name: "San Marino", dialCode: "+378", flag: "🇸🇲" },
+        { code: "VA", name: "Vatican City", dialCode: "+379", flag: "🇻🇦" },
+        { code: "LI", name: "Liechtenstein", dialCode: "+423", flag: "🇱🇮" },
+        { code: "IS", name: "Iceland", dialCode: "+354", flag: "🇮🇸" },
+        { code: "IE", name: "Ireland", dialCode: "+353", flag: "🇮🇪" },
+        { code: "IM", name: "Isle of Man", dialCode: "+44", flag: "🇮🇲" },
+        { code: "JE", name: "Jersey", dialCode: "+44", flag: "🇯🇪" },
+        { code: "GG", name: "Guernsey", dialCode: "+44", flag: "🇬🇬" },
+        { code: "FO", name: "Faroe Islands", dialCode: "+298", flag: "🇫🇴" },
+        { code: "GL", name: "Greenland", dialCode: "+299", flag: "🇬🇱" },
+        { code: "SJ", name: "Svalbard and Jan Mayen", dialCode: "+47", flag: "🇸🇯" },
+        { code: "AX", name: "Åland Islands", dialCode: "+358", flag: "🇦🇽" },
+        { code: "AL", name: "Albania", dialCode: "+355", flag: "🇦🇱" },
+        { code: "MK", name: "North Macedonia", dialCode: "+389", flag: "🇲🇰" },
+        { code: "ME", name: "Montenegro", dialCode: "+382", flag: "🇲🇪" },
+        { code: "RS", name: "Serbia", dialCode: "+381", flag: "🇷🇸" },
+        { code: "BA", name: "Bosnia and Herzegovina", dialCode: "+387", flag: "🇧🇦" },
+        { code: "HR", name: "Croatia", dialCode: "+385", flag: "🇭🇷" },
+        { code: "SI", name: "Slovenia", dialCode: "+386", flag: "🇸🇮" },
+        { code: "SK", name: "Slovakia", dialCode: "+421", flag: "🇸🇰" },
+        { code: "HU", name: "Hungary", dialCode: "+36", flag: "🇭🇺" },
+        { code: "RO", name: "Romania", dialCode: "+40", flag: "🇷🇴" },
+        { code: "BG", name: "Bulgaria", dialCode: "+359", flag: "🇧🇬" },
+        { code: "MD", name: "Moldova", dialCode: "+373", flag: "🇲🇩" },
+        { code: "UA", name: "Ukraine", dialCode: "+380", flag: "🇺🇦" },
+        { code: "BY", name: "Belarus", dialCode: "+375", flag: "🇧🇾" },
+        { code: "GE", name: "Georgia", dialCode: "+995", flag: "🇬🇪" },
+        { code: "AM", name: "Armenia", dialCode: "+374", flag: "🇦🇲" },
+        { code: "AZ", name: "Azerbaijan", dialCode: "+994", flag: "🇦🇿" },
+        { code: "AO", name: "Angola", dialCode: "+244", flag: "🇦🇴" },
+        { code: "BW", name: "Botswana", dialCode: "+267", flag: "🇧🇼" },
+        { code: "BI", name: "Burundi", dialCode: "+257", flag: "🇧🇮" },
+        { code: "CM", name: "Cameroon", dialCode: "+237", flag: "🇨🇲" },
+        { code: "CV", name: "Cape Verde", dialCode: "+238", flag: "🇨🇻" },
+        { code: "CF", name: "Central African Republic", dialCode: "+236", flag: "🇨🇫" },
+        { code: "TD", name: "Chad", dialCode: "+235", flag: "🇹🇩" },
+        { code: "KM", name: "Comoros", dialCode: "+269", flag: "🇰🇲" },
+        { code: "CG", name: "Congo", dialCode: "+242", flag: "🇨🇬" },
+        { code: "CD", name: "DR Congo", dialCode: "+243", flag: "🇨🇩" },
+        { code: "DJ", name: "Djibouti", dialCode: "+253", flag: "🇩🇯" },
+        { code: "GQ", name: "Equatorial Guinea", dialCode: "+240", flag: "🇬🇶" },
+        { code: "ER", name: "Eritrea", dialCode: "+291", flag: "🇪🇷" },
+        { code: "ET", name: "Ethiopia", dialCode: "+251", flag: "🇪🇹" },
+        { code: "GA", name: "Gabon", dialCode: "+241", flag: "🇬🇦" },
+        { code: "GM", name: "Gambia", dialCode: "+220", flag: "🇬🇲" },
+        { code: "GH", name: "Ghana", dialCode: "+233", flag: "🇬🇭" },
+        { code: "GN", name: "Guinea", dialCode: "+224", flag: "🇬🇳" },
+        { code: "GW", name: "Guinea-Bissau", dialCode: "+245", flag: "🇬🇼" },
+        { code: "CI", name: "Ivory Coast", dialCode: "+225", flag: "🇨🇮" },
+        { code: "LS", name: "Lesotho", dialCode: "+266", flag: "🇱🇸" },
+        { code: "LR", name: "Liberia", dialCode: "+231", flag: "🇱🇷" },
+        { code: "LY", name: "Libya", dialCode: "+218", flag: "🇱🇾" },
+        { code: "MG", name: "Madagascar", dialCode: "+261", flag: "🇲🇬" },
+        { code: "MW", name: "Malawi", dialCode: "+265", flag: "🇲🇼" },
+        { code: "ML", name: "Mali", dialCode: "+223", flag: "🇲🇱" },
+        { code: "MR", name: "Mauritania", dialCode: "+222", flag: "🇲🇷" },
+        { code: "MU", name: "Mauritius", dialCode: "+230", flag: "🇲🇺" },
+        { code: "YT", name: "Mayotte", dialCode: "+262", flag: "🇾🇹" },
+        { code: "MA", name: "Morocco", dialCode: "+212", flag: "🇲🇦" },
+        { code: "MZ", name: "Mozambique", dialCode: "+258", flag: "🇲🇿" },
+        { code: "NA", name: "Namibia", dialCode: "+264", flag: "🇳🇦" },
+        { code: "NE", name: "Niger", dialCode: "+227", flag: "🇳🇪" },
+        { code: "RW", name: "Rwanda", dialCode: "+250", flag: "🇷🇼" },
+        { code: "RE", name: "Réunion", dialCode: "+262", flag: "🇷🇪" },
+        { code: "ST", name: "São Tomé and Príncipe", dialCode: "+239", flag: "🇸🇹" },
+        { code: "SN", name: "Senegal", dialCode: "+221", flag: "🇸🇳" },
+        { code: "SC", name: "Seychelles", dialCode: "+248", flag: "🇸🇨" },
+        { code: "SL", name: "Sierra Leone", dialCode: "+232", flag: "🇸🇱" },
+        { code: "SO", name: "Somalia", dialCode: "+252", flag: "🇸🇴" },
+        { code: "SS", name: "South Sudan", dialCode: "+211", flag: "🇸🇸" },
+        { code: "SD", name: "Sudan", dialCode: "+249", flag: "🇸🇩" },
+        { code: "SZ", name: "Eswatini", dialCode: "+268", flag: "🇸🇿" },
+        { code: "TZ", name: "Tanzania", dialCode: "+255", flag: "🇹🇿" },
+        { code: "TG", name: "Togo", dialCode: "+228", flag: "🇹🇬" },
+        { code: "TN", name: "Tunisia", dialCode: "+216", flag: "🇹🇳" },
+        { code: "UG", name: "Uganda", dialCode: "+256", flag: "🇺🇬" },
+        { code: "ZM", name: "Zambia", dialCode: "+260", flag: "🇿🇲" },
+        { code: "ZW", name: "Zimbabwe", dialCode: "+263", flag: "🇿🇼" }
     ];
 
     document.addEventListener('DOMContentLoaded', function() {

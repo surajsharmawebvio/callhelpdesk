@@ -176,7 +176,7 @@
                         </div>
 
                         <!-- Show Author -->
-                        @if($company->author)
+                        @if(optional($company)->author)
                         <div class="author-section">
                             <h3 class="author-heading">About the Author</h3>
                             <a href="/author#{{ \Illuminate\Support\Str::slug($company->author->name) }}" class="author-card-link">

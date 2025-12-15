@@ -139,9 +139,9 @@ class CompanyRequestsTable
                             ->content(function ($record) {
                                 if ($record->document_path) {
                                     $fileName = basename($record->document_path);
-                                    $fileUrl = Storage::url($record->document_path);
+                                    $downloadUrl = route('admin.download.document', ['id' => $record->id]);
                                     return new HtmlString(
-                                        '<a href="' . $fileUrl . '" target="_blank" class="text-primary-600 hover:text-primary-800 underline font-medium">' . 
+                                        '<a href="' . $downloadUrl . '" target="_blank" class="text-primary-600 hover:text-primary-800 underline font-medium">' . 
                                         $fileName . ' <i class="heroicon-o-arrow-down-tray ml-1"></i></a>'
                                     );
                                 }
