@@ -17,11 +17,15 @@
                 <div class="row">
                     <div class="col-4 sitemap-item"><a href="{{ route('home') }}">Home</a></div>
                     <div class="col-4 sitemap-item"><a href="{{ route('companies.index') }}">All Companies</a></div>
+                    <div class="col-4 sitemap-item"><a href="{{ route('add.business') }}">Add Business</a></div>
+                    <div class="col-4 sitemap-item"><a href="{{ route('content.humanize') }}">Content Humanize</a></div>
                     <div class="col-4 sitemap-item"><a href="{{ route('about-us') }}">About Us</a></div>
                     <div class="col-4 sitemap-item"><a href="{{ route('contact-us') }}">Contact Us</a></div>
                     <div class="col-4 sitemap-item"><a href="{{ route('author') }}">Authors</a></div>
                     <div class="col-4 sitemap-item"><a href="{{ route('privacy-policy') }}">Privacy Policy</a></div>
                     <div class="col-4 sitemap-item"><a href="{{ route('terms-and-conditions') }}">Terms and Conditions</a></div>
+                    <div class="col-4 sitemap-item"><a href="{{ route('terms-of-service') }}">Terms of Service</a></div>
+                    <div class="col-4 sitemap-item"><a href="{{ route('do-not-sell-my-info') }}">Do Not Sell My Info</a></div>
                 </div>
             </div>
 

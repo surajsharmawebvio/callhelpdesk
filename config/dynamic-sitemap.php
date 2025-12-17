@@ -128,6 +128,14 @@ return [
                     'lastmod' => '2025-11-13T00:00:00+00:00',
                 ],
                 [
+                    'url' => '/terms-of-service',
+                    'lastmod' => '2025-12-16T00:00:00+00:00',
+                ],
+                [
+                    'url' => '/do-not-sell-my-info',
+                    'lastmod' => '2025-12-16T00:00:00+00:00',
+                ],
+                [
                     'url' => '/contact-us',
                     'lastmod' => '2025-11-13T00:00:00+00:00',
                 ],

@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\{ HomeController, CompanyController, ContactController, ContactUsController, AboutUsController, AuthorController, PrivacyPolicyController, TermsAndConditionsController, SitemapPageController, DisclaimerController, RssFeedController, AddBusinessController, AdminController, ContentHumenize};
+use App\Http\Controllers\{ HomeController, CompanyController, ContactController, ContactUsController, AboutUsController, AuthorController, PrivacyPolicyController, TermsAndConditionsController, TermsOfServiceController, DoNotSellMyInfoController, SitemapPageController, DisclaimerController, RssFeedController, AddBusinessController, AdminController, ContentHumenize};
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/add-business', [AddBusinessController::class, 'index'])->name('add.business');
@@ -31,7 +31,11 @@ Route::get('/about-us', [AboutUsController::class, 'index'])->name('about-us');
 Route::get('/author', [AuthorController::class, 'index'])->name('author');
 Route::get('/privacy-policy', [PrivacyPolicyController::class, 'index'])->name('privacy-policy');
 Route::get('/terms-and-conditions', [TermsAndConditionsController::class, 'index'])->name('terms-and-conditions');
+Route::get('/terms-of-service', [TermsOfServiceController::class, 'index'])->name('terms-of-service');
+Route::get('/do-not-sell-my-info', [DoNotSellMyInfoController::class, 'index'])->name('do-not-sell-my-info');
 #Route::get('/disclaimer', [DisclaimerController::class, 'index'])->name('disclaimer');
+
+Route::get('test', [CompanyController::class, 'test']);
 
 Route::get('/login', function () {
     return redirect()->route('filament.admin.auth.login');
@@ -48,6 +52,7 @@ Route::get('/{phoneNumber}/{companyName}', [CompanyController::class, 'index'])
         'phoneNumber' => '[a-zA-Z0-9]+',  // Allow letters and numbers
         'companyName' => '[a-zA-Z0-9-]+'   // Allow letters, numbers, hyphens
     ]);
+Route::get('test/{phoneNumber}/{companyName}', [CompanyController::class, 'index2']);
 Route::get('/search-companies', [CompanyController::class, 'searchCompanies'])->name('companies.search');
 
 // Redirect all 404 pages to home

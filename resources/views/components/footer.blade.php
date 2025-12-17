@@ -21,6 +21,8 @@
                 <ul>
                     <li><a href="{{ route('privacy-policy') }}">Privacy Policy</a></li>
                     <li><a href="{{ route('terms-and-conditions') }}">Terms & Conditions</a></li>
+                    <li><a href="{{ route('terms-of-service') }}">Terms of Service</a></li>
+                    <li><a href="{{ route('do-not-sell-my-info') }}">Do Not Sell My Info</a></li>
                     <li><a href="{{ route('about-us') }}">About Us</a></li>
                     <li><a href="{{ route('contact-us') }}">Contact Us</a></li>
                 </ul>

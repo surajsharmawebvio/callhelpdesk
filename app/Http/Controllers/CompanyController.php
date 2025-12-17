@@ -37,6 +37,35 @@ class CompanyController extends Controller
         ]);
     }
 
+    public function index2($phoneNumber='company', $companyName)
+    {
+        $url = route('company.show', ['phoneNumber' => $phoneNumber, 'companyName' => strtolower($companyName)]);
+        $parsedUrl = parse_url($url);
+        $path = $parsedUrl['path'] ?? '';
+
+        $company = Company::with(['questions', 'author'])->where('url', $path)->published()->first();
+
+        // Load SEO data for company page
+        $seo = $company?->seo;
+
+        // Get breadcrumbs - use custom breadcrumbs if available, otherwise use default
+        $breadcrumbs = $company && $company->breadcrumbs && count($company->breadcrumbs) > 0
+            ? $company->breadcrumbs
+            : [
+                ['title' => 'All Companies', 'url' => route('companies.index')],
+                ['title' => ($company->name ?? 'Company') . ' Customer Service', 'url' => $url],
+            ];
+
+        return view('company2', [
+            'company' => $company,
+            'seo' => $seo,
+            'page' => $company,
+            'breadcrumbs' => $breadcrumbs,
+            'phoneNumber' => $phoneNumber,
+            'companyName' => $companyName,
+        ]);
+    }
+
     public function searchCompanies(Request $request)
     {
         $query = $request->input('query');
@@ -77,5 +106,14 @@ class CompanyController extends Controller
             'seo' => $seo,
             'page' => $page
         ]);
+    }
+
+    public function test(){
+        $company = Company::count();
+
+        
+
+
+        print_r($company);
     }
 }

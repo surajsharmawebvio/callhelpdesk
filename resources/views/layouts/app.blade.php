@@ -28,10 +28,19 @@
     
     <!-- jQuery (required for Owl Carousel) -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6233465782175730"
+     crossorigin="anonymous"></script>
+    <meta name="google-adsense-account" content="ca-pub-6233465782175730">
     
     <!-- Styles -->
     @vite(['resources/css/app.css', 'resources/css/home.css'])
     @stack('styles')
+    <style>
+        #headerSearchBtn {
+            padding: 14px 0px !important;
+        }
+    </style>
 </head>
 <body>
     <div class="default-layout">

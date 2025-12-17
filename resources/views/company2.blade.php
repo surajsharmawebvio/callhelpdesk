@@ -169,10 +169,7 @@
                          -->
 
                         <div class="rich-content" id="richContent">
-                            {!! preg_replace('/<img([^>]+)>/', '<div class="image-wrapper"><span
-                                        class="ads-label">Ads</span>
-                                    <img$1>
-                                </div>', $company->content ?? '') !!}
+                            {!! $company->content ?? '' !!}
                         </div>
 
                         <!-- Show Author -->
@@ -237,16 +234,19 @@
                         <!-- right add -->
                         <!-- Advertisement Section -->
 
-                        <!-- Random 4:4 Image Banner -->
+                        <!-- Random Banner Ad -->
                         @if(isset($company->bottom_right_ad_image))
                         <div class="random-banner">
-                            <div class="image-wrapper">
-                                <span class="ads-label">Ads</span>
-                                <img
-                                    src="/storage/{{ $company->bottom_right_ad_image }}"
-                                    alt="Company advertisement"
-                                    style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 20px;">
-                            </div>
+                            <!-- Google AdSense Banner Ad -->
+                            <ins class="adsbygoogle"
+                                 style="display:block; width:100%; min-height:200px;"
+                                 data-ad-client="ca-pub-6233465782175730"
+                                 data-ad-slot="your-banner-ad-slot-id"
+                                 data-ad-format="auto"
+                                 data-full-width-responsive="true"></ins>
+                            <script>
+                                 (adsbygoogle = window.adsbygoogle || []).push({});
+                            </script>
                         </div>
                         @endif
 
@@ -259,10 +259,16 @@
                         <!-- Right Advertisement -->
                         @if(isset($company->right_ad_image))
                         <div class="sticky-top right-ad-container" style="text-align: center;">
-                            <div class="image-wrapper"><span class="ads-label">Ads</span><img
-                                    src="/storage/{{ $company->right_ad_image }}" alt="Company advertisement"
-                                    class="right_ad"></div>
-
+                            <!-- Google AdSense Ad Unit -->
+                            <ins class="adsbygoogle"
+                                 style="display:block; width:300px; height:600px;"
+                                 data-ad-client="ca-pub-6233465782175730"
+                                 data-ad-slot="9876543210"
+                                 data-ad-format="auto"
+                                 data-full-width-responsive="true"></ins>
+                            <script>
+                                 (adsbygoogle = window.adsbygoogle || []).push({});
+                            </script>
                         </div>
                         @endif
                     </div>
@@ -441,10 +447,10 @@
     }
 
     /* Right sidebar ad container - updated for Google AdSense */
-    /* .right-ad-container {
+    .right-ad-container {
         text-align: center;
         margin: 20px 0;
-    } */
+    }
 
     @keyframes ring {
         0% {
@@ -477,23 +483,23 @@
     }
 
     /* Google AdSense Ad Units */
-    /* .adsbygoogle {
+    .adsbygoogle {
         margin: 20px 0;
         border-radius: 8px;
         overflow: hidden;
-    } */
+    }
 
     /* Right sidebar ad container */
-    /* .right-ad-container .adsbygoogle {
+    .right-ad-container .adsbygoogle {
         margin: 15px;
         border-radius: 8px;
-    } */
+    }
 
     /* Random banner ad container */
-    /* .random-banner .adsbygoogle {
+    .random-banner .adsbygoogle {
         border-radius: 8px;
         margin-bottom: 20px;
-    } */
+    }
 
     /* Hide right ad on mobile */
     @media (max-width: 700px) {
@@ -827,33 +833,34 @@
         }
     });
 
-    // Ads label positioning relative to image
-    document.addEventListener('DOMContentLoaded', function () {
-        const wrappers = document.querySelectorAll('.image-wrapper');
-        wrappers.forEach(wrapper => {
-            const label = wrapper.querySelector('.ads-label');
-            const img = wrapper.querySelector('img');
-            
-            if (label && img) {
-                // Function to position label relative to image
-                function positionLabel() {
-                    const imgRect = img.getBoundingClientRect();
-                    const wrapperRect = wrapper.getBoundingClientRect();
-                    
-                    // Calculate position relative to wrapper
-                    const relativeTop = imgRect.top - wrapperRect.top + 10; // 10px from top of image
-                    const relativeLeft = imgRect.left - wrapperRect.left + 10; // 10px from left of image
-                    
-                    label.style.position = 'absolute';
-                    label.style.top = relativeTop + 'px';
-                    label.style.left = relativeLeft + 'px';
-                    label.style.opacity = '1'; // Always visible
-                }
-                
-                // Position on load and resize
-                positionLabel();
-                window.addEventListener('resize', positionLabel);
-            }
-        });
-    });</script>
+    // Ads label positioning relative to image - REMOVED: No longer using image wrappers
+    // document.addEventListener('DOMContentLoaded', function () {
+    //     const wrappers = document.querySelectorAll('.image-wrapper');
+    //     wrappers.forEach(wrapper => {
+    //         const label = wrapper.querySelector('.ads-label');
+    //         const img = wrapper.querySelector('img');
+    //
+    //         if (label && img) {
+    //             // Function to position label relative to image
+    //             function positionLabel() {
+    //                 const imgRect = img.getBoundingClientRect();
+    //                 const wrapperRect = wrapper.getBoundingClientRect();
+    //
+    //                 // Calculate position relative to wrapper
+    //                 const relativeTop = imgRect.top - wrapperRect.top + 10; // 10px from top of image
+    //                 const relativeLeft = imgRect.left - wrapperRect.left + 10; // 10px from left of image
+    //
+    //                 label.style.position = 'absolute';
+    //                 label.style.top = relativeTop + 'px';
+    //                 label.style.left = relativeLeft + 'px';
+    //                 label.style.opacity = '1'; // Always visible
+    //             }
+    //
+    //             // Position on load and resize
+    //             positionLabel();
+    //             window.addEventListener('resize', positionLabel);
+    //         }
+    //     });
+    // });
+    </script>
 @endsection
